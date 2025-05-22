@@ -2,95 +2,277 @@
 <html lang="et">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Libtek OÜ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
   <style>
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
     body {
-      margin: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #f4f4f4;
+      line-height: 1.6;
+      background: #f9fafb;
       color: #333;
     }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
     header {
-      background-color: #0c2340;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(12,35,64,0.95);
+      color: white;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
     nav {
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: #001f3f;
-      padding: 1rem 0;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
     }
-    nav a {
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      cursor: default;
+      user-select: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+    nav ul li a {
+      font-weight: 600;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: #054a91;
       color: #fff;
-      text-decoration: none;
-      font-weight: bold;
     }
+
+    /* Hero section */
+    .hero {
+      margin-top: 60px;
+      height: 600px;
+      background: url('https://www.powerdesigninc.us/images/about/banner.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(12,35,64,0.6);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+    .hero-content h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.6rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    .hero-content p {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+    .btn-primary {
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      background-color: #0071bc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #005f99;
+    }
+
+    /* Sections */
     section {
-      padding: 2rem;
+      padding: 4rem 1rem;
       max-width: 1000px;
       margin: auto;
     }
-    .hero {
-      background: url('https://www.powerdesigninc.us/images/about/banner.jpg') center/cover;
-      height: 300px;
+    section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      color: #0c2340;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+    }
+    .services-list li {
+      background: white;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #054a91;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .services-list li:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Projects */
+    .projects p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      text-align: center;
+      color: #555;
+    }
+
+    /* About */
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: #444;
+      text-align: center;
+    }
+
+    /* Contact */
+    .contact p {
+      max-width: 700px;
+      margin: 0 auto 1rem auto;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      text-align: center;
+      color: #444;
+    }
+    .contact-info {
+      text-align: center;
+      font-weight: 600;
+      color: #054a91;
+    }
+
+    /* Footer */
     footer {
       background-color: #0c2340;
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 1.2rem 1rem;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+      nav ul {
+        gap: 1rem;
+      }
+      .services-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">Libtek OÜ</div>
+      <ul>
+        <li><a href="#teenused">Teenused</a></li>
+        <li><a href="#projektid">Projektid</a></li>
+        <li><a href="#meist">Meist</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-label="Kodu">
+  <div class="hero-content">
     <h1>Libtek OÜ</h1>
-    <p>Innovaatilised elektri- ja projekteerimislahendused</p>
-  </header>
+    <p>Innovaatilised elektri- ja projekteerimislahendused Eestis</p>
+    <button class="btn-primary" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">Võta ühendust</button>
+  </div>
+</section>
 
-  <nav>
-    <a href="#teenused">Teenused</a>
-    <a href="#projektid">Projektid</a>
-    <a href="#meist">Meist</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
+<section id="teenused" class="services">
+  <h2>Meie Teenused</h2>
+  <ul class="services-list">
+    <li>Elektriprojekteerimine</li>
+    <li>Disain-ehituse lahendused</li>
+    <li>Energiatõhususe konsultatsioon</li>
+    <li>Elektrisüsteemide paigaldus</li>
+  </ul>
+</section>
 
-  <div class="hero"></div>
+<section id="projektid" class="projects">
+  <h2>Viimased Projektid</h2>
+  <p>Oleme uhked oma mitmekesise ja kvaliteetse töö üle äri- ja tööstusklientidele üle Eesti.</p>
+</section>
 
-  <section id="teenused">
-    <h2>Meie Teenused</h2>
-    <ul>
-      <li>Elektriprojekteerimine</li>
-      <li>Disain-ehituse lahendused</li>
-      <li>Energiatõhususe konsultatsioon</li>
-      <li>Elektrisüsteemide paigaldus</li>
-    </ul>
-  </section>
+<section id="meist" class="about">
+  <h2>Meist</h2>
+  <p>Libtek OÜ on Eesti ettevõte, mis pakub professionaalseid elektri- ja insenerilahendusi, tuginedes uuenduslikkusele, täpsusele ja kliendirahulolule.</p>
+</section>
 
-  <section id="projektid">
-    <h2>Viimased Projektid</h2>
-    <p>Oleme uhked oma mitmekesise ja kvaliteetse töö üle äri- ja tööstusklientidele üle Eesti.</p>
-  </section>
+<section id="kontakt" class="contact">
+  <h2>Kontakt</h2>
+  <p>Kui soovid meie teenuseid või sul on küsimusi, võta julgelt ühendust!</p>
+  <p class="contact-info">Email: <a href="mailto:info@libtek.ee">info@libtek.ee</a></p>
+  <p class="contact-info">Telefon: <a href="tel:+37255551234">+372 5555 1234</a></p>
+  <p class="contact-info">Aadress: Tööstuse tee 10, Tallinn</p>
+</section>
 
-  <section id="meist">
-    <h2>Meist</h2>
-    <p>Libtek OÜ on Eesti ettevõte, mis pakub professionaalseid elektri- ja insenerilahendusi, tuginedes uuenduslikkusele, täpsusele ja kliendirahulolule.</p>
-  </section>
+<footer>
+  <p>&copy; 2025 Libtek OÜ. Kõik õigused kaitstud.</p>
+</footer>
 
-  <section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Email: info@libtek.ee</p>
-    <p>Telefon: +372 5555 1234</p>
-    <p>Aadress: Tööstuse tee 10, Tallinn</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Libtek OÜ. Kõik õigused kaitstud.</p>
-  </footer>
 </body>
 </html>
