@@ -1,138 +1,96 @@
-
 <!DOCTYPE html>
 <html lang="et">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libtek OÜ – Elektrilahendused ja Projekteerimine</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #eef2f3, #8e9eab);
-            color: #222;
-        }
-        header {
-            background: linear-gradient(to right, #004466, #007acc);
-            color: white;
-            text-align: center;
-            padding: 4em 1em;
-        }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-        header p {
-            font-size: 1.2em;
-            margin-top: 0.5em;
-        }
-        nav {
-            background-color: #00334d;
-            text-align: center;
-            padding: 1em 0;
-        }
-        nav a {
-            color: #ffcc00;
-            margin: 0 1.5em;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: white;
-        }
-        main {
-            max-width: 1100px;
-            margin: 2em auto;
-            background: white;
-            padding: 2em;
-            border-radius: 12px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-        }
-        section {
-            margin-bottom: 3em;
-        }
-        h2 {
-            color: #005580;
-            border-bottom: 2px solid #0099cc;
-            padding-bottom: 0.3em;
-        }
-        ul {
-            padding-left: 1.2em;
-        }
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 1em 0;
-        }
-        .contact-info {
-            background-color: #f9f9f9;
-            padding: 1em;
-            border-left: 5px solid #007acc;
-            border-radius: 4px;
-        }
-        footer {
-            background-color: #002233;
-            color: white;
-            text-align: center;
-            padding: 1.5em;
-            margin-top: 3em;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Libtek OÜ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #0c2340;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #001f3f;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      background: url('https://www.powerdesigninc.us/images/about/banner.jpg') center/cover;
+      height: 300px;
+    }
+    footer {
+      background-color: #0c2340;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Libtek OÜ</h1>
+    <p>Innovaatilised elektri- ja projekteerimislahendused</p>
+  </header>
 
-    <header>
-        <h1>Libtek OÜ</h1>
-        <p>Kaasaegsed elektrilahendused ja projekteerimisteenused</p>
-    </header>
+  <nav>
+    <a href="#teenused">Teenused</a>
+    <a href="#projektid">Projektid</a>
+    <a href="#meist">Meist</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
 
-    <nav>
-        <a href="#avaleht">Avaleht</a>
-        <a href="#teenused">Teenused</a>
-        <a href="#meist">Meist</a>
-        <a href="#kontakt">Kontakt</a>
-    </nav>
+  <div class="hero"></div>
 
-    <main>
-        <section id="avaleht">
-            <h2>Avaleht</h2>
-            <p>Libtek OÜ on spetsialiseerunud innovaatilistele elektritehnilistele lahendustele ning projekteerimisele. Oleme usaldusväärne partner nii eramajadele, ettevõtetele kui ka avalikule sektorile.</p>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJLNpprI-84WgqR0P03bUnNXpjm9XgxfjGjA&s" alt="Elektrijuhtmed">
-        </section>
+  <section id="teenused">
+    <h2>Meie Teenused</h2>
+    <ul>
+      <li>Elektriprojekteerimine</li>
+      <li>Disain-ehituse lahendused</li>
+      <li>Energiatõhususe konsultatsioon</li>
+      <li>Elektrisüsteemide paigaldus</li>
+    </ul>
+  </section>
 
-        <section id="teenused">
-            <h2>Teenused</h2>
-            <ul>
-                <li>Elektriprojektide koostamine ja ehitusload</li>
-                <li>Elektripaigaldise teostamine ja hooldus</li>
-                <li>Automaatikalahendused ja targad süsteemid</li>
-                <li>Konsultatsioonid ja tehniline järelevalve</li>
-            </ul>
-            <img src="https://images.unsplash.com/photo-1618329767972-3e3cd2dfdc0b?auto=format&fit=crop&w=1470&q=80" alt="Elektritöö">
-        </section>
+  <section id="projektid">
+    <h2>Viimased Projektid</h2>
+    <p>Oleme uhked oma mitmekesise ja kvaliteetse töö üle äri- ja tööstusklientidele üle Eesti.</p>
+  </section>
 
-        <section id="meist">
-            <h2>Meist</h2>
-            <p>Meie meeskond koosneb kogenud elektriinseneridest, kelle eesmärk on pakkuda klientidele turvalisi, vastupidavaid ja esteetilisi lahendusi. Tegutseme kogu Eestis, pakkudes paindlikke teenuseid igale projektile.</p>
-            <img src="https://images.unsplash.com/photo-1636541608123-8b617ff91b12?auto=format&fit=crop&w=1470&q=80" alt="Elektrik töötamas">
-        </section>
+  <section id="meist">
+    <h2>Meist</h2>
+    <p>Libtek OÜ on Eesti ettevõte, mis pakub professionaalseid elektri- ja insenerilahendusi, tuginedes uuenduslikkusele, täpsusele ja kliendirahulolule.</p>
+  </section>
 
-        <section id="kontakt">
-            <h2>Kontakt</h2>
-            <div class="contact-info">
-                <p><strong>Email:</strong> arman@libtek.ee</p>
-                <p><strong>Telefon:</strong> +372 5346 1535</p>
-                <p><strong>Aadress:</strong> Tallinn, Eesti</p>
-            </div>
-        </section>
-    </main>
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Email: info@libtek.ee</p>
+    <p>Telefon: +372 5555 1234</p>
+    <p>Aadress: Tööstuse tee 10, Tallinn</p>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Libtek OÜ. Kõik õigused kaitstud.</p>
-    </footer>
-
+  <footer>
+    <p>&copy; 2025 Libtek OÜ. Kõik õigused kaitstud.</p>
+  </footer>
 </body>
 </html>
