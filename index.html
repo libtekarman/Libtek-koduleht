@@ -4,46 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libtek OÜ</title>
+    <title>Libtek OÜ – Elektrilahendused ja Projekteerimine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            color: #222;
         }
         header {
-            background-color: #663500;
+            background: linear-gradient(to right, #004466, #007acc);
             color: white;
-            padding: 1em;
             text-align: center;
+            padding: 4em 1em;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 0.5em;
         }
         nav {
-            background-color: #006699;
-            padding: 0.5em;
+            background-color: #00334d;
             text-align: center;
+            padding: 1em 0;
         }
         nav a {
-            color: white;
-            margin: 0 1em;
+            color: #ffcc00;
+            margin: 0 1.5em;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: white;
         }
         main {
+            max-width: 1100px;
+            margin: 2em auto;
+            background: white;
             padding: 2em;
-            background-color: white;
-            max-width: 900px;
-            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+        section {
+            margin-bottom: 3em;
+        }
+        h2 {
+            color: #005580;
+            border-bottom: 2px solid #0099cc;
+            padding-bottom: 0.3em;
+        }
+        ul {
+            padding-left: 1.2em;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1em 0;
+        }
+        .contact-info {
+            background-color: #f9f9f9;
+            padding: 1em;
+            border-left: 5px solid #007acc;
+            border-radius: 4px;
         }
         footer {
-            background-color: #004466;
+            background-color: #002233;
             color: white;
             text-align: center;
-            padding: 1em;
-            margin-top: 2em;
+            padding: 1.5em;
+            margin-top: 3em;
         }
     </style>
 </head>
@@ -51,7 +86,7 @@
 
     <header>
         <h1>Libtek OÜ</h1>
-        <p>Tehnilised lahendused ja teenused</p>
+        <p>Kaasaegsed elektrilahendused ja projekteerimisteenused</p>
     </header>
 
     <nav>
@@ -64,29 +99,34 @@
     <main>
         <section id="avaleht">
             <h2>Avaleht</h2>
-            <p>Tere tulemast Libtek OÜ kodulehele! Pakume terviklikke tehnilisi ja elektritehnilisi lahendusi, sealhulgas süsteemide projekteerimist, dokumentatsiooni koostamist ning nõustamist. Meie eesmärk on pakkuda usaldusväärseid ja energiatõhusaid lahendusi vastavalt kliendi vajadustele ning kehtivatele normidele ja standarditele.</p>
+            <p>Libtek OÜ on spetsialiseerunud innovaatilistele elektritehnilistele lahendustele ning projekteerimisele. Oleme usaldusväärne partner nii eramajadele, ettevõtetele kui ka avalikule sektorile.</p>
+            <img src="https://images.unsplash.com/photo-1594842580443-ef18e5c8e5e5?auto=format&fit=crop&w=1470&q=80" alt="Elektrijuhtmed">
         </section>
 
         <section id="teenused">
             <h2>Teenused</h2>
             <ul>
-                <li>IT tugi ja hooldus</li>
-                <li>Veebilehtede loomine ja haldus</li>
-                <li>Võrgu- ja serverilahendused</li>
-                <li>Consulting ja koolitus</li>
+                <li>Elektriprojektide koostamine ja ehitusload</li>
+                <li>Elektripaigaldise teostamine ja hooldus</li>
+                <li>Automaatikalahendused ja targad süsteemid</li>
+                <li>Konsultatsioonid ja tehniline järelevalve</li>
             </ul>
+            <img src="https://images.unsplash.com/photo-1618329767972-3e3cd2dfdc0b?auto=format&fit=crop&w=1470&q=80" alt="Elektritöö">
         </section>
 
         <section id="meist">
             <h2>Meist</h2>
-            <p>Libtek OÜ on Eesti kapitalil põhinev ettevõte, mis tegutseb tehnoloogiateenuste vallas alates 2021. aastast. Meie meeskond koosneb kogenud IT-spetsialistidest.</p>
+            <p>Meie meeskond koosneb kogenud elektriinseneridest, kelle eesmärk on pakkuda klientidele turvalisi, vastupidavaid ja esteetilisi lahendusi. Tegutseme kogu Eestis, pakkudes paindlikke teenuseid igale projektile.</p>
+            <img src="https://images.unsplash.com/photo-1636541608123-8b617ff91b12?auto=format&fit=crop&w=1470&q=80" alt="Elektrik töötamas">
         </section>
 
         <section id="kontakt">
             <h2>Kontakt</h2>
-            <p>📧 info@libtek.ee<br>
-               📞 +372 5346 1535<br>
-               📍 Tallinn, Eesti</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> arman@libtek.ee</p>
+                <p><strong>Telefon:</strong> +372 5346 1535</p>
+                <p><strong>Aadress:</strong> Tallinn, Eesti</p>
+            </div>
         </section>
     </main>
 
