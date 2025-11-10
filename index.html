@@ -194,8 +194,24 @@
         </div>
       </div>
       <div>
-        <div class="panel-scene">
-          <div class="bus" aria-hidden="true"></div>
+        <div class="sun-wrap" aria-hidden="true" style="aspect-ratio:1/1; max-width:520px; margin-inline:auto; position:relative;">
+  <div class="halo" style="position:absolute; inset:-10%; border-radius:50%; background:radial-gradient(circle, rgba(255,183,0,.25), rgba(255,183,0,0) 60%); animation:pulse 4.2s ease-in-out infinite"></div>
+  <div class="orbit" style="position:absolute; inset:-20%; border-radius:50%; border:1px solid rgba(58,214,255,.25); animation:spin 20s linear infinite"></div>
+  <svg class="sun" viewBox="0 0 200 200" style="width:100%; height:auto; filter:drop-shadow(0 10px 30px rgba(255,183,0,.25))">
+    <defs><radialGradient id="sunG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff1c1"/><stop offset="60%" stop-color="#ffb700"/><stop offset="100%" stop-color="#ff7b00"/></radialGradient></defs>
+    <circle cx="100" cy="100" r="36" fill="url(#sunG)"></circle>
+    <g stroke="#ffb700" stroke-width="4" stroke-linecap="round">
+      <line x1="100" y1="6" x2="100" y2="30"/>
+      <line x1="100" y1="194" x2="100" y2="170"/>
+      <line x1="6" y1="100" x2="30" y2="100"/>
+      <line x1="194" y1="100" x2="170" y2="100"/>
+      <line x1="28" y1="28" x2="46" y2="46"/>
+      <line x1="172" y1="172" x2="154" y2="154"/>
+      <line x1="28" y1="172" x2="46" y2="154"/>
+      <line x1="172" y1="28" x2="154" y2="46"/>
+    </g>
+  </svg>
+</div>
           <div class="panel-grid" aria-hidden="true">
             <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
             <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
