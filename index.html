@@ -4,148 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Libtek – Päikeseparkide hooldus, paneelipesu ja niitmine</title>
-  <meta name="description" content="Libtek OÜ – Päikeseparkide hooldus kogu Eestis: paneelide puhastus, niitmine, termodrooniga inspekteerimine, lumetõrje ja tootluse monitooring." />
+  <meta name="description" content="Libtek OÜ – Päikeseparkide hooldus kogu Eestis: paneelide puhastus, niitmine, talvine lumetõrje ja tootluse säilitamine.">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Plus+Jakarta+Sans:wght@600;800&display=swap" rel="stylesheet">
   <style>
     /* --- Design tokens --- */
     :root{
-      --bg:#070b12;               /* night sky */
-      --ink:#e9f2ff;              /* text */
-      --muted:#a7b3c7;
-      --brand:#3ad6ff;            /* electric blue */
-      --brand-2:#a6ff00;          /* solar lime */
-      --accent:#ffb700;           /* sun */
-      --card:#0d1320a6;           /* glass */
-      --border:1px solid #1c2538;
-      --radius:18px;
-      --shadow:0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+      --bg:#070b12; --ink:#e9f2ff; --muted:#a7b3c7;
+      --brand:#3ad6ff; --brand2:#a6ff00; --sun:#ffb700;
+      --panel:#0e1626; --glass:#0d1320a6; --border:1px solid #1c2538;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{
-      margin:0; font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color:var(--ink); background:radial-gradient(1200px 800px at 70% -10%, #0d1b2a 10%, #070b12 60%), var(--bg);
-      line-height:1.6; overflow-x:hidden;
-    }
+    body{margin:0; font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:radial-gradient(1400px 800px at 70% -10%, #0d1b2a 10%, #070b12 60%), var(--bg); line-height:1.6; overflow-x:hidden}
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
     .container{max-width:1200px; margin:0 auto; padding:0 1.25rem}
 
-    /* --- Noise + stars backdrop for subtle motion --- */
-    .space, .aurora{
-      position:fixed; inset:0; pointer-events:none; z-index:-2;
-    }
-    .space{background:radial-gradient(1200px 1200px at 20% 10%, rgba(61,137,255,.08), transparent 60%),
-                       radial-gradient(900px 900px at 80% 30%, rgba(255,198,61,.08), transparent 60%);}    
-    .stars{position:fixed; inset:-50vh -50vw; background:transparent; z-index:-3; filter:drop-shadow(0 0 3px rgba(255,255,255,.2));}
-    .stars canvas{width:200vw; height:200vh;}
+    /* Background motion */
+    .space,.aurora{position:fixed;inset:0;pointer-events:none;z-index:-2}
+    .space{background:radial-gradient(1200px 1200px at 20% 10%, rgba(61,137,255,.08), transparent 60%), radial-gradient(900px 900px at 80% 30%, rgba(255,198,61,.08), transparent 60%)}
+    .stars{position:fixed; inset:-50vh -50vw; z-index:-3; filter:drop-shadow(0 0 3px rgba(255,255,255,.2))}
+    .stars canvas{width:200vw; height:200vh}
+    .aurora{background:conic-gradient(from 180deg at 50% -20%, rgba(56,240,173,.15), transparent 25%, rgba(61,137,255,.12), transparent 55%, rgba(255,183,0,.12)); filter:blur(50px); mix-blend-mode:screen}
 
-    .aurora{background:conic-gradient(from 180deg at 50% -20%, rgba(56,240,173,.15), transparent 25%, rgba(61,137,255,.12), transparent 55%, rgba(255,183,0,.12)); filter:blur(50px); mix-blend-mode:screen;}
-
-    /* --- Header --- */
-    header{position:sticky; top:0; backdrop-filter:saturate(1.4) blur(12px); z-index:50;}
-    .nav{display:flex; align-items:center; justify-content:space-between; height:72px;}
-    .brand{display:flex; align-items:center; gap:.8rem; font-weight:800; letter-spacing:.6px}
+    /* Header */
+    header{position:sticky; top:0; backdrop-filter:saturate(1.4) blur(12px); z-index:50}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:72px}
+    .brand{display:flex; align-items:center; gap:.8rem; font-weight:800; letter-spacing:.4px}
     .brand .logo{width:40px; height:40px}
-    .brand span{font-family:"Plus Jakarta Sans", Manrope; font-weight:800}
-    .nav a{opacity:.9}
-    .nav a:hover{opacity:1}
+    .brand span{font-family:"Plus Jakarta Sans",Manrope; font-weight:800}
     .nav-links{display:flex; gap:1.1rem; align-items:center}
-    .chip{display:inline-flex; align-items:center; gap:.5rem; padding:.55rem .9rem; border-radius:999px; border:var(--border); background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03)); box-shadow:var(--shadow)}
-    .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.1rem; border-radius:12px; background:linear-gradient(180deg, #1a2741, #0f1729); border:1px solid #2b3752; box-shadow:var(--shadow); font-weight:700}
-    .btn:hover{transform:translateY(-1px)}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.85rem 1.1rem; border-radius:12px; background:linear-gradient(180deg,#1a2741,#0f1729); border:1px solid #2b3752; box-shadow:var(--shadow); font-weight:800}
+    .btn-outline{background:transparent; border:1px dashed #2b3752}
 
-    /* --- Hero --- */
+    /* Hero */
     .hero{position:relative; padding:8rem 0 5rem}
-    .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; align-items:center}
-    .super{display:inline-flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#bfe7ff; opacity:.9}
-    .title{font-size:clamp(2.2rem, 4vw + .5rem, 4rem); line-height:1.05; margin:.6rem 0 1rem; font-weight:800}
-    .title .grad{background:linear-gradient(95deg, var(--brand), var(--brand-2) 40%, var(--accent) 80%); -webkit-background-clip:text; background-clip:text; color:transparent}
-    .subtitle{font-size:1.125rem; color:var(--muted); max-width:56ch}
-
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:2rem; align-items:center}
+    .super{display:inline-flex; gap:.6rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#bfe7ff; opacity:.9}
+    .title{font-size:clamp(2.2rem,4vw+.5rem,4rem); line-height:1.05; margin:.6rem 0 1rem; font-weight:800}
+    .title .grad{background:linear-gradient(95deg,var(--brand),var(--brand2) 40%,var(--sun) 80%); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .subtitle{font-size:1.125rem; color:var(--muted); max-width:60ch}
     .cta-row{display:flex; gap:.7rem; align-items:center; margin:1.25rem 0 0}
-    .cta-primary{background:linear-gradient(90deg, #2bd0ff, #a6ff00); color:#001019; border:none; box-shadow:0 8px 25px rgba(43,208,255,.25);}
-    .cta-secondary{background:transparent; border:1px dashed #2b3752}
 
-    /* --- Solar Sun SVG --- */
+    /* Hero visual */
     .sun-wrap{position:relative; aspect-ratio:1/1; max-width:520px; margin-inline:auto}
-    .sun{width:100%; height:auto; filter:drop-shadow(0 10px 30px rgba(255,183,0,.25));}
+    .sun{width:100%; height:auto; filter:drop-shadow(0 10px 30px rgba(255,183,0,.25))}
     .halo{position:absolute; inset:-10%; border-radius:50%; background:radial-gradient(circle, rgba(255,183,0,.25), rgba(255,183,0,0) 60%); animation:pulse 4.2s ease-in-out infinite}
     @keyframes pulse{50%{transform:scale(1.05); opacity:.6}}
     .orbit{position:absolute; inset:-20%; border-radius:50%; border:1px solid rgba(58,214,255,.25); animation:spin 20s linear infinite}
     @keyframes spin{to{transform:rotate(360deg)}}
 
-    /* --- Trust / KPIs --- */
-    .kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:2.2rem}
-    .kpi{padding:1.2rem; border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03)); border:var(--border); box-shadow:var(--shadow); text-align:center}
-    .kpi strong{font-size:1.8rem}
-    .kpi span{display:block; color:var(--muted); font-size:.95rem}
+    /* Highlights (replaces risky KPIs) */
+    .highlights{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:2rem}
+    .chip{display:flex; align-items:center; justify-content:center; padding:1rem; border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03)); border:var(--border); box-shadow:var(--shadow); text-align:center; font-weight:800}
 
-    /* --- Section heading --- */
+    /* Sections */
     section{padding:4.5rem 0}
     .heading{display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.6rem}
-    .heading h2{font-size:clamp(1.6rem, 2.4vw + .6rem, 2.6rem); margin:0}
+    .heading h2{font-size:clamp(1.6rem,2.4vw+.6rem,2.6rem); margin:0}
     .heading p{color:var(--muted); max-width:60ch}
 
-    /* --- Services --- */
+    /* Grid & cards */
     .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:1rem}
     .card{grid-column:span 4; padding:1.2rem; border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03)); border:var(--border); box-shadow:var(--shadow); position:relative; overflow:hidden}
-    .card .tag{position:absolute; top:12px; right:12px; font-size:.75rem; color:#08131f; background:linear-gradient(90deg, #2bd0ff, #a6ff00); padding:.3rem .55rem; border-radius:999px; font-weight:800}
-    .icon{width:40px; height:40px; margin-bottom:.6rem; filter:drop-shadow(0 6px 16px rgba(58,214,255,.25))}
     .card h3{margin:.2rem 0 .3rem; font-size:1.25rem}
     .card p{color:var(--muted)}
-    .tilt{transform-style:preserve-3d; will-change:transform}
+    .icon{width:40px; height:40px; margin-bottom:.6rem; filter:drop-shadow(0 6px 16px rgba(58,214,255,.25))}
 
-    /* --- Before/After Slider --- */
-    .ba{display:grid; grid-template-columns:1fr; border-radius:var(--radius); overflow:hidden; border:var(--border)}
+    /* Before/After */
+    .ba{border-radius:var(--radius); overflow:hidden; border:var(--border)}
     .ba-wrap{position:relative; aspect-ratio:16/9; background:#0b1323}
     .ba-wrap img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
     .ba-wrap .after{clip-path:inset(0 0 0 50%)}
-    .ba input[type=range]{appearance:none; position:absolute; inset:auto 0 0 0; width:100%; height:36px; background:linear-gradient(90deg, #2bd0ff, #a6ff00); mix-blend-mode:screen}
+    .ba input[type=range]{appearance:none; position:absolute; inset:auto 0 0 0; width:100%; height:36px; background:linear-gradient(90deg,var(--brand),var(--brand2)); mix-blend-mode:screen}
     .ba input[type=range]::-webkit-slider-thumb{appearance:none; width:28px; height:28px; border-radius:50%; background:#fff; box-shadow:0 0 0 3px #0005}
 
-    /* --- Gallery --- */
+    /* Masonry gallery */
     .masonry{columns:3 280px; column-gap:1rem}
     .masonry figure{break-inside:avoid; margin:0 0 1rem; overflow:hidden; border-radius:14px; border:var(--border)}
-    .masonry img{transition:transform .6s;}
+    .masonry img{transition:transform .6s}
     .masonry img:hover{transform:scale(1.05)}
 
-    /* --- Pricing --- */
+    /* Pricing */
     .pricing .card{grid-column:span 4}
     .price{font-size:2rem; font-weight:800}
 
-    /* --- FAQ --- */
+    /* FAQ */
     details{border:var(--border); background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03)); border-radius:14px; padding:1rem 1.1rem}
     details+details{margin-top:.8rem}
     summary{cursor:pointer; font-weight:700}
     details p{color:var(--muted); margin:.6rem 0 0}
 
-    /* --- Contact --- */
+    /* Contact */
     form{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem}
     form .full{grid-column:1/-1}
-    input, textarea{width:100%; padding:.9rem 1rem; border-radius:12px; background:#0e1626; border:1px solid #1f2940; color:var(--ink)}
+    input,textarea{width:100%; padding:.9rem 1rem; border-radius:12px; background:var(--panel); border:1px solid #1f2940; color:var(--ink)}
     textarea{min-height:120px}
     .note{color:var(--muted); font-size:.9rem}
 
     footer{padding:2.5rem 0; color:#93a1b7; border-top:1px solid #1b2538}
 
-    /* --- Scroll animations --- */
+    /* Reveal */
     .reveal{opacity:0; transform:translateY(12px); transition:transform .7s ease, opacity .7s ease}
     .reveal.in{opacity:1; transform:none}
 
-    /* --- Responsiveness --- */
+    /* Responsive */
     @media (max-width: 960px){
       .hero-grid{grid-template-columns:1fr; text-align:center}
-      .kpis{grid-template-columns:repeat(2,1fr)}
+      .highlights{grid-template-columns:repeat(2,1fr)}
       .grid .card{grid-column:span 6}
       .pricing .card{grid-column:span 6}
       .cta-row{justify-content:center}
     }
     @media (max-width: 640px){
       .nav-links{display:none}
-      .kpis{grid-template-columns:1fr}
+      .highlights{grid-template-columns:1fr}
       .grid .card, .pricing .card{grid-column:span 12}
     }
   </style>
@@ -161,17 +136,12 @@
     <div class="container nav">
       <a class="brand" href="#kodu" aria-label="Libtek avaleht">
         <svg class="logo" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#2bd0ff"/>
-              <stop offset="100%" stop-color="#a6ff00"/>
-            </linearGradient>
-          </defs>
+          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2bd0ff"/><stop offset="100%" stop-color="#a6ff00"/></linearGradient></defs>
           <rect x="6" y="10" width="52" height="36" rx="8" stroke="url(#g)" stroke-width="3"/>
           <path d="M10 34h44M22 25l6 6 8-10 12 14" stroke="#ffb700" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span>Libtek</span>
-        <span class="chip" style="margin-left:.4rem">Päikesepargi hooldus</span>
+        <span class="btn btn-outline" style="margin-left:.4rem">Päikesepargi hooldus</span>
       </a>
       <nav class="nav-links" aria-label="Põhinavigatsioon">
         <a href="#teenused">Teenused</a>
@@ -188,38 +158,32 @@
   <main id="kodu" class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="super">Tootluse turbo</div>
-        <h1 class="title">Päikesepargi <span class="grad">hooldus</span> – paneelipesu ja niitmine</h1>tle">Hoia<p class="subtitle">Hoiame pargi puhta ja maksimumtootluses. Töötame üle Eesti – ausad hinnad ja paindlik graafik.</p>ta-primary" href="#kontakt">Küsi pakkumist</a>
-          <a class="btn cta-secondary" href="#teenused" aria-label="Vaata teenuseid">Vaata teenuseid</a>
+        <div class="super">Puhas paneel = rohkem kWh</div>
+        <h1 class="title">Päikesepargi <span class="grad">hooldus</span> – paneelipesu ja niitmine</h1>
+        <p class="subtitle">Aus ja paindlik teenus üle Eesti: puhastame paneelid, hoiame rohu kontrolli all ja tagame sujuva töö – ilma miinimummahuta.</p>
+        <div class="cta-row">
+          <a class="btn" href="#kontakt">Küsi pakkumist</a>
+          <a class="btn btn-outline" href="#teenused">Vaata teenuseid</a>
         </div>
-        
-          <div class="kpi" role="status"><strong data-c<div class="kpis">\n          <div class="kpi" role="status"><strong>Alustav</strong><span>Uus teenus</span></div>\n          <div class="kpi" role="status"><strong>Paindlik</strong><span>Graafik ja mahud</span></div>\n          <div class="kpi" role="status"><strong>Kogu EE</strong><span>Tegutseme üle Eesti</span></div>\n          <div class="kpi" role="status"><strong>24h</strong><span>Vastame kiiresti</span></div>\n        </div>ng><span>Partnerparki</span></div>
-          <div class="kpi" role="status"><strong data-counter="15">0</strong><span>Min reageerimisaeg</span></div>
+        <div class="highlights">
+          <div class="chip">Miinimumi pole</div>
+          <div class="chip">Paindlik graafik</div>
+          <div class="chip">Kogu Eesti</div>
+          <div class="chip">Kiire vastus</div>
         </div>
       </div>
       <div>
-        <div class="sun-wrap tilt" aria-hidden="true">
+        <div class="sun-wrap" aria-hidden="true">
           <div class="halo"></div>
           <div class="orbit"></div>
           <svg class="sun" viewBox="0 0 200 200">
-            <defs>
-              <radialGradient id="sunG" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#fff1c1"/>
-                <stop offset="60%" stop-color="#ffb700"/>
-                <stop offset="100%" stop-color="#ff7b00"/>
-              </radialGradient>
-            </defs>
+            <defs><radialGradient id="sunG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff1c1"/><stop offset="60%" stop-color="#ffb700"/><stop offset="100%" stop-color="#ff7b00"/></radialGradient></defs>
             <circle cx="100" cy="100" r="36" fill="url(#sunG)"></circle>
-            <!-- Rays -->
-            <g id="rays" stroke="#ffb700" stroke-width="4" stroke-linecap="round">
-              <line x1="100" y1="6" x2="100" y2="30"/>
-              <line x1="100" y1="194" x2="100" y2="170"/>
-              <line x1="6" y1="100" x2="30" y2="100"/>
-              <line x1="194" y1="100" x2="170" y2="100"/>
-              <line x1="28" y1="28" x2="46" y2="46"/>
-              <line x1="172" y1="172" x2="154" y2="154"/>
-              <line x1="28" y1="172" x2="46" y2="154"/>
-              <line x1="172" y1="28" x2="154" y2="46"/>
+            <g stroke="#ffb700" stroke-width="4" stroke-linecap="round">
+              <line x1="100" y1="6" x2="100" y2="30"/><line x1="100" y1="194" x2="100" y2="170"/>
+              <line x1="6" y1="100" x2="30" y2="100"/><line x1="194" y1="100" x2="170" y2="100"/>
+              <line x1="28" y1="28" x2="46" y2="46"/><line x1="172" y1="172" x2="154" y2="154"/>
+              <line x1="28" y1="172" x2="46" y2="154"/><line x1="172" y1="28" x2="154" y2="46"/>
             </g>
           </svg>
         </div>
@@ -231,17 +195,57 @@
   <section id="teenused">
     <div class="container">
       <div class="heading">
-        <h2>Teenused, mis teevad vahe sisse</h2>
-        <p>Valik on modulaarne – kombineeri paneelipesu, niitmine, termograafia, oksarajamine ja talvine lumetõrje. Raporteerime pildid & mõõtmised samal päeval.</p>
+        <h2>Teenused, mis hoiavad tootluse üleval</h2>
+        <p>Paneelipesu, niitmine, oksarajamine ja talvine lumetõrje. Raporteerime pildid samal päeval.</p>
       </div>
-      <div clas<p>Valik on modulaarne – kombineeri paneelipesu, niitmine, oksarajamine ja talvine lumetõrje. Raporteerime pildid samal päeval.</p>ll="none" stroke="currentColor" stroke-width="2ash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop&sat=150&exp=20" alt="Päikesepaneelid pärast puhastust – selge peegeldus" class="after" loading="lazy">
-          <input type="range" min="0" max="100" value="50" aria-labe<h3>Monitooring & reageerimine</h3>\n          <p>Seirame seadmeid ja anname märku kõrvalekalletest. Koostame lihtsa aruande ja soovitused.</p>er">
+      <div class="grid">
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v14H3z"/><path d="M7 21h10"/><path d="M9 17v4M15 17v4"/></svg>
+          <h3>Paneelide süvapuhastus</h3>
+          <p>RO-di, pehmeharjaline süsteem ja kuum vesi – ei kriimusta, ei jäta plekke.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17h18M5 17l2-6h10l2 6"/><circle cx="7" cy="20" r="2"/><circle cx="17" cy="20" r="2"/></svg>
+          <h3>Niitmine & haljastus</h3>
+          <p>Hoidke varjud ja tuleoht madalal. Juurdepääsukoridorid hooldusteedele.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M4 4l16 16M20 4L4 20"/></svg>
+          <h3>Lumetõrje & jää</h3>
+          <p>Ohutud meetodid konstruktsiooni ja kaablite kaitseks. Vajadusel ka öösiti.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before / After -->
+  <section id="tulemused">
+    <div class="container">
+      <div class="heading">
+        <h2>Enne ja pärast – päris paneelid</h2>
+        <p>Pesu eemaldab mikromustuse, mis tõstab temperatuuri ja vähendab efektiivsust.</p>
+      </div>
+      <div class="ba reveal">
+        <div class="ba-wrap">
+          <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1600&auto=format&fit=crop" alt="Päikesepaneelid enne puhastust – tolmune pind" class="before" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1509395230980-cbded6f9289b?q=80&w=1600&auto=format&fit=crop" alt="Päikesepaneelid pärast puhastust – selge peegeldus" class="after" loading="lazy">
+          <input type="range" min="0" max="100" value="50" aria-label="Lükka, et võrrelda enne ja pärast">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="galerii">
+    <div class="container">
       <div class="heading">
         <h2>Hetked välitöödest</h2>
-        https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?q=80&w=1400&auto=format&fit=crop" alt="Päikesepargi hooldus meeskond tööl" loading="lazy"></figure>
-        <figure><img src="https://ima.com/photo-1492724441997-5dc865305da7?q=80&w=1400&auto=format&fit=crop" alt="Termodrooniga inspekteerimine" loading="lazy"></figure>
-        <figure><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1400&auto=format&fit=crop" alt="Niiduk töötab paneelide vahel" loading="lazy"></figure>
-        <figure><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="Öine hooldus – valgustatud paneeliread" loading="lazy"></figure>
+        <p>Puhastus, niitmine ja detailid – päris projektidest üle Eesti.</p>
+      </div>
+      <div class="masonry reveal" aria-label="Fotogalerii">
+        <figure><img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?q=80&w=1400&auto=format&fit=crop" alt="Päikesepargi hooldus – meeskond tööl" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1400&auto=format&fit=crop" alt="Paneelide puhastuse detail – pehme harjaga süsteem" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1400&auto=format&fit=crop" alt="Niitmine paneeliridade vahel" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -251,60 +255,70 @@
     <div class="container">
       <div class="heading">
         <h2>Läbipaistev hinnastus</h2>
-        <p>Hinnad sõltuvad ligipääsust, pargi pindalast ja hooldustihedusest. Küsi fikseeritud kuutasu pakkumist.</p>
+        <p>Hinnad sõltuvad ligipääsust, pindalast ja sagedusest. Miinimumi pole – teeme ka väikseid töid.</p>
       </div>
       <div class="grid">
         <div class="card reveal">
           <h3>Paneelipesu</h3>
-          <p class="price">al. <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1600&auto=format&fit=crop" alt="Päikesepaneelid enne puhastust – tolmune pind" class="before" loading="lazy">      <h3>T<img src="https://images.unsplash.com/photo-1509395230980-cbded6f9289b?q=80&w=1600&auto=format&fit=crop" alt="Päikesepaneelid pärast puhastust – selge peegeldus" class="after" loading="lazy"> <section id="kkk">
+          <p class="price">al. 0,55 € / m²</p>
+          <p>RO-di, kuum vesi, triipudevastane lõpetus.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Niitmine</h3>
+          <p class="price">al. 0,09 € / m²</p>
+          <p>Robot- ja trimmerniide komboplaan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="kkk">
     <div class="container">
       <div class="heading"><h2>Korduma kippuvad küsimused</h2></div>
       <details class="reveal">
         <summary>Kui tihti peaks paneele pesema?</summary>
-        <p>Tööstuslikes tingimustes 1–2× aastas; tolmuses, põllumajandus- või merelähedases keskkonnas ka tihemini. Monitooringuga anname märku, kui tootlus vajub.</p>
+        <p>Tööstuslikes tingimustes 1–2× aastas; tolmuses, põllumajandus- või merelähedases keskkonnas ka tihemini.</p>
       </details>
       <details class="reveal">
-        <summary>Kas pesu mõjutab garantii tingimusi?</summary>
-        <p>Kasutame tootjate poolt heaks kiidetud meetodeid (pehmeharjad, sobiv rõhk, RO-di). Ei kasuta abrasiive ega leeliselisi kemikaale.</p>
+        <summary>Kas pesu mõjutab garantiid?</summary>
+        <p>Kasutame tootjate poolt heaks kiidetud meetodeid (pehmeharjad, sobiv rõhk, RO-di). Ei kasuta abrasiive ega leeliseid.</p>
       </details>
       <details class="reveal">
-        <summary>Kas teete töid ka öösel?</st või faasinihkeid.</p>
+        <summary>Kas teete töid ka öösel?</summary>
+        <p>Võimalik kokkuleppel, kui tootmine ja ohutus seda lubavad.</p>
       </details>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="kontakt">
-    <div class="contai<figure><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="Päikesepaneelide ridade puhastus töö käigus" loading="lazy"></figure>i päike tõuseb.</p
+    <div class="container">
+      <div class="heading">
+        <h2>Küsi pakkumist</h2>
+        <p>Kirjelda pargi asukohta, pindala ja soovitud teenuseid. Vastame kiiresti.</p>
+      </div>
+      <form class="reveal" onsubmit="event.preventDefault(); alert('Aitäh! Võtame peagi ühendust.'); this.reset();">
+        <input type="text" name="name" placeholder="Nimi" required>
         <input type="email" name="email" placeholder="E-post" required>
         <input type="tel" name="phone" placeholder="Telefon" required>
-        <input type="text" name="power" placeholder="Pargi võimsus (kW/MW)" >
+        <input type="text" name="power" placeholder="Pargi pindala / võimsus" >
         <textarea class="full" name="message" placeholder="Sõnum – kirjeldus ja soovitud teenused" required></textarea>
-        <button class="btn cta-primary full" type="submit">Saada päring</button>
+        <button class="btn full" type="submit">Saada päring</button>
         <p class="note full">Või kirjuta otse: <a href="mailto:arman@libtek.ee">arman@libtek.ee</a> · <a href="tel:+37253461535">+372 5346 1535</a></p>
       </form>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <div style="display:flex; gap:1rem; align-items:center; justify-content:space-between; flex-wrap:wrap">
-        <small>© <span id="year"></span> Libtek OÜ. Kõik õiguse<p>RO-di, kuum vesi, triipudevastane lõpetus. Miinimumi pole – teeme ka väikseid töid.</p>mall>
-      </div>
+    <div class="container" style="display:flex; gap:1rem; align-items:center; justify-content:space-between; flex-wrap:wrap">
+      <small>© <span id="year"></span> Libtek OÜ. Kõik õigused kaitstud.</small>
+      <small>Reg nr: 12345678 · Tallinn, Eesti</small>
     </div>
   </footer>
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Libtek OÜ",
-    "description":"Päikeseparkide ho","addressCountry":"EE"},
-    "areaServed":"EE",
-    "url":"https://libtek.ee"
-  }
-  </script>
+  <!-- SEO Schema -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Libtek OÜ","description":"Päikeseparkide hooldus: paneelipesu, niitmine, talvine lumetõrje.","email":"mailto:arman@libtek.ee","telephone":"+37253461535","address":{"@type":"PostalAddress","addressLocality":"Tallinn","addressCountry":"EE"},"areaServed":"EE","url":"https://libtek.ee"}</script>
 
   <!-- Interactions -->
   <script>
@@ -316,7 +330,7 @@
       const c = document.getElementById('stars');
       const ctx = c.getContext('2d');
       const DPR = Math.min(devicePixelRatio||1, 2);
-      function size(){ c.width = c.clientWidth * DPR; c.height = c.clientHeight * DPR; draw(); }
+      function size(){ c.width = c.clientWidth * DPR; c.height = c.clientHeight * DPR; }
       const stars = Array.from({length:600}, () => ({ x: Math.random(), y: Math.random(), r: Math.random()*1.8 + .2, s: Math.random()*0.6 + 0.2 }));
       function draw(){
         ctx.clearRect(0,0,c.width,c.height);
@@ -328,45 +342,18 @@
         }
         requestAnimationFrame(draw);
       }
-      window.addEventListener('resize', size, {passive:true}); size();
-    }) const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          const el = e.target; const target = parseFloat(el.dataset.counter);
-          let cur = 0; const step = target/100; const int = setInterval(()=>{
-            cur += step; if(cur >= target){ cur = target; clearInterval(int); }
-            el.textContent = (target%1? cur.toFixed(1) : Math.round(cur));
-          }, 18);
-          io.unobserve(el);
-        }
-      })
-    }, {threshold: .8});
-    counters.forEach(el=>io.observe(el));
+      window.addEventListener('resize', ()=>{size();}, {passive:true});
+      size(); draw();
+    })();
 
     // Reveal on scroll
-    const revIO = new IntersectionObserver((es)=>{
-      es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); revIO.unobserve(e.target);} });
-    }, { threshold:.15 });
+    const revIO = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); revIO.unobserve(e.target);} }); }, { threshold:.15 });
     document.querySelectorAll('.reveal').forEach(el=>revIO.observe(el));
 
-    // Tilt effect
-    document.querySelectorAll('.tilt').forEach(card=>{
-      let rAF;
-      function onMove(e){
-        const r = card.getBoundingClientRect();
-        const px = (e.clientX - r.left)/r.width - .5;
-        const py = (e.clientY - r.top)/r.height - .5;
-        cancelAnimationFrame(rAF);
-        rAF = requestAnimationFrame(()=>{
-          card.style.transform = `rotateY(${px*8}deg) rotateX(${ -py*8 }deg)`;
-        });
-      }
-      card.addEventListener('mousemove', onMove);"description":"Päikeseparkide hooldus: paneelipesu, niitmine, talvine lumetõrje."re/After slider
+    // Before/After slider
     const ba = document.querySelector('.ba input[type=range]');
     const after = document.querySelector('.ba .after');
-    ba.addEventListener('input', e=>{
-      const v = +e.target.value; after.style.clipPath = `inset(0 0 0 ${v}%)`;
-    });
+    if(ba && after){ ba.addEventListener('input', e=>{ const v = +e.target.value; after.style.clipPath = `inset(0 0 0 ${v}%)`; }); }
   </script>
 </body>
 </html>
