@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libtek OÜ | Elektritööd, projektid ja dokumendid</title>
+    <title>Libtek OÜ | Elektritööd ja elektri projekteerimine</title>
 
     <meta name="description" content="Libtek OÜ teeb elektripaigaldust, elektri projekteerimist, mõõdistusi ja dokumentatsiooni. Küsi pakkumist: info@libtek.ee">
     <meta name="keywords" content="elektritööd, elektrik, elektripaigaldus, elektriprojekt, elektri projekteerimine, elektrikilp, mõõdistused, dokumentatsioon, Libtek OÜ">
     <meta name="author" content="Libtek OÜ">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.libtek.ee/">
-    <meta name="theme-color" content="#ff9500">
+    <meta name="theme-color" content="#d88400">
 
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="SIIA_GOOGLE_SEARCH_CONSOLE_KOOD">
@@ -87,20 +87,17 @@
 
     <style>
         :root {
-            --dark: #090909;
-            --dark-2: #111111;
-            --dark-3: #1a1a1a;
-            --paper: #f4efe6;
-            --paper-2: #fff9ee;
-            --white: #ffffff;
-            --muted: #9c9c9c;
-            --muted-dark: #5f5f5f;
-            --line: rgba(255,255,255,0.12);
-            --line-light: rgba(0,0,0,0.12);
-            --orange: #ff9500;
-            --orange-2: #d97900;
-            --max: 1280px;
-            --shadow: 0 30px 90px rgba(0,0,0,0.25);
+            --bg: #f5f1e8;
+            --paper: #ffffff;
+            --text: #191919;
+            --muted: #6d6a64;
+            --line: #ded6c8;
+            --orange: #d88400;
+            --orange-dark: #a96400;
+            --dark: #141414;
+            --soft: #fbf7ef;
+            --shadow: 0 18px 48px rgba(20, 20, 20, 0.10);
+            --max: 1120px;
         }
 
         * {
@@ -114,11 +111,10 @@
         }
 
         body {
-            background: var(--dark);
-            color: var(--white);
+            background: var(--bg);
+            color: var(--text);
             font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.5;
-            overflow-x: hidden;
+            line-height: 1.55;
         }
 
         a {
@@ -127,37 +123,23 @@
         }
 
         .container {
-            width: min(var(--max), calc(100% - 44px));
+            width: min(var(--max), calc(100% - 36px));
             margin: 0 auto;
         }
 
-        .noise {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 100;
-            opacity: 0.06;
-            background-image:
-                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.5) 0 1px, transparent 1px),
-                radial-gradient(circle at 80% 30%, rgba(255,255,255,0.35) 0 1px, transparent 1px),
-                radial-gradient(circle at 50% 70%, rgba(255,255,255,0.35) 0 1px, transparent 1px);
-            background-size: 34px 34px, 47px 47px, 59px 59px;
-        }
-
-        /* NAV */
         .topbar {
             position: sticky;
             top: 0;
-            z-index: 90;
-            background: rgba(9,9,9,0.82);
-            backdrop-filter: blur(14px);
+            z-index: 50;
+            background: rgba(245, 241, 232, 0.94);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--line);
         }
 
         nav {
-            width: min(var(--max), calc(100% - 44px));
+            width: min(var(--max), calc(100% - 36px));
             margin: 0 auto;
-            min-height: 76px;
+            min-height: 70px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -165,9 +147,9 @@
         }
 
         .logo {
-            font-size: 1.45rem;
+            font-size: 1.35rem;
             font-weight: 900;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             text-transform: uppercase;
         }
 
@@ -178,627 +160,379 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .nav-links a {
             font-size: 0.82rem;
             font-weight: 800;
-            letter-spacing: 0.7px;
             text-transform: uppercase;
-            color: #d7d7d7;
+            letter-spacing: 0.4px;
+            color: #2c2c2c;
         }
 
         .nav-links a:hover {
-            color: var(--orange);
+            color: var(--orange-dark);
         }
 
-        .nav-cta {
-            color: #111 !important;
-            background: var(--orange);
-            padding: 11px 16px;
+        .nav-button {
+            background: var(--dark);
+            color: #fff !important;
+            padding: 10px 15px;
             border-radius: 999px;
         }
 
-        .nav-cta:hover {
-            color: #fff !important;
-            background: var(--orange-2);
+        .nav-button:hover {
+            background: var(--orange-dark);
         }
 
-        /* HERO */
         .hero {
-            min-height: calc(100vh - 76px);
-            display: grid;
-            align-items: center;
-            position: relative;
-            padding: 78px 0 64px;
-            overflow: hidden;
+            padding: 62px 0 58px;
+            border-bottom: 1px solid var(--line);
             background:
-                radial-gradient(circle at 80% 14%, rgba(255,149,0,0.25), transparent 26%),
-                radial-gradient(circle at 18% 72%, rgba(255,149,0,0.12), transparent 24%),
-                linear-gradient(180deg, #090909 0%, #121212 100%);
+                radial-gradient(circle at top right, rgba(216, 132, 0, 0.14), transparent 30%),
+                linear-gradient(180deg, #fbf7ef 0%, #f5f1e8 100%);
         }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
-            background-size: 52px 52px;
-            mask-image: linear-gradient(180deg, #000 0%, transparent 90%);
-            opacity: 0.55;
-        }
-
-        .hero-inner {
-            position: relative;
-            z-index: 1;
+        .hero-grid {
             display: grid;
-            grid-template-columns: 1.06fr 0.94fr;
-            gap: 48px;
-            align-items: center;
+            grid-template-columns: 1fr 430px;
+            gap: 34px;
+            align-items: start;
         }
 
-        .eyebrow {
-            color: var(--orange);
-            font-size: 0.84rem;
+        .small-title {
+            color: var(--orange-dark);
+            font-size: 0.8rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 1.4px;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-size: clamp(2.35rem, 5vw, 4.2rem);
+            line-height: 1.04;
+            letter-spacing: -1.4px;
+            font-weight: 900;
+            max-width: 760px;
             margin-bottom: 18px;
         }
 
-        .hero h1 {
-            font-size: clamp(3.1rem, 8vw, 7.4rem);
-            line-height: 0.92;
-            letter-spacing: -4px;
-            font-weight: 950;
-            text-transform: uppercase;
-            max-width: 900px;
-            margin-bottom: 28px;
-        }
-
-        .hero h1 span {
+        h1 span {
             color: var(--orange);
         }
 
-        .hero-text {
-            color: #d0d0d0;
-            font-size: 1.08rem;
+        .hero p {
+            color: var(--muted);
+            font-size: 1.02rem;
             max-width: 660px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         .hero-actions {
             display: flex;
-            gap: 14px;
+            gap: 12px;
             flex-wrap: wrap;
+            margin-bottom: 24px;
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 50px;
-            padding: 14px 22px;
-            border-radius: 999px;
-            font-size: 0.92rem;
+            display: inline-block;
+            padding: 13px 20px;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
-            transition: 0.22s ease;
+            font-size: 0.88rem;
+            letter-spacing: 0.4px;
+            border-radius: 999px;
+            transition: 0.2s ease;
         }
 
         .btn-primary {
-            color: #111;
             background: var(--orange);
+            color: var(--dark);
         }
 
         .btn-primary:hover {
+            background: var(--orange-dark);
             color: #fff;
-            background: var(--orange-2);
             transform: translateY(-2px);
         }
 
         .btn-secondary {
-            color: #fff;
+            background: #fff;
             border: 1px solid var(--line);
-            background: rgba(255,255,255,0.04);
+            color: var(--dark);
         }
 
         .btn-secondary:hover {
             border-color: var(--orange);
-            color: var(--orange);
+            color: var(--orange-dark);
             transform: translateY(-2px);
         }
 
-        .hero-panel {
-            position: relative;
-            min-height: 620px;
-            border: 1px solid var(--line);
-            background:
-                linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
-            border-radius: 34px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .hero-panel::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 78% 18%, rgba(255,149,0,0.25), transparent 26%),
-                linear-gradient(180deg, rgba(255,255,255,0.05), transparent);
-        }
-
-        .panel-top {
-            position: relative;
-            z-index: 2;
-            padding: 22px;
-            border-bottom: 1px solid var(--line);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #e7e7e7;
-        }
-
-        .panel-top strong {
-            text-transform: uppercase;
-            font-size: 0.82rem;
-            letter-spacing: 1px;
-        }
-
-        .panel-status {
-            color: var(--orange);
-            font-weight: 900;
-            font-size: 0.82rem;
-        }
-
-        .hero-visual {
-            position: relative;
-            z-index: 1;
-            height: 390px;
-            margin: 22px;
-            border-radius: 26px;
-            overflow: hidden;
-            background: #0d0d0d;
-            border: 1px solid var(--line);
-        }
-
-        .hero-visual svg {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        .hero-info {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            padding: 0 22px 22px;
-        }
-
-        .hero-info div {
-            border: 1px solid var(--line);
-            border-radius: 20px;
-            padding: 16px;
-            background: rgba(255,255,255,0.04);
-        }
-
-        .hero-info span {
-            display: block;
-            color: var(--muted);
-            font-size: 0.82rem;
-            margin-bottom: 5px;
-        }
-
-        .hero-info strong {
-            display: block;
-            font-size: 1rem;
-        }
-
-        .marquee {
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
-            background: var(--orange);
-            color: #111;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .marquee-track {
-            display: inline-flex;
-            gap: 34px;
-            padding: 14px 0;
-            animation: marquee 24s linear infinite;
-            font-weight: 950;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .marquee-track span {
-            display: inline-block;
-        }
-
-        @keyframes marquee {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 110px 0;
-        }
-
-        .section-head {
-            display: grid;
-            grid-template-columns: 0.35fr 1fr;
-            gap: 40px;
-            align-items: start;
-            margin-bottom: 44px;
-        }
-
-        .section-head h2 {
-            font-size: clamp(2.2rem, 5vw, 5rem);
-            line-height: 0.95;
-            letter-spacing: -2.5px;
-            text-transform: uppercase;
-            font-weight: 950;
-            max-width: 930px;
-        }
-
-        .section-head p {
-            color: #cfcfcf;
-            max-width: 680px;
-            font-size: 1.05rem;
-            margin-top: 12px;
-        }
-
-        .light {
-            background: var(--paper);
-            color: var(--dark);
-        }
-
-        .light .section-head p {
-            color: var(--muted-dark);
-        }
-
-        .light .eyebrow {
-            color: var(--orange-2);
-        }
-
-        /* SERVICES */
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 18px;
-        }
-
-        .service-row {
-            min-height: 460px;
-            display: grid;
-            grid-template-columns: 0.88fr 1.12fr;
-            background: #fff;
-            border: 1px solid var(--line-light);
-            border-radius: 34px;
-            overflow: hidden;
-            box-shadow: 0 22px 70px rgba(0,0,0,0.10);
-        }
-
-        .service-row:nth-child(even) {
-            grid-template-columns: 1.12fr 0.88fr;
-        }
-
-        .service-row:nth-child(even) .service-art {
-            order: 2;
-        }
-
-        .service-art {
-            position: relative;
-            overflow: hidden;
-            background: #111;
-        }
-
-        .service-art::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.58) 100%);
-            z-index: 2;
-        }
-
-        .service-art svg {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-        }
-
-        .service-num {
-            position: absolute;
-            z-index: 3;
-            top: 22px;
-            left: 22px;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: var(--orange);
-            color: #111;
-            display: grid;
-            place-items: center;
-            font-weight: 950;
-            font-size: 1rem;
-        }
-
-        .service-art-title {
-            position: absolute;
-            z-index: 3;
-            left: 26px;
-            bottom: 26px;
-            color: #fff;
-            font-size: clamp(1.7rem, 3vw, 3.1rem);
-            line-height: 0.98;
-            letter-spacing: -1px;
-            font-weight: 950;
-            text-transform: uppercase;
-            max-width: 420px;
-        }
-
-        .service-copy {
-            padding: 48px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .service-copy .tag {
-            color: var(--orange-2);
-            font-size: 0.82rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-
-        .service-copy h3 {
-            font-size: clamp(2rem, 4vw, 4rem);
-            line-height: 0.96;
-            letter-spacing: -2px;
-            font-weight: 950;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
-
-        .service-copy p {
-            color: var(--muted-dark);
-            font-size: 1.04rem;
-            max-width: 620px;
-            margin-bottom: 26px;
-        }
-
-        .chips {
+        .hero-note {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 9px;
         }
 
-        .chips span {
-            border: 1px solid var(--line-light);
-            background: #f7f2ea;
-            color: #242424;
-            padding: 10px 13px;
-            border-radius: 999px;
-            font-weight: 800;
+        .hero-note span {
+            background: rgba(255,255,255,0.78);
+            border: 1px solid var(--line);
+            padding: 8px 11px;
             font-size: 0.88rem;
+            font-weight: 700;
+            border-radius: 999px;
         }
 
-        /* DARK BLOCK */
-        .dark-band {
-            background:
-                radial-gradient(circle at 80% 20%, rgba(255,149,0,0.16), transparent 28%),
-                #0b0b0b;
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
-        }
-
-        .split-block {
-            display: grid;
-            grid-template-columns: 0.95fr 1.05fr;
-            gap: 20px;
-            align-items: stretch;
-        }
-
-        .quote-intro,
-        .quote-form-box {
+        .mini-visual {
+            margin-top: 34px;
+            background: var(--paper);
             border: 1px solid var(--line);
-            border-radius: 34px;
-            background: rgba(255,255,255,0.05);
             box-shadow: var(--shadow);
+            overflow: hidden;
         }
 
-        .quote-intro {
-            padding: 42px;
+        .mini-visual svg {
+            display: block;
+            width: 100%;
+            height: auto;
         }
 
-        .quote-intro h2 {
-            font-size: clamp(2.4rem, 5vw, 5rem);
-            line-height: 0.95;
-            letter-spacing: -2.4px;
-            text-transform: uppercase;
-            font-weight: 950;
-            margin-bottom: 20px;
-        }
-
-        .quote-intro p {
-            color: #cfcfcf;
-            font-size: 1.03rem;
-            margin-bottom: 22px;
-        }
-
-        .quote-list {
-            display: grid;
-            gap: 10px;
-        }
-
-        .quote-list div {
+        .quote-card {
+            background: var(--paper);
             border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 14px 16px;
-            color: #f1f1f1;
-            background: rgba(255,255,255,0.035);
+            box-shadow: var(--shadow);
+            padding: 24px;
+            position: sticky;
+            top: 92px;
         }
 
-        .quote-form-box {
-            padding: 34px;
+        .quote-card h2 {
+            font-size: 1.7rem;
+            line-height: 1.08;
+            letter-spacing: -0.6px;
+            margin-bottom: 10px;
+        }
+
+        .quote-card p {
+            font-size: 0.94rem;
+            color: var(--muted);
+            margin-bottom: 18px;
         }
 
         form {
             display: grid;
-            gap: 14px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
+            gap: 12px;
         }
 
         input,
         select,
         textarea {
             width: 100%;
+            background: #fff;
             border: 1px solid var(--line);
-            border-radius: 18px;
-            background: rgba(255,255,255,0.08);
-            color: #fff;
-            padding: 16px 17px;
-            font-size: 1rem;
+            padding: 13px 14px;
+            font-size: 0.96rem;
+            color: var(--text);
             outline: none;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            color: #a8a8a8;
-        }
-
-        select {
-            color: #fff;
-        }
-
-        option {
-            color: #111;
+            border-radius: 0;
         }
 
         input:focus,
         select:focus,
         textarea:focus {
             border-color: var(--orange);
-            box-shadow: 0 0 0 4px rgba(255,149,0,0.12);
+            box-shadow: 0 0 0 3px rgba(216,132,0,0.14);
         }
 
         textarea {
-            min-height: 160px;
+            min-height: 120px;
             resize: vertical;
         }
 
         .submit-btn {
-            justify-self: start;
             border: 0;
-            border-radius: 999px;
-            background: var(--orange);
-            color: #111;
-            padding: 16px 24px;
-            font-weight: 950;
+            background: var(--dark);
+            color: #fff;
+            padding: 14px 18px;
+            font-weight: 900;
             text-transform: uppercase;
             cursor: pointer;
+            font-size: 0.9rem;
         }
 
         .submit-btn:hover {
-            background: var(--orange-2);
-            color: #fff;
+            background: var(--orange-dark);
         }
 
         .form-note {
-            color: #a8a8a8;
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        section {
+            padding: 68px 0;
+        }
+
+        .section-head {
+            max-width: 760px;
+            margin-bottom: 32px;
+        }
+
+        .section-head h2 {
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            line-height: 1.08;
+            letter-spacing: -0.8px;
+            margin-bottom: 12px;
+        }
+
+        .section-head p {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .services {
+            background: var(--bg);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .service-card {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-art {
+            height: 230px;
+            background: var(--soft);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .service-art svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .service-content {
+            padding: 22px;
+        }
+
+        .service-number {
+            color: var(--orange-dark);
+            font-size: 0.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .service-content h3 {
+            font-size: 1.35rem;
+            line-height: 1.12;
+            letter-spacing: -0.4px;
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            color: var(--muted);
+            font-size: 0.96rem;
+            margin-bottom: 16px;
+        }
+
+        .service-points {
+            display: grid;
+            gap: 8px;
+        }
+
+        .service-points span {
+            background: var(--soft);
+            border: 1px solid var(--line);
+            padding: 9px 11px;
+            font-weight: 700;
+            color: #333;
             font-size: 0.88rem;
         }
 
-        /* ABOUT / CONTACT */
         .about-contact {
-            background: var(--paper);
-            color: var(--dark);
+            background: #fff;
+            border-top: 1px solid var(--line);
         }
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 0.9fr;
+            grid-template-columns: 1fr 0.85fr;
             gap: 20px;
         }
 
-        .about-card,
-        .contact-card {
-            background: #fff;
-            border: 1px solid var(--line-light);
-            border-radius: 34px;
-            box-shadow: 0 22px 70px rgba(0,0,0,0.10);
-            padding: 42px;
+        .about-box,
+        .contact-box {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            padding: 30px;
         }
 
-        .about-card h2,
-        .contact-card h2 {
-            font-size: clamp(2.2rem, 4vw, 4.4rem);
-            line-height: 0.95;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            font-weight: 950;
-            margin-bottom: 22px;
+        .about-box h2,
+        .contact-box h2 {
+            font-size: 2rem;
+            line-height: 1.08;
+            letter-spacing: -0.6px;
+            margin-bottom: 16px;
         }
 
-        .about-card p {
-            color: var(--muted-dark);
-            font-size: 1.04rem;
-            margin-bottom: 14px;
-            max-width: 760px;
+        .about-box p {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 13px;
         }
 
-        .contact-card {
+        .about-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-box {
             background: var(--dark);
             color: #fff;
         }
 
-        .contact-card p {
-            color: #cfcfcf;
-            margin-bottom: 26px;
+        .contact-box p {
+            color: #d6d6d6;
+            margin-bottom: 22px;
         }
 
         .contact-data {
             display: grid;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .contact-data span {
+        .contact-label {
             color: var(--orange);
-            font-size: 0.82rem;
-            text-transform: uppercase;
+            font-size: 0.8rem;
             font-weight: 900;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .contact-name {
-            font-size: 1.5rem;
-            font-weight: 950;
+            font-size: 1.35rem;
+            font-weight: 900;
         }
 
         .contact-data a {
-            font-size: 1.18rem;
-            font-weight: 950;
+            font-size: 1.08rem;
+            font-weight: 900;
         }
 
         .contact-data a:hover {
@@ -806,46 +540,43 @@
         }
 
         footer {
-            background: #050505;
-            color: #bdbdbd;
+            background: var(--dark);
+            color: #d6d6d6;
+            padding: 26px 20px;
             text-align: center;
-            padding: 28px 20px;
             font-size: 0.88rem;
         }
 
-        @media (max-width: 1050px) {
-            .hero-inner,
-            .section-head,
-            .service-row,
-            .service-row:nth-child(even),
-            .split-block,
+        @media (max-width: 1000px) {
+            .hero-grid,
             .about-grid {
                 grid-template-columns: 1fr;
             }
 
-            .service-row:nth-child(even) .service-art {
-                order: 0;
+            .quote-card {
+                position: static;
             }
 
-            .hero-panel {
-                min-height: auto;
+            .service-grid {
+                grid-template-columns: 1fr;
             }
 
             .service-art {
-                min-height: 360px;
+                height: 260px;
             }
         }
 
         @media (max-width: 720px) {
             .container,
             nav {
-                width: min(var(--max), calc(100% - 28px));
+                width: min(100% - 28px, var(--max));
             }
 
             nav {
                 align-items: flex-start;
                 flex-direction: column;
                 padding: 16px 0;
+                min-height: auto;
             }
 
             .nav-links {
@@ -857,43 +588,23 @@
             }
 
             .hero {
-                padding: 58px 0;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
+                padding: 46px 0 52px;
             }
 
             section {
-                padding: 64px 0;
+                padding: 54px 0;
             }
 
-            .hero-info,
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .service-copy,
-            .quote-intro,
-            .quote-form-box,
-            .about-card,
-            .contact-card {
-                padding: 26px 20px;
-            }
-
-            .service-art {
-                min-height: 300px;
-            }
-
-            .submit-btn {
-                width: 100%;
+            .quote-card,
+            .about-box,
+            .contact-box {
+                padding: 22px;
             }
         }
     </style>
 </head>
 
 <body>
-<div class="noise"></div>
 
 <div class="topbar">
     <nav>
@@ -901,325 +612,71 @@
 
         <div class="nav-links">
             <a href="#teenused">Teenused</a>
-            <a href="#pakkumine">Pakkumine</a>
             <a href="#ettevottest">Ettevõttest</a>
             <a href="#kontakt">Kontakt</a>
-            <a href="#pakkumine" class="nav-cta">Küsi pakkumist</a>
+            <a href="#paring" class="nav-button">Küsi pakkumist</a>
         </div>
     </nav>
 </div>
 
 <header class="hero">
     <div class="container">
-        <div class="hero-inner">
+        <div class="hero-grid">
             <div>
-                <div class="eyebrow">Elektritööd • projektid • dokumendid</div>
+                <div class="small-title">Elektritööd • projektid • dokumendid</div>
 
-                <h1>Elektritööd, mis ei jää <span>poolikuks.</span></h1>
+                <h1>Elektritööd, projektid ja dokumendid <span>ühest kohast.</span></h1>
 
-                <p class="hero-text">
+                <p>
                     Libtek OÜ aitab elektripaigalduse, projekteerimise, mõõdistuste ja dokumentatsiooniga.
-                    Ütle, mida vaja on. Vaatame üle ja pakume lahenduse.
+                    Vaatame töö sisu üle, pakume mõistliku lahenduse ja viime töö lõpuni.
                 </p>
 
                 <div class="hero-actions">
-                    <a href="#pakkumine" class="btn btn-primary" onclick="trackContactClick('hero_kysi_pakkumist')">Küsi pakkumist</a>
+                    <a href="#paring" class="btn btn-primary" onclick="trackContactClick('hero_kysi_pakkumist')">Küsi pakkumist</a>
                     <a href="tel:+37253461535" class="btn btn-secondary" onclick="trackContactClick('hero_telefon')">Helista</a>
                 </div>
-            </div>
 
-            <div class="hero-panel">
-                <div class="panel-top">
-                    <strong>Libtek / töölaud</strong>
-                    <span class="panel-status">valmis päringuks</span>
+                <div class="hero-note">
+                    <span>Elektrikilbid</span>
+                    <span>CAD-joonised</span>
+                    <span>Mõõdistused</span>
+                    <span>Dokumentatsioon</span>
                 </div>
 
-                <div class="hero-visual">
-                    <svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="heroSvgBg" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#171717"/>
-                                <stop offset="100%" stop-color="#0a0a0a"/>
-                            </linearGradient>
-                        </defs>
-
-                        <rect width="720" height="430" fill="url(#heroSvgBg)"/>
-
-                        <g opacity="0.16">
-                            <path d="M0 54H720M0 108H720M0 162H720M0 216H720M0 270H720M0 324H720M0 378H720" stroke="#ffffff"/>
-                            <path d="M60 0V430M120 0V430M180 0V430M240 0V430M300 0V430M360 0V430M420 0V430M480 0V430M540 0V430M600 0V430M660 0V430" stroke="#ffffff"/>
+                <div class="mini-visual">
+                    <svg viewBox="0 0 900 270" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="900" height="270" fill="#151515"/>
+                        <g opacity="0.18">
+                            <path d="M0 45H900M0 90H900M0 135H900M0 180H900M0 225H900" stroke="#fff"/>
+                            <path d="M75 0V270M150 0V270M225 0V270M300 0V270M375 0V270M450 0V270M525 0V270M600 0V270M675 0V270M750 0V270M825 0V270" stroke="#fff"/>
                         </g>
 
-                        <rect x="62" y="62" width="250" height="260" rx="24" fill="#f4efe6"/>
-                        <rect x="91" y="96" width="84" height="56" rx="11" fill="#ffffff" stroke="#cfc6b8" stroke-width="2"/>
-                        <rect x="192" y="96" width="84" height="56" rx="11" fill="#ffffff" stroke="#cfc6b8" stroke-width="2"/>
-                        <rect x="91" y="174" width="84" height="56" rx="11" fill="#ffffff" stroke="#cfc6b8" stroke-width="2"/>
-                        <rect x="192" y="174" width="84" height="56" rx="11" fill="#ffffff" stroke="#cfc6b8" stroke-width="2"/>
-                        <rect x="91" y="252" width="185" height="40" rx="10" fill="#ffffff" stroke="#cfc6b8" stroke-width="2"/>
+                        <rect x="55" y="55" width="180" height="145" rx="12" fill="#f5f1e8"/>
+                        <rect x="84" y="82" width="48" height="36" rx="6" fill="#fff" stroke="#bbb"/>
+                        <rect x="148" y="82" width="48" height="36" rx="6" fill="#fff" stroke="#bbb"/>
+                        <rect x="84" y="134" width="112" height="36" rx="6" fill="#fff" stroke="#bbb"/>
+                        <path d="M235 90C315 90 330 90 380 90" stroke="#d88400" stroke-width="6" fill="none" stroke-linecap="round"/>
+                        <path d="M235 145C310 145 335 162 420 162" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/>
 
-                        <g fill="none" stroke-linecap="round" stroke-width="7">
-                            <path d="M312 116C360 116 382 116 430 116" stroke="#ff9500"/>
-                            <path d="M312 198C370 198 390 182 500 182" stroke="#2563eb"/>
-                            <path d="M312 278C380 278 430 300 598 300" stroke="#ff9500"/>
-                        </g>
+                        <path d="M470 80H650V122H710V190H620V165H560V218H470Z" stroke="#fff" stroke-width="4" fill="none"/>
+                        <path d="M470 58H710" stroke="#d88400" stroke-width="3" fill="none"/>
+                        <path d="M735 80V190" stroke="#d88400" stroke-width="3" fill="none"/>
 
-                        <rect x="430" y="72" width="220" height="260" rx="24" fill="#101010" stroke="#383838" stroke-width="2"/>
-
-                        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M460 120H540V158H588V210H542V252H460Z" stroke="#ffffff" stroke-width="4"/>
-                            <path d="M490 120V178H540" stroke="#ffffff" stroke-width="4"/>
-                            <path d="M540 158V252" stroke="#ffffff" stroke-width="4"/>
-                            <path d="M452 96H600" stroke="#ff9500" stroke-width="3"/>
-                            <path d="M612 120V252" stroke="#ff9500" stroke-width="3"/>
-                        </g>
-
-                        <rect x="102" y="106" width="22" height="12" rx="3" fill="#ff9500"/>
-                        <rect x="204" y="106" width="22" height="12" rx="3" fill="#ff9500"/>
-                        <rect x="102" y="184" width="22" height="12" rx="3" fill="#ff9500"/>
-                        <rect x="204" y="184" width="22" height="12" rx="3" fill="#ff9500"/>
-
-                        <text x="360" y="382" text-anchor="middle" fill="#ff9500" font-size="26" font-weight="900">
-                            KILP • CAD • DOKUMENTATSIOON
+                        <text x="450" y="245" text-anchor="middle" fill="#d88400" font-size="22" font-weight="900">
+                            KILP • JOONIS • DOKUMENT
                         </text>
                     </svg>
                 </div>
-
-                <div class="hero-info">
-                    <div>
-                        <span>Paigaldus</span>
-                        <strong>kilbid ja kaablid</strong>
-                    </div>
-                    <div>
-                        <span>Projekt</span>
-                        <strong>skeemid ja joonised</strong>
-                    </div>
-                    <div>
-                        <span>Mõõtmine</span>
-                        <strong>kontroll ja tabelid</strong>
-                    </div>
-                    <div>
-                        <span>Lõpp</span>
-                        <strong>dokumendid korda</strong>
-                    </div>
-                </div>
             </div>
-        </div>
-    </div>
-</header>
 
-<div class="marquee">
-    <div class="marquee-track">
-        <span>Elektrikilbid</span>
-        <span>Elektriprojektid</span>
-        <span>CAD-joonised</span>
-        <span>Mõõdistused</span>
-        <span>Dokumentatsioon</span>
-        <span>Paigaldustööd</span>
-        <span>Elektrikilbid</span>
-        <span>Elektriprojektid</span>
-        <span>CAD-joonised</span>
-        <span>Mõõdistused</span>
-        <span>Dokumentatsioon</span>
-        <span>Paigaldustööd</span>
-    </div>
-</div>
-
-<section id="teenused" class="light">
-    <div class="container">
-        <div class="section-head">
-            <div class="eyebrow">Teenused</div>
-            <div>
-                <h2>Paigaldus, projekt ja paberid.</h2>
+            <aside id="paring" class="quote-card">
+                <div class="small-title">Küsi pakkumist</div>
+                <h2>Kirjelda tööd</h2>
                 <p>
-                    Need on kolm osa, mis peavad omavahel kokku jooksma. Kui üks neist on tegemata,
-                    jääb töö kliendi jaoks poolikuks.
-                </p>
-            </div>
-        </div>
-
-        <div class="services-grid">
-            <article class="service-row">
-                <div class="service-art">
-                    <div class="service-num">01</div>
-                    <div class="service-art-title">Kilbid ja paigaldus</div>
-
-                    <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <rect width="720" height="460" fill="#f4efe6"/>
-
-                        <rect x="82" y="62" width="556" height="310" rx="28" fill="#ffffff" stroke="#cbc1b2" stroke-width="3"/>
-                        <rect x="118" y="102" width="220" height="220" rx="18" fill="#f7f7f7" stroke="#ddd4c7" stroke-width="3"/>
-                        <rect x="390" y="102" width="210" height="220" rx="18" fill="#f7f7f7" stroke="#ddd4c7" stroke-width="3"/>
-
-                        <rect x="145" y="132" width="70" height="46" rx="10" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
-                        <rect x="232" y="132" width="70" height="46" rx="10" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
-                        <rect x="145" y="198" width="70" height="46" rx="10" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
-                        <rect x="232" y="198" width="70" height="46" rx="10" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
-                        <rect x="145" y="264" width="157" height="40" rx="10" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
-
-                        <rect x="420" y="132" width="58" height="122" rx="10" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
-                        <rect x="498" y="132" width="58" height="122" rx="10" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
-                        <rect x="420" y="278" width="136" height="42" rx="10" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
-
-                        <g fill="none" stroke-linecap="round" stroke-width="8">
-                            <path d="M338 148C370 148 390 148 420 148" stroke="#ff9500"/>
-                            <path d="M338 214C380 214 405 198 498 198" stroke="#2563eb"/>
-                            <path d="M338 282C388 282 430 298 556 298" stroke="#111111"/>
-                            <path d="M338 315C390 315 430 315 556 315" stroke="#ff9500"/>
-                        </g>
-
-                        <text x="360" y="420" text-anchor="middle" fill="#111111" font-size="26" font-weight="900">
-                            ELEKTRIKILP JA PAIGALDUS
-                        </text>
-                    </svg>
-                </div>
-
-                <div class="service-copy">
-                    <div class="tag">Elektripaigaldus</div>
-                    <h3>Paigaldus, kaablid ja elektrikilbid</h3>
-                    <p>
-                        Teeme elektripaigaldustöid uutel ja olemasolevatel objektidel:
-                        kaablid, kilbid, pistikupesad, lülitid, valgustid ja muud paigaldise osad.
-                    </p>
-
-                    <div class="chips">
-                        <span>Jaotuskilbid</span>
-                        <span>Kaablite vedu</span>
-                        <span>Valgustid</span>
-                        <span>Pistikupesad</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="service-row">
-                <div class="service-art">
-                    <div class="service-num">02</div>
-                    <div class="service-art-title">Projekt ja joonised</div>
-
-                    <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <rect width="720" height="460" fill="#101010"/>
-
-                        <g opacity="0.22">
-                            <path d="M0 46H720M0 92H720M0 138H720M0 184H720M0 230H720M0 276H720M0 322H720M0 368H720M0 414H720" stroke="#fff"/>
-                            <path d="M60 0V460M120 0V460M180 0V460M240 0V460M300 0V460M360 0V460M420 0V460M480 0V460M540 0V460M600 0V460M660 0V460" stroke="#fff"/>
-                        </g>
-
-                        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M100 110H292V170H392V128H620V298H464V260H350V342H100Z" stroke="#ffffff" stroke-width="5"/>
-                            <path d="M196 110V190H292" stroke="#ffffff" stroke-width="5"/>
-                            <path d="M292 170V260" stroke="#ffffff" stroke-width="5"/>
-                            <path d="M392 128V222H506" stroke="#ffffff" stroke-width="5"/>
-                            <path d="M506 222V298" stroke="#ffffff" stroke-width="5"/>
-                            <path d="M260 260H464" stroke="#ffffff" stroke-width="5"/>
-                            <path d="M100 82H620" stroke="#ff9500" stroke-width="4"/>
-                            <path d="M642 110V298" stroke="#ff9500" stroke-width="4"/>
-                        </g>
-
-                        <g fill="#ff9500">
-                            <circle cx="260" cy="260" r="7"/>
-                            <circle cx="292" cy="170" r="7"/>
-                            <circle cx="392" cy="170" r="7"/>
-                            <circle cx="506" cy="222" r="7"/>
-                            <circle cx="464" cy="260" r="7"/>
-                        </g>
-
-                        <text x="360" y="420" text-anchor="middle" fill="#ff9500" font-size="26" font-weight="900">
-                            CAD JOONISED JA SKEEMID
-                        </text>
-                    </svg>
-                </div>
-
-                <div class="service-copy">
-                    <div class="tag">Projekteerimine</div>
-                    <h3>Elektriprojektid ja skeemid</h3>
-                    <p>
-                        Enne ehitamist peab olema selge, mida tehakse. Koostame elektriprojekte,
-                        põhimõtteskeeme ja teostusjooniseid.
-                    </p>
-
-                    <div class="chips">
-                        <span>Elektriprojektid</span>
-                        <span>Põhimõtteskeemid</span>
-                        <span>Teostusjoonised</span>
-                        <span>CAD</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="service-row">
-                <div class="service-art">
-                    <div class="service-num">03</div>
-                    <div class="service-art-title">Dokumendid korda</div>
-
-                    <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <rect width="720" height="460" fill="#f4efe6"/>
-
-                        <rect x="84" y="78" width="250" height="270" rx="22" fill="#ffffff" stroke="#d6cbbd" stroke-width="3" transform="rotate(-5 209 213)"/>
-                        <rect x="388" y="80" width="250" height="270" rx="22" fill="#ffffff" stroke="#d6cbbd" stroke-width="3" transform="rotate(5 513 215)"/>
-
-                        <g transform="rotate(-5 209 213)">
-                            <rect x="120" y="122" width="148" height="12" rx="6" fill="#ff9500"/>
-                            <rect x="120" y="160" width="176" height="10" rx="5" fill="#cbd5e1"/>
-                            <rect x="120" y="188" width="156" height="10" rx="5" fill="#cbd5e1"/>
-                            <rect x="120" y="228" width="48" height="34" rx="8" fill="#dbeafe"/>
-                            <rect x="180" y="228" width="48" height="34" rx="8" fill="#fed7aa"/>
-                            <rect x="240" y="228" width="48" height="34" rx="8" fill="#dbeafe"/>
-                            <rect x="120" y="290" width="176" height="10" rx="5" fill="#cbd5e1"/>
-                        </g>
-
-                        <g transform="rotate(5 513 215)">
-                            <rect x="424" y="122" width="140" height="12" rx="6" fill="#ff9500"/>
-                            <rect x="424" y="160" width="180" height="10" rx="5" fill="#cbd5e1"/>
-                            <rect x="424" y="188" width="150" height="10" rx="5" fill="#cbd5e1"/>
-                            <rect x="424" y="238" width="170" height="42" rx="10" fill="#f8fafc" stroke="#ded6c9"/>
-                            <text x="440" y="266" fill="#171717" font-size="18" font-weight="900">Mõõdistus OK</text>
-                            <path d="M432 312L462 342L530 270" fill="none" stroke="#ff9500" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-                        </g>
-
-                        <text x="360" y="420" text-anchor="middle" fill="#111111" font-size="26" font-weight="900">
-                            TABELID JA DOKUMENDID
-                        </text>
-                    </svg>
-                </div>
-
-                <div class="service-copy">
-                    <div class="tag">Mõõdistused ja vormistus</div>
-                    <h3>Mõõtmised, tabelid ja dokumendid</h3>
-                    <p>
-                        Aitame mõõdistuste, tabelite, protokollide ja muu vajaliku dokumentatsiooniga.
-                        See on vajalik näiteks auditi, kasutusloa või töö üleandmise jaoks.
-                    </p>
-
-                    <div class="chips">
-                        <span>Mõõteprotokollid</span>
-                        <span>Tabelid</span>
-                        <span>Dokumendid</span>
-                        <span>Kasutusluba</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section id="pakkumine" class="dark-band">
-    <div class="container">
-        <div class="split-block">
-            <div class="quote-intro">
-                <div class="eyebrow">Küsi pakkumist</div>
-                <h2>Kirjelda töö ära.</h2>
-                <p>
-                    Saada lühike kirjeldus. Võimalusel lisa objekt, töö liik, olemasolev projekt või pildid.
-                    Päring liigub aadressile <strong>info@libtek.ee</strong>.
+                    Saada lühike kirjeldus. Päring liigub aadressile <strong>info@libtek.ee</strong>.
                 </p>
 
-                <div class="quote-list">
-                    <div>Elektripaigaldus ja kilbitööd</div>
-                    <div>Elektriprojektid ja teostusjoonised</div>
-                    <div>Mõõdistused ja dokumentatsioon</div>
-                </div>
-            </div>
-
-            <div class="quote-form-box">
                 <form action="https://formsubmit.co/info@libtek.ee" method="POST" onsubmit="trackQuoteSubmit()">
                     <input type="hidden" name="_subject" value="Uus hinnapäring Libtek veebilehelt">
                     <input type="hidden" name="_template" value="table">
@@ -1227,32 +684,131 @@
                     <input type="hidden" name="_next" value="https://www.libtek.ee/#kontakt">
                     <input type="text" name="_honey" style="display:none">
 
-                    <div class="form-row">
-                        <input type="text" name="Nimi" placeholder="Nimi" required>
-                        <input type="tel" name="Telefon" placeholder="Telefon" required>
-                    </div>
+                    <input type="text" name="Nimi" placeholder="Nimi" required>
+                    <input type="tel" name="Telefon" placeholder="Telefon" required>
+                    <input type="email" name="email" placeholder="E-post" required>
 
-                    <div class="form-row">
-                        <input type="email" name="email" placeholder="E-post" required>
-
-                        <select name="Töö liik" required>
-                            <option value="">Vali töö liik</option>
-                            <option value="Elektripaigaldustööd">Elektripaigaldustööd</option>
-                            <option value="Elektri projekteerimine">Elektri projekteerimine</option>
-                            <option value="Mõõdistused ja dokumentatsioon">Mõõdistused ja dokumentatsioon</option>
-                            <option value="Muu">Muu</option>
-                        </select>
-                    </div>
+                    <select name="Töö liik" required>
+                        <option value="">Vali töö liik</option>
+                        <option value="Elektripaigaldustööd">Elektripaigaldustööd</option>
+                        <option value="Elektri projekteerimine">Elektri projekteerimine</option>
+                        <option value="Mõõdistused ja dokumentatsioon">Mõõdistused ja dokumentatsioon</option>
+                        <option value="Muu">Muu</option>
+                    </select>
 
                     <textarea name="Töö kirjeldus" placeholder="Kirjelda lühidalt, millise tööga abi vajad" required></textarea>
 
                     <button class="submit-btn" type="submit">Saada päring</button>
 
                     <div class="form-note">
-                        Kui vastust ei tule, võib kirjutada otse aadressile info@libtek.ee või helistada numbril +372 5346 1535.
+                        Võid kirjutada ka otse: info@libtek.ee
                     </div>
                 </form>
-            </div>
+            </aside>
+        </div>
+    </div>
+</header>
+
+<section id="teenused" class="services">
+    <div class="container">
+        <div class="section-head">
+            <div class="small-title">Teenused</div>
+            <h2>Elektritööd alates plaanist kuni dokumentideni.</h2>
+            <p>
+                Teeme elektripaigaldust, projekteerimist, mõõdistusi ja dokumentatsiooni.
+                Vajadusel aitame nii üksiku tööga kui ka terviklikuma lahendusega.
+            </p>
+        </div>
+
+        <div class="service-grid">
+            <article class="service-card">
+                <div class="service-art">
+                    <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="520" height="260" fill="#fff7ed"/>
+                        <rect x="70" y="42" width="380" height="158" rx="16" fill="#fff" stroke="#d8d0c4" stroke-width="2"/>
+                        <rect x="100" y="75" width="130" height="92" rx="10" fill="#f4f1eb" stroke="#c8beb0" stroke-width="2"/>
+                        <rect x="285" y="75" width="115" height="92" rx="10" fill="#f4f1eb" stroke="#c8beb0" stroke-width="2"/>
+                        <rect x="118" y="92" width="40" height="28" rx="5" fill="#fff" stroke="#999"/>
+                        <rect x="172" y="92" width="40" height="28" rx="5" fill="#fff" stroke="#999"/>
+                        <rect x="118" y="130" width="94" height="25" rx="5" fill="#fff" stroke="#999"/>
+                        <path d="M230 98C260 98 280 98 305 98" stroke="#d88400" stroke-width="5" fill="none" stroke-linecap="round"/>
+                        <path d="M230 145C270 145 305 145 380 145" stroke="#151515" stroke-width="5" fill="none" stroke-linecap="round"/>
+                        <text x="260" y="230" text-anchor="middle" fill="#151515" font-size="18" font-weight="900">ELEKTRIKILBID</text>
+                    </svg>
+                </div>
+
+                <div class="service-content">
+                    <div class="service-number">01 / Elektripaigaldus</div>
+                    <h3>Paigaldus, kaablid ja elektrikilbid</h3>
+                    <p>
+                        Teeme elektripaigaldustöid uutel ja olemasolevatel objektidel.
+                    </p>
+                    <div class="service-points">
+                        <span>Jaotuskilbid ja ühendused</span>
+                        <span>Kaablite vedu ja paigaldus</span>
+                        <span>Valgustid, lülitid ja pistikupesad</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="service-card">
+                <div class="service-art">
+                    <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="520" height="260" fill="#151515"/>
+                        <g opacity="0.22">
+                            <path d="M0 43H520M0 86H520M0 129H520M0 172H520M0 215H520" stroke="#fff"/>
+                            <path d="M52 0V260M104 0V260M156 0V260M208 0V260M260 0V260M312 0V260M364 0V260M416 0V260M468 0V260" stroke="#fff"/>
+                        </g>
+                        <path d="M65 70H215V112H292V82H440V182H340V158H260V215H65Z" stroke="#fff" stroke-width="4" fill="none"/>
+                        <path d="M65 50H440" stroke="#d88400" stroke-width="3"/>
+                        <path d="M460 70V182" stroke="#d88400" stroke-width="3"/>
+                        <text x="260" y="235" text-anchor="middle" fill="#d88400" font-size="18" font-weight="900">CAD-JOONISED</text>
+                    </svg>
+                </div>
+
+                <div class="service-content">
+                    <div class="service-number">02 / Projekteerimine</div>
+                    <h3>Elektriprojektid ja skeemid</h3>
+                    <p>
+                        Koostame elektriprojekte, põhimõtteskeeme ja teostusjooniseid.
+                    </p>
+                    <div class="service-points">
+                        <span>Elektriprojektid</span>
+                        <span>Põhimõtteskeemid</span>
+                        <span>Teostusjoonised</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="service-card">
+                <div class="service-art">
+                    <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="520" height="260" fill="#fff7ed"/>
+                        <rect x="85" y="48" width="130" height="150" rx="12" fill="#fff" stroke="#d8d0c4" stroke-width="2" transform="rotate(-5 150 123)"/>
+                        <rect x="290" y="48" width="130" height="150" rx="12" fill="#fff" stroke="#d8d0c4" stroke-width="2" transform="rotate(5 355 123)"/>
+                        <rect x="112" y="76" width="75" height="8" rx="4" fill="#d88400"/>
+                        <rect x="112" y="104" width="86" height="7" rx="4" fill="#cbd5e1"/>
+                        <rect x="112" y="126" width="78" height="7" rx="4" fill="#cbd5e1"/>
+                        <rect x="320" y="80" width="70" height="8" rx="4" fill="#d88400"/>
+                        <rect x="320" y="110" width="82" height="7" rx="4" fill="#cbd5e1"/>
+                        <path d="M318 152L340 174L390 120" fill="none" stroke="#d88400" stroke-width="8" stroke-linecap="round"/>
+                        <text x="260" y="230" text-anchor="middle" fill="#151515" font-size="18" font-weight="900">DOKUMENDID</text>
+                    </svg>
+                </div>
+
+                <div class="service-content">
+                    <div class="service-number">03 / Mõõdistused</div>
+                    <h3>Mõõtmised, tabelid ja dokumendid</h3>
+                    <p>
+                        Aitame mõõdistuste, tabelite, protokollide ja muu vajaliku dokumentatsiooniga.
+                    </p>
+                    <div class="service-points">
+                        <span>Elektripaigaldise mõõtmised</span>
+                        <span>Tabelid ja protokollid</span>
+                        <span>Dokumentatsioon auditi või kasutusloa jaoks</span>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 </section>
@@ -1260,8 +816,8 @@
 <section id="ettevottest" class="about-contact">
     <div class="container">
         <div class="about-grid">
-            <div class="about-card">
-                <div class="eyebrow">Ettevõttest</div>
+            <div class="about-box">
+                <div class="small-title">Ettevõttest</div>
                 <h2>Libtek OÜ</h2>
                 <p>
                     Libtek OÜ tegeleb elektritööde, elektri projekteerimise, mõõdistuste ja dokumentatsiooniga.
@@ -1276,13 +832,13 @@
                 </p>
             </div>
 
-            <div id="kontakt" class="contact-card">
-                <div class="eyebrow">Kontakt</div>
+            <div id="kontakt" class="contact-box">
+                <div class="small-title">Kontakt</div>
                 <h2>Võta ühendust</h2>
                 <p>Kirjuta või helista, kui vajad abi elektritöö, projekti või dokumentatsiooniga.</p>
 
                 <div class="contact-data">
-                    <span>Kontaktisik</span>
+                    <div class="contact-label">Kontaktisik</div>
                     <div class="contact-name">Arman Liblik</div>
 
                     <a href="tel:+37253461535" onclick="trackContactClick('telefoniklikk')">
