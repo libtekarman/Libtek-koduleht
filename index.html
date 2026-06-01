@@ -16,7 +16,7 @@
     <link rel="canonical" href="https://www.libtek.ee/">
 
     <!-- GOOGLE ADS / GOOGLE ANALYTICS -->
-    <!-- Asenda hiljem oma päris ID-dega -->
+    <!-- Asenda hiljem oma päris Google ID-dega -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -36,7 +36,7 @@
         }
     </script>
 
-    <!-- FACEBOOK / META -->
+    <!-- FACEBOOK / META JAGAMISE INFO -->
     <meta property="og:title" content="Libtek OÜ | Elektritööd ja elektri projekteerimine">
     <meta property="og:description" content="Elektritööd, elektripaigaldus, projekteerimine, mõõdistused ja dokumentatsioon era- ja äriklientidele.">
     <meta property="og:type" content="website">
@@ -64,18 +64,9 @@
         "addressLocality": "Tallinn"
       },
       "areaServed": [
-        {
-          "@type": "Place",
-          "name": "Tallinn"
-        },
-        {
-          "@type": "Place",
-          "name": "Harjumaa"
-        },
-        {
-          "@type": "Country",
-          "name": "Estonia"
-        }
+        { "@type": "Place", "name": "Tallinn" },
+        { "@type": "Place", "name": "Harjumaa" },
+        { "@type": "Country", "name": "Estonia" }
       ],
       "description": "Libtek OÜ teostab elektritöid, elektripaigaldust, elektri projekteerimist, mõõdistusi ja dokumentatsiooni.",
       "founder": {
@@ -119,6 +110,7 @@
         :root {
             --bg-dark: #0f1115;
             --bg-light: #181b22;
+            --bg-card: #141820;
             --industrial-yellow: #ffae00;
             --text-light: #ffffff;
             --text-muted: #a7acb7;
@@ -146,9 +138,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 5%;
+            padding: 22px 5%;
             background-color: #0a0b0d;
             border-bottom: 2px solid var(--industrial-yellow);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .logo {
@@ -162,33 +157,75 @@
             color: var(--industrial-yellow);
         }
 
-        .nav-text {
-            font-weight: 700;
-            font-size: 0.85rem;
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
             color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.6px;
+        }
+
+        .nav-links a:hover {
+            color: var(--industrial-yellow);
         }
 
         .hero {
+            min-height: 62vh;
+            padding: 80px 5%;
             display: flex;
             align-items: center;
-            min-height: 52vh;
-            padding: 70px 5%;
             border-bottom: 1px solid var(--border-color);
             background:
-                linear-gradient(120deg, rgba(255, 174, 0, 0.13), transparent 35%),
-                linear-gradient(180deg, #101319 0%, #0f1115 100%);
+                linear-gradient(110deg, rgba(15, 17, 21, 0.95) 0%, rgba(15, 17, 21, 0.82) 47%, rgba(15, 17, 21, 0.98) 100%),
+                radial-gradient(circle at 72% 35%, rgba(255, 174, 0, 0.22), transparent 30%),
+                linear-gradient(135deg, #101319 0%, #0f1115 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -80px;
+            top: 50px;
+            width: 520px;
+            height: 320px;
+            border: 1px solid rgba(255, 174, 0, 0.28);
+            background:
+                linear-gradient(90deg, transparent 95%, rgba(255, 174, 0, 0.18) 95%),
+                linear-gradient(0deg, transparent 95%, rgba(255, 174, 0, 0.18) 95%);
+            background-size: 28px 28px;
+            transform: rotate(-8deg);
+            opacity: 0.7;
         }
 
         .hero-text {
             max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-kicker {
+            color: var(--industrial-yellow);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 900;
+            letter-spacing: 1.2px;
+            margin-bottom: 14px;
         }
 
         .hero-text h1 {
-            font-size: 3.2rem;
+            font-size: 3.35rem;
             font-weight: 900;
-            line-height: 1.15;
+            line-height: 1.12;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
@@ -200,7 +237,7 @@
         .hero-text p {
             font-size: 1.15rem;
             color: #c4c9d3;
-            max-width: 780px;
+            max-width: 800px;
             margin-bottom: 28px;
         }
 
@@ -213,53 +250,79 @@
 
         .hero-points span {
             border: 1px solid var(--border-color);
-            background-color: rgba(24, 27, 34, 0.75);
+            background-color: rgba(24, 27, 34, 0.78);
             color: #d7dbe3;
             padding: 8px 12px;
             font-size: 0.92rem;
-            font-weight: 700;
+            font-weight: 800;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
         }
 
         .btn-heavy {
             display: inline-block;
             background-color: var(--industrial-yellow);
             color: #000;
-            padding: 14px 35px;
+            padding: 14px 34px;
             font-size: 1rem;
-            font-weight: 800;
+            font-weight: 900;
             text-transform: uppercase;
             text-decoration: none;
             letter-spacing: 0.5px;
+            border: 2px solid var(--industrial-yellow);
         }
 
         .btn-heavy:hover {
             background-color: #e09900;
+            border-color: #e09900;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            color: #ffffff;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--industrial-yellow);
+            color: var(--industrial-yellow);
         }
 
         .section {
-            padding: 65px 5%;
+            padding: 70px 5%;
         }
 
         .section-title {
             font-size: 2rem;
             font-weight: 900;
             text-transform: uppercase;
-            margin-bottom: 40px;
+            margin-bottom: 38px;
             border-left: 5px solid var(--industrial-yellow);
             padding-left: 15px;
         }
 
         .section-intro {
-            max-width: 850px;
+            max-width: 900px;
             color: #c4c9d3;
             font-size: 1.05rem;
-            margin-top: -20px;
+            margin-top: -18px;
             margin-bottom: 35px;
         }
 
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
             gap: 25px;
         }
 
@@ -283,8 +346,8 @@
         }
 
         .card-content h3 {
-            font-size: 1.25rem;
-            font-weight: 800;
+            font-size: 1.22rem;
+            font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 10px;
             color: var(--industrial-yellow);
@@ -295,12 +358,130 @@
             font-size: 0.96rem;
         }
 
+        .trust-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 35px;
+        }
+
+        .trust-item {
+            border: 1px solid var(--border-color);
+            background-color: #11141a;
+            padding: 22px;
+        }
+
+        .trust-item strong {
+            display: block;
+            color: var(--industrial-yellow);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .trust-item span {
+            color: #c4c9d3;
+            font-size: 0.96rem;
+        }
+
+        .quote-section {
+            padding: 75px 5%;
+            background:
+                linear-gradient(120deg, rgba(255, 174, 0, 0.11), transparent 42%),
+                #11141a;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .quote-box {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--industrial-yellow);
+            padding: 42px;
+        }
+
+        .quote-head {
+            max-width: 760px;
+            margin-bottom: 28px;
+        }
+
+        .quote-head h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .quote-head p {
+            color: #c4c9d3;
+            font-size: 1rem;
+        }
+
+        .quote-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .quote-form input,
+        .quote-form select,
+        .quote-form textarea {
+            width: 100%;
+            background-color: #0f1115;
+            border: 1px solid var(--border-color);
+            color: #ffffff;
+            padding: 15px 16px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .quote-form input:focus,
+        .quote-form select:focus,
+        .quote-form textarea:focus {
+            border-color: var(--industrial-yellow);
+        }
+
+        .quote-form textarea {
+            resize: vertical;
+            min-height: 135px;
+        }
+
+        .quote-form button {
+            justify-self: start;
+            background-color: var(--industrial-yellow);
+            color: #000000;
+            border: 0;
+            padding: 15px 34px;
+            font-size: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .quote-form button:hover {
+            background-color: #e09900;
+        }
+
+        .form-note {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
         .about-box {
             background-color: var(--bg-light);
             border: 1px solid var(--border-color);
             border-left: 5px solid var(--industrial-yellow);
             padding: 32px;
-            max-width: 1000px;
+            max-width: 1050px;
         }
 
         .about-box p {
@@ -313,7 +494,6 @@
             margin-bottom: 0;
         }
 
-        /* KONTAKT - LAI TAUSTAKAST, VÄIKSEM TEKST */
         .contact-wrap {
             padding: 65px 2%;
         }
@@ -388,13 +568,22 @@
         @media (max-width: 768px) {
             nav {
                 align-items: flex-start;
-                gap: 10px;
+                gap: 12px;
                 flex-direction: column;
+                position: static;
+            }
+
+            .nav-links {
+                gap: 12px;
             }
 
             .hero {
                 min-height: auto;
                 padding: 55px 5%;
+            }
+
+            .hero::after {
+                display: none;
             }
 
             .hero-text h1 {
@@ -411,6 +600,22 @@
 
             .section-title {
                 font-size: 1.55rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-box {
+                padding: 28px 20px;
+            }
+
+            .quote-head h2 {
+                font-size: 1.55rem;
+            }
+
+            .quote-form button {
+                width: 100%;
             }
 
             .contact-wrap {
@@ -445,12 +650,18 @@
     <!-- NAVIGATSIOON -->
     <nav>
         <div class="logo">LIB<span>TEK</span> OÜ</div>
-        <div class="nav-text">Elektritööd • Projekteerimine • Paigaldus</div>
+        <div class="nav-links">
+            <a href="#teenused">Teenused</a>
+            <a href="#pakkumine">Küsi pakkumist</a>
+            <a href="#ettevottest">Libtek OÜ</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
     </nav>
 
     <!-- HERO -->
     <header class="hero">
         <div class="hero-text">
+            <div class="hero-kicker">Elektritööd • Projekteerimine • Paigaldus</div>
             <h1>Elektritööd ja <span>elektri projekteerimine</span></h1>
             <p>
                 Libtek OÜ teostab elektripaigaldustöid, elektriprojekteerimist, mõõdistusi ja dokumentatsiooni
@@ -465,7 +676,10 @@
                 <span>Dokumentatsioon</span>
             </div>
 
-            <a href="#kontakt" class="btn-heavy" onclick="trackContactClick('hero_kysi_pakkumist')">Küsi pakkumist</a>
+            <div class="btn-row">
+                <a href="#pakkumine" class="btn-heavy" onclick="trackContactClick('hero_kysi_pakkumist')">Küsi pakkumist</a>
+                <a href="tel:+37253461535" class="btn-outline" onclick="trackContactClick('hero_telefon')">Helista</a>
+            </div>
         </div>
     </header>
 
@@ -607,6 +821,65 @@
                 </div>
             </article>
 
+        </div>
+
+        <div class="trust-row">
+            <div class="trust-item">
+                <strong>Selge töömaht</strong>
+                <span>Kirjeldame enne töö alustamist, mida tehakse ja milline lahendus sobib objektile.</span>
+            </div>
+            <div class="trust-item">
+                <strong>Ohutus ja korrektsus</strong>
+                <span>Tööde eesmärk on nõuetekohane ja ohutu elektrilahendus.</span>
+            </div>
+            <div class="trust-item">
+                <strong>Üks kontakt</strong>
+                <span>Projekt, paigaldus, mõõtmised ja dokumentatsioon liiguvad ühe kontakti kaudu.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- KÜSI PAKKUMIST -->
+    <section class="quote-section" id="pakkumine">
+        <div class="quote-box">
+            <div class="quote-head">
+                <h2>Küsi pakkumist</h2>
+                <p>
+                    Täida vorm ja kirjelda lühidalt, millist elektritööd vajad. Päring saadetakse aadressile
+                    info@libtek.ee.
+                </p>
+            </div>
+
+            <form action="https://formsubmit.co/info@libtek.ee" method="POST" class="quote-form">
+                <input type="hidden" name="_subject" value="Uus hinnapäring Libtek veebilehelt">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+
+                <div class="form-row">
+                    <input type="text" name="Nimi" placeholder="Nimi" required>
+                    <input type="tel" name="Telefon" placeholder="Telefon" required>
+                </div>
+
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="E-post" required>
+                    <select name="Töö liik" required>
+                        <option value="">Vali töö liik</option>
+                        <option value="Elektri projekteerimine">Elektri projekteerimine</option>
+                        <option value="Elektripaigaldustööd">Elektripaigaldustööd</option>
+                        <option value="Mõõdistused ja dokumendid">Mõõdistused ja dokumendid</option>
+                        <option value="Muu elektritöö">Muu elektritöö</option>
+                    </select>
+                </div>
+
+                <textarea name="Töö kirjeldus" placeholder="Kirjelda lühidalt, millise tööga abi vajad" required></textarea>
+
+                <button type="submit" onclick="trackContactClick('vorm_saada_paring')">Saada päring</button>
+
+                <div class="form-note">
+                    Esimesel testimisel tuleb FormSubmiti kinnituskiri info@libtek.ee postkastis ära kinnitada.
+                </div>
+            </form>
         </div>
     </section>
 
