@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- GOOGLE SEO (See tekst ilmub Google otsingutulemuses, nagu pildil näha) -->
+    <!-- GOOGLE SEO -->
     <title>Elektritööd & Projekteerimine | Libtek OÜ</title>
     <meta name="description" content="Libtek OÜ teostab elektripaigaldustöid ja elektriprojekteerimist ideest teostuseni. Täisteenus ja nõuetekohane dokumentatsioon. Kirjuta: info@libtek.ee">
     <meta name="keywords" content="elektritööd, elektripaigaldus, elektri projekteerimine, elektrik, käidukorraldus, Libtek OÜ, Arman Liblik">
@@ -159,22 +159,14 @@
             border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
-        .card-icon-container {
+        .card-img {
             width: 100%;
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #11141a;
+            height: 220px;
+            object-fit: cover;
             border-bottom: 2px solid var(--border-color);
-        }
-
-        .card-icon-container svg {
-            width: 60px;
-            height: 60px;
-            fill: var(--industrial-yellow);
         }
 
         .card-content {
@@ -269,11 +261,8 @@
             
             <!-- KAART 1 -->
             <div class="work-card">
-                <div class="card-icon-container">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-2-4H7v-2h10v2zm0-4H7V9h10v2z"/>
-                    </svg>
-                </div>
+                <!-- Tehnilised juhtmed / skeemid -->
+                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=600&q=80" alt="Elektriprojekteerimise ettevalmistus" class="card-img">
                 <div class="card-content">
                     <h3>01. Elektri Projekteerimine</h3>
                     <p>Elektriprojektide, põhimõtteskeemide ja teostusjooniste koostamine. Tehniliselt korrektsed lahendused enne ehitustööde algust.</p>
@@ -282,11 +271,8 @@
 
             <!-- KAART 2 -->
             <div class="work-card">
-                <div class="card-icon-container">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M7 2v11h3v9l7-12h-4l4-8H7z"/>
-                    </svg>
-                </div>
+                <!-- Puhas vaade elektrikilbist ja installatsioonist -->
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Elektrikilbi ehitus ja paigaldus" class="card-img">
                 <div class="card-content">
                     <h3>02. Elektripaigaldustööd</h3>
                     <p>Kaablite vedu, jaotuskilpide montaaž, pistikupesade, lülitite ja valgustite paigaldus. Tugev- ja nõrkvoolusüsteemide ehitus.</p>
@@ -295,11 +281,8 @@
 
             <!-- KAART 3 -->
             <div class="work-card">
-                <div class="card-icon-container">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/>
-                    </svg>
-                </div>
+                <!-- Kaablid ja mõõteriistad -->
+                <img src="https://images.unsplash.com/photo-1618577462001-cc6ca28da242?auto=format&fit=crop&w=600&q=80" alt="Elektrikaablid ja testimine" class="card-img">
                 <div class="card-content">
                     <h3>03. Mõõdistused & Dokumendid</h3>
                     <p>Isolatsioonitakistuse mõõtmised, maanduse kontroll ja nõuetekohasuse deklaratsioonide vormistamine elektriauditi ja kasutusloa jaoks.</p>
@@ -312,7 +295,7 @@
     <!-- KONTAKT -->
     <section id="kontakt" class="section">
         <div class="contact-section">
-            <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase;">Kontakt</h2>
+            <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase;">Contact</h2>
             <p style="color: var(--text-muted); font-size: 1rem; margin-top: 5px;">Hinnapakkumise saamiseks saatke objekti info või projekt meilile.</p>
             
             <div class="contact-grid">
