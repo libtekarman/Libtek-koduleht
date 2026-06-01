@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- GOOGLE SEO -->
-    <title>Elektritööd & Projekteerimine | Libtek OÜ</title>
-    <meta name="description" content="Libtek OÜ teostab elektripaigaldustöid ja elektriprojekteerimist ideest teostuseni. Täisteenus ja nõuetekohane documentation. Kirjuta: info@libtek.ee">
+    <title>Elektritööd ja Projekteerimine | Libtek OÜ</title>
+    <meta name="description" content="Libtek OÜ teostab elektripaigaldustöid ja elektriprojekteerimist ideest teostuseni. Täisteenus ja nõuetekohane dokumentatsioon. Kirjuta: info@libtek.ee">
     <meta name="keywords" content="elektritööd, elektripaigaldus, elektri projekteerimine, elektrik, käidukorraldus, Libtek OÜ, Arman Liblik">
     <meta name="author" content="Arman Liblik">
 
-    <!-- GOOGLE SCHEMA & SEARCHBOX -->
+    <!-- GOOGLE SCHEMA & SEARCHBOX KOOD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -157,14 +157,6 @@
             overflow: hidden;
         }
 
-        /* Korrektne ja puhas pildikast */
-        .card-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-bottom: 2px solid var(--border-color);
-        }
-
         .card-content {
             padding: 25px;
         }
@@ -227,63 +219,103 @@
         }
 
         @media (max-width: 768px) {
-            .hero-text h1 { font-size: 2.2rem; }
-            .section-title { font-size: 1.6rem; }
+            .hero-text h1 { 
+                font-size: 2.2rem; 
+            }
+
+            .section-title { 
+                font-size: 1.6rem; 
+            }
         }
     </style>
 </head>
+
 <body>
 
+    <!-- NAVIGATSIOON -->
     <nav>
         <div class="logo">LIBTEK<span> OÜ</span></div>
         <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-muted);">PROJEKTEERIMINE & EHITUS</div>
     </nav>
 
+    <!-- HERO SEKTSIOON -->
     <section class="hero">
         <div class="hero-text">
             <h1>Elektritööd <span>projekteerimisest teostuseni</span>.</h1>
-            <p>Libtek OÜ teostab professionaalseid elektripaigaldustöid ja koostab nõuetekohaseid elektriprojekte nii era- kui ka äriklientidele.</p>
-            <a href="#kontakt" class="btn-heavy">Uuri lisaks</a>
+            <p>Libtek OÜ teostab elektripaigaldustöid ja elektriprojekteerimist era- ja äriklientidele. Töö tehakse korrektselt, ohutult ja kokkulepitud lahenduse järgi.</p>
+            <a href="#kontakt" class="btn-heavy">Võta ühendust</a>
         </div>
     </section>
 
+    <!-- TEENUSED -->
     <section class="section">
         <h2 class="section-title">Teenused</h2>
+
         <div class="grid-3">
             
-            <!-- KAART 1: PROJEKTEERIMINE -->
+            <!-- KAART 1 -->
             <div class="work-card">
-                <!-- AJUTINE KOHTAHOIDJA: asenda see tekst reaalne_pilt.jpg failiga, kui sul see olemas on -->
-                <img src="https://placehold.co/600x400/11141a/ffae00?text=ELEKTRI+PROJEKTEERIMINE" alt="Elektriprojekteerimine" class="card-img">
+
+                <div style="height:220px; background:#11141a; border-bottom:2px solid #2c313c; display:flex; align-items:center; justify-content:center;">
+                    <svg width="105" height="105" viewBox="0 0 64 64" fill="none" stroke="#ffae00" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                        <rect x="14" y="10" width="36" height="44"></rect>
+                        <path d="M22 22h20"></path>
+                        <path d="M22 30h14"></path>
+                        <path d="M22 38h20"></path>
+                        <path d="M46 14l4-4"></path>
+                    </svg>
+                </div>
+
                 <div class="card-content">
-                    <h3>01. Elektri Projekteerimine</h3>
+                    <h3>01. Elektri projekteerimine</h3>
                     <p>Elektriprojektide, põhimõtteskeemide ja teostusjooniste koostamine. Tehniliselt korrektsed lahendused enne ehitustööde algust.</p>
                 </div>
             </div>
 
-            <!-- KAART 2: ELEKTRIPAIGALDUS -->
+            <!-- KAART 2 -->
             <div class="work-card">
-                <!-- AJUTINE KOHTAHOIDJA -->
-                <img src="https://placehold.co/600x400/11141a/ffae00?text=ELEKTRIPAIGALDUSTÖÖD" alt="Elektripaigaldustööd" class="card-img">
+
+                <div style="height:220px; background:#11141a; border-bottom:2px solid #2c313c; display:flex; align-items:center; justify-content:center;">
+                    <svg width="105" height="105" viewBox="0 0 64 64" fill="none" stroke="#ffae00" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                        <rect x="14" y="10" width="36" height="44"></rect>
+                        <path d="M24 20h16"></path>
+                        <path d="M24 30h16"></path>
+                        <path d="M24 40h16"></path>
+                        <path d="M18 20h3"></path>
+                        <path d="M18 30h3"></path>
+                        <path d="M18 40h3"></path>
+                    </svg>
+                </div>
+
                 <div class="card-content">
                     <h3>02. Elektripaigaldustööd</h3>
                     <p>Kaablite vedu, jaotuskilpide montaaž, pistikupesade, lülitite ja valgustite paigaldus. Tugev- ja nõrkvoolusüsteemide ehitus.</p>
                 </div>
             </div>
 
-            <!-- KAART 3: MÕÕDISTUSED -->
+            <!-- KAART 3 -->
             <div class="work-card">
-                <!-- AJUTINE KOHTAHOIDJA -->
-                <img src="https://placehold.co/600x400/11141a/ffae00?text=MÕÕDISTUSED+JA+DOKUMENDID" alt="Mõõdistused ja dokumendid" class="card-img">
+
+                <div style="height:220px; background:#11141a; border-bottom:2px solid #2c313c; display:flex; align-items:center; justify-content:center;">
+                    <svg width="105" height="105" viewBox="0 0 64 64" fill="none" stroke="#ffae00" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+                        <rect x="16" y="16" width="32" height="32" rx="3"></rect>
+                        <path d="M24 36h16"></path>
+                        <path d="M28 28l4-6 4 6"></path>
+                        <path d="M22 48v6"></path>
+                        <path d="M42 48v6"></path>
+                    </svg>
+                </div>
+
                 <div class="card-content">
-                    <h3>03. Mõõdistused & Dokumendid</h3>
-                    <p>Isolatsioonitakistuse mõõtmised, maanduse kontroll ja nõuetekohasuse deklaratsioonide vormistamine elektriauditi ja kasutusloa jaoks.</p>
+                    <h3>03. Mõõdistused ja dokumendid</h3>
+                    <p>Elektripaigaldise mõõtmised, maanduse kontroll ja dokumentide vormistamine elektriauditi või kasutusloa jaoks.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
+    <!-- KONTAKT -->
     <section id="kontakt" class="section">
         <div class="contact-section">
             <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase;">Kontakt</h2>
@@ -294,10 +326,12 @@
                     <h4>Ettevõtte juht</h4>
                     <p>Arman Liblik</p>
                 </div>
+
                 <div class="contact-item">
                     <h4>Telefon</h4>
                     <a href="tel:+37253461535">+372 5346 1535</a>
                 </div>
+
                 <div class="contact-item">
                     <h4>E-post</h4>
                     <a href="mailto:info@libtek.ee">info@libtek.ee</a>
@@ -306,6 +340,7 @@
         </div>
     </section>
 
+    <!-- JALUS -->
     <footer>
         <p>&copy; 2026 Libtek OÜ. Kõik õigused kaitstud.</p>
     </footer>
