@@ -16,7 +16,7 @@
     <link rel="canonical" href="https://www.libtek.ee/">
 
     <!-- GOOGLE SEARCH CONSOLE -->
-    <!-- Asenda see hiljem Google Search Console kinnituskoodiga -->
+    <!-- Asenda see Google Search Console kinnituskoodiga -->
     <meta name="google-site-verification" content="SIIA_GOOGLE_SEARCH_CONSOLE_KOOD">
 
     <!-- GOOGLE ADS / GOOGLE ANALYTICS -->
@@ -86,18 +86,9 @@
         "addressLocality": "Tallinn"
       },
       "areaServed": [
-        {
-          "@type": "Place",
-          "name": "Tallinn"
-        },
-        {
-          "@type": "Place",
-          "name": "Harjumaa"
-        },
-        {
-          "@type": "Country",
-          "name": "Estonia"
-        }
+        { "@type": "Place", "name": "Tallinn" },
+        { "@type": "Place", "name": "Harjumaa" },
+        { "@type": "Country", "name": "Estonia" }
       ],
       "description": "Libtek OÜ teostab elektritöid, elektripaigaldust, elektri projekteerimist, mõõdistusi ja dokumentatsiooni.",
       "founder": {
@@ -150,6 +141,7 @@
             --orange-dark: #d97706;
             --orange-soft: #fff7ed;
             --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+            --shadow-strong: 0 25px 60px rgba(15, 23, 42, 0.16);
         }
 
         * {
@@ -169,12 +161,9 @@
             line-height: 1.6;
         }
 
-        a {
-            color: inherit;
-        }
-
         nav {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             padding: 20px 6%;
             display: flex;
@@ -229,7 +218,7 @@
         }
 
         .hero {
-            padding: 80px 6%;
+            padding: 82px 6%;
             background:
                 linear-gradient(110deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.93) 52%, rgba(255,247,237,0.95) 100%);
             border-bottom: 1px solid var(--border);
@@ -337,11 +326,9 @@
         .hero-card {
             background: var(--dark);
             color: var(--white);
-            border-radius: 0;
             box-shadow: var(--shadow);
             border-top: 5px solid var(--orange);
             padding: 34px;
-            position: relative;
         }
 
         .hero-card h2 {
@@ -381,7 +368,7 @@
         }
 
         section {
-            padding: 74px 6%;
+            padding: 78px 6%;
         }
 
         .section-inner {
@@ -404,99 +391,170 @@
             color: var(--muted);
             font-size: 1.05rem;
             margin-top: -16px;
-            margin-bottom: 36px;
+            margin-bottom: 42px;
         }
 
-        .grid-3 {
+        .service-showcase {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr 1.15fr 1fr;
             gap: 24px;
+            align-items: stretch;
         }
 
-        .service-card {
+        .image-service-card {
             background: var(--white);
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             min-height: 100%;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .service-head {
-            height: 155px;
+        .image-service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .featured-service {
+            transform: translateY(-14px);
+        }
+
+        .featured-service:hover {
+            transform: translateY(-22px);
+        }
+
+        .service-photo {
+            height: 285px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 26px;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .featured-service .service-photo {
+            height: 330px;
+        }
+
+        .service-photo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
             background:
-                linear-gradient(135deg, #fff7ed 0%, #ffffff 75%);
-            border-bottom: 1px solid var(--border);
+                linear-gradient(180deg, rgba(17,24,39,0.05) 0%, rgba(17,24,39,0.82) 100%);
+            z-index: 0;
+        }
+
+        .service-number,
+        .service-label {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-number {
+            position: absolute;
+            top: 22px;
+            left: 22px;
+            width: 54px;
+            height: 54px;
+            border: 2px solid var(--orange);
+            background: rgba(17, 24, 39, 0.78);
+            color: var(--orange);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 24px;
+            font-weight: 900;
+            font-size: 1.05rem;
         }
 
-        .service-icon {
-            width: 86px;
-            height: 86px;
-            border: 3px solid var(--orange);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--white);
+        .service-label {
+            font-size: 1.55rem;
+            line-height: 1.1;
+            font-weight: 900;
+            text-transform: uppercase;
+            max-width: 340px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.35);
         }
 
-        .service-icon svg {
-            width: 48px;
-            height: 48px;
-            fill: none;
-            stroke: var(--orange-dark);
-            stroke-width: 3;
-            stroke-linecap: square;
-            stroke-linejoin: miter;
-        }
-
-        .card-content {
+        .image-service-content {
             padding: 26px;
         }
 
-        .card-content h3 {
+        .image-service-content h3 {
             color: var(--dark);
-            font-size: 1.15rem;
+            font-size: 1.18rem;
             font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 10px;
         }
 
-        .card-content h3 span {
-            color: var(--orange-dark);
-        }
-
-        .card-content p {
+        .image-service-content p {
             color: var(--muted);
             font-size: 0.98rem;
         }
 
-        .trust-row {
+        .process-block {
+            margin-top: 56px;
+            background: var(--dark);
+            color: var(--white);
+            padding: 42px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--orange);
+        }
+
+        .process-head {
+            max-width: 780px;
+            margin-bottom: 30px;
+        }
+
+        .process-head span {
+            color: var(--orange);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.88rem;
+        }
+
+        .process-head h3 {
+            margin-top: 10px;
+            font-size: 1.85rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .process-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 18px;
-            margin-top: 28px;
         }
 
-        .trust-item {
-            background: var(--white);
-            border: 1px solid var(--border);
+        .process-item {
+            background: #0b1220;
+            border: 1px solid #334155;
             padding: 24px;
         }
 
-        .trust-item strong {
-            display: block;
-            color: var(--dark);
+        .process-step {
+            color: var(--orange);
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .process-item h4 {
+            font-size: 1.05rem;
             text-transform: uppercase;
-            font-size: 0.95rem;
             margin-bottom: 8px;
         }
 
-        .trust-item span {
-            color: var(--muted);
+        .process-item p {
+            color: #cbd5e1;
             font-size: 0.96rem;
         }
 
@@ -673,13 +731,29 @@
             font-size: 0.9rem;
         }
 
-        @media (max-width: 950px) {
+        @media (max-width: 1050px) {
             .hero-inner {
                 grid-template-columns: 1fr;
             }
 
-            .grid-3,
-            .trust-row {
+            .service-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-service {
+                transform: none;
+            }
+
+            .featured-service:hover {
+                transform: translateY(-8px);
+            }
+
+            .service-photo,
+            .featured-service .service-photo {
+                height: 270px;
+            }
+
+            .process-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -719,6 +793,18 @@
 
             .section-title {
                 font-size: 1.55rem;
+            }
+
+            .service-label {
+                font-size: 1.3rem;
+            }
+
+            .process-block {
+                padding: 30px 22px;
+            }
+
+            .process-head h3 {
+                font-size: 1.45rem;
             }
 
             .form-row {
@@ -769,7 +855,7 @@
 
                 <p>
                     Libtek OÜ teostab elektripaigaldustöid, elektri projekteerimist, mõõdistusi ja dokumentatsiooni
-                    era- ning äriklientidele. Selge töömaht, korrektne teostus ja kokkulepetest kinnipidamine.
+                    era- ning äriklientidele. Selge lahendus, korrektne teostus ja töö lõpuni välja.
                 </p>
 
                 <div class="hero-points">
@@ -787,9 +873,10 @@
             </div>
 
             <div class="hero-card">
-                <h2>Elektrilahendused objektile</h2>
+                <h2>Elektrilahendus objektile</h2>
+
                 <p>
-                    Aitame tööde planeerimisel, paigaldusel ja vajalike dokumentide vormistamisel.
+                    Olgu vaja projekti, paigaldust, kilbitööd või dokumentatsiooni — paneme töö loogiliselt paika ja viime lõpuni.
                 </p>
 
                 <div class="panel-visual">
@@ -797,17 +884,20 @@
                         <span>Projekt</span>
                         <strong>Skeemid ja joonised</strong>
                     </div>
+
                     <div class="panel-line">
                         <span>Paigaldus</span>
-                        <strong>Kaablid ja kilbid</strong>
+                        <strong>Kaablid, kilbid, valgustus</strong>
                     </div>
+
                     <div class="panel-line">
                         <span>Kontroll</span>
                         <strong>Mõõdistused</strong>
                     </div>
+
                     <div class="panel-line">
-                        <span>Tulemus</span>
-                        <strong>Korras dokumentatsioon</strong>
+                        <span>Lõpp</span>
+                        <strong>Dokumentatsioon</strong>
                     </div>
                 </div>
             </div>
@@ -820,94 +910,83 @@
             <h2 class="section-title">Teenused</h2>
 
             <p class="section-intro">
-                Libtek OÜ pakub elektritööde terviklahendusi alates projekti koostamisest kuni paigalduse,
-                mõõdistuste ja vajaliku dokumentatsiooni vormistamiseni.
+                Libtek OÜ aitab elektritöödega alates esimesest plaanist kuni valmis lahenduseni.
+                Teeme projekte, paigaldustöid, mõõdistusi ja vajalikku dokumentatsiooni.
             </p>
 
-            <div class="grid-3">
-                <article class="service-card">
-                    <div class="service-head">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 64 64" aria-hidden="true">
-                                <rect x="14" y="10" width="36" height="44"></rect>
-                                <path d="M22 22h20"></path>
-                                <path d="M22 31h14"></path>
-                                <path d="M22 40h20"></path>
-                                <path d="M45 15l6-6"></path>
-                            </svg>
-                        </div>
+            <div class="service-showcase">
+
+                <article class="image-service-card">
+                    <div class="service-photo" style="background-image: linear-gradient(rgba(17,24,39,0.15), rgba(17,24,39,0.75)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="service-number">01</div>
+                        <div class="service-label">Projekt ja lahendus</div>
                     </div>
 
-                    <div class="card-content">
-                        <h3><span>01.</span> Elektri projekteerimine</h3>
+                    <div class="image-service-content">
+                        <h3>Elektri projekteerimine</h3>
                         <p>
-                            Elektriprojektide, põhimõtteskeemide ja teostusjooniste koostamine.
-                            Tehniliselt korrektsed lahendused enne ehitus- ja paigaldustööde algust.
+                            Elektriprojektid, põhimõtteskeemid ja teostusjoonised. Lahendus pannakse paika enne,
+                            kui töö objektil algab.
                         </p>
                     </div>
                 </article>
 
-                <article class="service-card">
-                    <div class="service-head">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 64 64" aria-hidden="true">
-                                <rect x="12" y="10" width="40" height="44"></rect>
-                                <path d="M22 20h20"></path>
-                                <path d="M22 30h20"></path>
-                                <path d="M22 40h20"></path>
-                                <path d="M17 20h2"></path>
-                                <path d="M17 30h2"></path>
-                                <path d="M17 40h2"></path>
-                            </svg>
-                        </div>
+                <article class="image-service-card featured-service">
+                    <div class="service-photo" style="background-image: linear-gradient(rgba(17,24,39,0.12), rgba(17,24,39,0.78)), url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="service-number">02</div>
+                        <div class="service-label">Paigaldus ja ehitus</div>
                     </div>
 
-                    <div class="card-content">
-                        <h3><span>02.</span> Elektripaigaldustööd</h3>
+                    <div class="image-service-content">
+                        <h3>Elektripaigaldustööd</h3>
                         <p>
-                            Kaablite vedu, jaotuskilpide montaaž, pistikupesade, lülitite ja valgustite paigaldus.
-                            Tugev- ja nõrkvoolusüsteemide ehitus.
+                            Kaablite vedu, jaotuskilpide montaaž, pistikupesad, lülitid, valgustid ning
+                            tugev- ja nõrkvoolusüsteemide ehitus.
                         </p>
                     </div>
                 </article>
 
-                <article class="service-card">
-                    <div class="service-head">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 64 64" aria-hidden="true">
-                                <rect x="16" y="14" width="32" height="34" rx="3"></rect>
-                                <path d="M24 36h16"></path>
-                                <path d="M28 28l4-7 4 7"></path>
-                                <path d="M23 48v7"></path>
-                                <path d="M41 48v7"></path>
-                            </svg>
-                        </div>
+                <article class="image-service-card">
+                    <div class="service-photo" style="background-image: linear-gradient(rgba(17,24,39,0.16), rgba(17,24,39,0.78)), url('https://images.unsplash.com/photo-1603732551658-5fabbafa84eb?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="service-number">03</div>
+                        <div class="service-label">Kontroll ja dokumendid</div>
                     </div>
 
-                    <div class="card-content">
-                        <h3><span>03.</span> Mõõdistused ja dokumendid</h3>
+                    <div class="image-service-content">
+                        <h3>Mõõdistused ja dokumentatsioon</h3>
                         <p>
-                            Elektripaigaldise mõõtmised, maanduse kontroll ja dokumentide vormistamine
-                            elektriauditi või kasutusloa jaoks.
+                            Elektripaigaldise mõõtmised, kontroll ja dokumentide vormistamine elektriauditi
+                            või kasutusloa jaoks.
                         </p>
                     </div>
                 </article>
+
             </div>
 
-            <div class="trust-row">
-                <div class="trust-item">
-                    <strong>Selge töömaht</strong>
-                    <span>Enne töö alustamist on arusaadav, mida tehakse ja milline lahendus sobib objektile.</span>
+            <div class="process-block">
+                <div class="process-head">
+                    <span>Kuidas töö käib?</span>
+                    <h3>Lihtne, selge ja ilma üleliigse keerutamiseta.</h3>
                 </div>
 
-                <div class="trust-item">
-                    <strong>Ohutus ja korrektsus</strong>
-                    <span>Tööde eesmärk on nõuetekohane ja ohutu elektrilahendus.</span>
-                </div>
+                <div class="process-grid">
+                    <div class="process-item">
+                        <div class="process-step">01</div>
+                        <h4>Kirjeldad töö ära</h4>
+                        <p>Saadad info, pildid, projekti või lühikese kirjelduse, mida on vaja teha.</p>
+                    </div>
 
-                <div class="trust-item">
-                    <strong>Üks kontakt</strong>
-                    <span>Projekt, paigaldus, mõõtmised ja dokumentatsioon liiguvad ühe kontakti kaudu.</span>
+                    <div class="process-item">
+                        <div class="process-step">02</div>
+                        <h4>Paneme lahenduse paika</h4>
+                        <p>Vaatame töö läbi ja ütleme, milline lahendus on mõistlik ja teostatav.</p>
+                    </div>
+
+                    <div class="process-item">
+                        <div class="process-step">03</div>
+                        <h4>Teeme töö valmis</h4>
+                        <p>Paigaldus, kontroll, mõõtmised ja vajadusel dokumentatsioon liiguvad lõpuni.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -919,6 +998,7 @@
             <div class="quote-box">
                 <div class="quote-head">
                     <h2>Küsi pakkumist</h2>
+
                     <p>
                         Täida vorm ja kirjelda lühidalt, millist elektritööd vajad.
                         Päring saadetakse aadressile info@libtek.ee.
@@ -977,7 +1057,7 @@
                 </p>
 
                 <p>
-                    Eesmärk on pakkuda kliendile selget, ohutut ja nõuetekohast lahendust,
+                    Eesmärk on pakkuda kliendile selget, praktilist ja nõuetekohast elektrilahendust,
                     mis sobib konkreetse objekti vajadustega.
                 </p>
             </div>
@@ -988,6 +1068,7 @@
     <section id="kontakt" class="contact-wrap">
         <div class="contact-section">
             <h2>Võta ühendust</h2>
+
             <p>Kirjelda lühidalt, millise elektritöö või projektiga abi vajad.</p>
 
             <div class="contact-info">
