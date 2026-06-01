@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- GOOGLE SEO -->
     <title>Elektritööd & Projekteerimine | Libtek OÜ</title>
     <meta name="description" content="Libtek OÜ: Professionaalsed elektritööd ja elektri projekteerimine ideest teostuseni. Täisteenus, korrektne asjaajamine ja vastupidav ehitus. Arman Liblik.">
     <meta name="keywords" content="elektritööd, elektripaigaldus, elektri projekteerimine, elektrik, tööstuslik elekter, Libtek, Arman Liblik">
     <meta name="author" content="Arman Liblik">
 
-    <!-- GOOGLE SCHEMA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -31,11 +29,11 @@
     </script>
 
     <style>
-        /* --- TÖÖSTUSLIK JA JÕULINE MEHELIK DISAIN --- */
+        /* --- PUHAS JA TEHNILINE DISAIN --- */
         :root {
-            --bg-dark: #0f1115;      /* Matt must / tume teras */
-            --bg-light: #181b22;     /* Tumehall betooni toon */
-            --industrial-yellow: #ffae00; /* Hoiatuskollane / rasketööstus */
+            --bg-dark: #0f1115;      /* Matt must */
+            --bg-light: #181b22;     /* Tumehall */
+            --industrial-yellow: #ffae00; /* Tööstuslik kollane */
             --text-light: #ffffff;
             --text-muted: #9a9ea7;
             --border-color: #2c313c;
@@ -45,13 +43,12 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Impact', 'Arial Black', sans-serif; /* Jõuline kiri pealkirjadele */
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif; /* Puhas ja loetav font */
         }
 
         body {
             background-color: var(--bg-dark);
             color: var(--text-light);
-            font-family: 'Arial', sans-serif; /* Loetav tekst sisu jaoks */
             line-height: 1.6;
         }
 
@@ -66,8 +63,8 @@
         }
 
         .logo {
-            font-family: 'Impact', sans-serif;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
+            font-weight: 800;
             letter-spacing: 1px;
             color: var(--text-light);
         }
@@ -76,27 +73,34 @@
             color: var(--industrial-yellow);
         }
 
-        /* HERO SEKTSIOON (Karm ja konkreetne) */
+        /* HERO SEKTSIOON (Ilma taustapildita, puhas ja konkreetne) */
         .hero {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            min-height: 75vh;
+            display: flex;
             align-items: center;
+            min-height: 60vh;
             padding: 0 5%;
-            background: linear-gradient(rgba(15, 17, 21, 0.85), rgba(15, 17, 21, 0.85)), 
-                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1500&q=80');
-            background-size: cover;
-            background-position: center;
+            background: #0f1115;
+            position: relative;
             border-bottom: 1px solid var(--border-color);
         }
 
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            border-right: 4px solid var(--industrial-yellow);
+            border-top: 4px solid var(--industrial-yellow);
+            opacity: 0.2;
+        }
+
         .hero-text h1 {
-            font-family: 'Impact', sans-serif;
-            font-size: 4rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.05;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
             margin-bottom: 20px;
+            max-width: 800px;
         }
 
         .hero-text h1 span {
@@ -106,29 +110,26 @@
         .hero-text p {
             font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 600px;
+            max-width: 650px;
             margin-bottom: 35px;
-            font-weight: bold;
         }
 
-        /* Kandiline, massiivne nupp */
+        /* Kandiline massiivne nupp */
         .btn-heavy {
             display: inline-block;
             background-color: var(--industrial-yellow);
             color: #000;
-            padding: 18px 45px;
-            font-family: 'Impact', sans-serif;
-            font-size: 1.3rem;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
             text-transform: uppercase;
             text-decoration: none;
             letter-spacing: 1px;
             transition: background 0.2s;
-            border: none;
         }
 
         .btn-heavy:hover {
             background-color: #e09900;
-            cursor: pointer;
         }
 
         /* SEKTSIOONID JA TEENUSTE BLOKID */
@@ -137,11 +138,11 @@
         }
 
         .section-title {
-            font-family: 'Impact', sans-serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
+            font-weight: 800;
             text-transform: uppercase;
             margin-bottom: 50px;
-            border-left: 8px solid var(--industrial-yellow);
+            border-left: 6px solid var(--industrial-yellow);
             padding-left: 20px;
         }
 
@@ -161,12 +162,7 @@
             width: 100%;
             height: 240px;
             object-fit: cover;
-            filter: grayscale(30%); /* Teeb pildid karmimaks */
             border-bottom: 4px solid var(--border-color);
-        }
-
-        .card-img:hover {
-            filter: grayscale(0%);
         }
 
         .card-content {
@@ -174,8 +170,8 @@
         }
 
         .card-content h3 {
-            font-family: 'Impact', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
+            font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 12px;
             color: var(--industrial-yellow);
@@ -186,26 +182,28 @@
             font-size: 1rem;
         }
 
-        /* MEIE PÕHIMÕTE - OTSEKOHENE TEKST */
+        /* MEIE PÕHIMÕTE */
         .core-values {
             background-color: #0a0b0d;
-            padding: 60px 40px;
-            border: 2px solid var(--border-color);
+            padding: 50px 40px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--industrial-yellow);
             margin: 40px 0;
         }
 
         .core-values h3 {
-            font-family: 'Impact', sans-serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 15px;
             color: #fff;
         }
 
-        /* KONTAKTPLOKK (Selge ja loetav) */
+        /* KONTAKT */
         .contact-section {
             background-color: var(--bg-light);
-            border: 2px solid var(--industrial-yellow);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--industrial-yellow);
             padding: 50px;
             margin-top: 40px;
         }
@@ -218,8 +216,8 @@
         }
 
         .contact-item h4 {
-            font-family: 'Impact', sans-serif;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
+            font-weight: 700;
             text-transform: uppercase;
             color: var(--text-muted);
             margin-bottom: 8px;
@@ -227,8 +225,8 @@
         }
 
         .contact-item p, .contact-item a {
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 1.6rem;
+            font-weight: 700;
             color: #fff;
             text-decoration: none;
         }
@@ -248,65 +246,59 @@
         }
 
         @media (max-width: 900px) {
-            .hero { grid-template-columns: 1fr; text-align: center; padding: 60px 5%; }
-            .hero-text h1 { font-size: 2.8rem; }
-            .section-title { font-size: 2.2rem; }
+            .hero { text-align: center; padding: 60px 5%; justify-content: center; }
+            .hero::after { display: none; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATSIOON -->
     <nav>
         <div class="logo">LIBTEK<span> OÜ</span></div>
-        <div style="font-family: 'Impact', sans-serif; font-size: 1.1rem; letter-spacing: 1px; color: var(--text-muted);">ELEKTRISÜSTEEMID</div>
+        <div style="font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; color: var(--text-muted);">ELEKTRISÜSTEEMID</div>
     </nav>
 
-    <!-- HERO SEKTSIOON -->
     <section class="hero">
         <div class="hero-text">
             <h1>Projektist kuni <span>ehituse lõpuni</span>.</h1>
             <p>Me ei tee tühje lubadusi ega jäta objekte pooleli. Libtek OÜ teostab professionaalsed elektritööd ja projekteerimise tähtaegadest kinni pidades.</p>
-            <a href="#kontakt" class="btn-heavy">Võta ühendust</a>
+            <a href="#kontakt" class="btn-heavy">Uuri lisaks</a>
         </div>
     </section>
 
-    <!-- TEENUSED JA TEHNILISED PILDID -->
     <section class="section">
         <h2 class="section-title">Tehtavad tööd</h2>
         <div class="grid-3">
             
-            <!-- KAART 1 -->
             <div class="work-card">
-                <img src="https://images.unsplash.com/photo-1581094719216-fdac10b91223?auto=format&fit=crop&w=600&q=80" alt="Elektri projekteerimine" class="card-img">
+                <img src="https://images.unsplash.com/photo-1503387762458-bf488993ef30?auto=format&fit=crop&w=600&q=80" alt="Elektri projekteerimine ja joonised" class="card-img">
                 <div class="card-content">
                     <h3>01. Elektri Projekteerimine</h3>
-                    <p>Põhjalikud ja nõuetekohased elektriprojektid ja joonised. Läbimõeldud plaan hoiab ära probleemid ehitusplatsil.</p>
+                    <p>Põhjalikud ja nõuetekohased elektriprojektid ning joonised. Läbimõeldud plaan hoiab ära ootamatud probleemid ehitusplatsil.</p>
                 </div>
             </div>
 
-            <!-- KAART 2 -->
             <div class="work-card">
-                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Elektripaigaldustööd" class="card-img">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Elektrijuhtmed ja kilbitööd" class="card-img">
                 <div class="card-content">
                     <h3>02. Elektripaigaldus & Ehitus</h3>
-                    <p>Kaablite vedu, kilpide koostamine ja seadmete paigaldus. Teostus on puhas, sirge ja vastab standarditele.</p>
+                    <p>Kaablite vedu, kilpide koostamine ja seadmete paigaldus. Teostus on puhas, sirge ja vastab kehtivatele ehitusstandarditele.</p>
                 </div>
             </div>
 
-            <!-- KAART 3 -->
             <div class="work-card">
-                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Elektri audit ja mõõdistus" class="card-img">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Mõõteriistad ja audit" class="card-img">
                 <div class="card-content">
                     <h3>03. Mõõdistused & Dokumentatsioon</h3>
-                    <p>Teostusjoonised, nõuetekohasuse deklaratsioonid ja elektriauditid. Vormistame dokumendid, et objekt saaks kasutusloa.</p>
+                    <p>Teostusjoonised, nõuetekohasuse deklaratsioonid ja elektriauditid. Vormistame vajalikud dokumendid, et objekt saaks kasutusloa.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- OTSEKOHENE LUBADUS -->
     <section class="section" style="padding-top: 0; padding-bottom: 0;">
         <div class="core-values">
             <h3>Korrektne asjaajamine</h3>
@@ -316,10 +308,9 @@
         </div>
     </section>
 
-    <!-- KONTAKT -->
     <section id="kontakt" class="section">
         <div class="contact-section">
-            <h2 style="font-family: 'Impact', sans-serif; font-size: 2.5rem; text-transform: uppercase; margin-bottom: 10px;">Projektide vastuvõtt</h2>
+            <h2 style="font-size: 2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 10px;">Projektide vastuvõtt</h2>
             <p style="color: var(--text-muted); font-size: 1.1rem;">Saada plaanid meilile või helista otse.</p>
             
             <div class="contact-grid">
@@ -339,7 +330,6 @@
         </div>
     </section>
 
-    <!-- JALUS -->
     <footer>
         <p>&copy; 2026 Libtek OÜ. Kõik õigused kaitstud. Elektripaigaldus ja projekteerimine.</p>
     </footer>
