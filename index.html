@@ -23,8 +23,8 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-XXXXXXXXXX');   /* Google Analytics */
-        gtag('config', 'AW-XXXXXXXXXX');  /* Google Ads */
+        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'AW-XXXXXXXXXX');
 
         function trackContactClick(actionName) {
             if (typeof gtag === 'function') {
@@ -47,7 +47,7 @@
 
     <meta name="theme-color" content="#ffae00">
 
-    <!-- STRUCTURED DATA -->
+    <!-- GOOGLE STRUCTURED DATA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -313,57 +313,60 @@
             margin-bottom: 0;
         }
 
-        /* SUUR KONTAKTIKAST */
+        /* KONTAKT - LAI TAUSTAKAST, VÄIKSEM TEKST */
+        .contact-wrap {
+            padding: 65px 2%;
+        }
+
         .contact-section {
             width: 100%;
-            max-width: 1200px;
-            margin: 20px auto 0 auto;
+            max-width: none;
+            margin: 0 auto;
             background-color: var(--bg-light);
             border: 1px solid var(--border-color);
             border-top: 3px solid var(--industrial-yellow);
-            padding: 70px 40px;
+            padding: 55px 20px;
             text-align: center;
         }
 
         .contact-section h2 {
-            font-size: 2.4rem;
+            font-size: 1.9rem;
             font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 14px;
+            color: #ffffff;
         }
 
         .contact-section p {
             color: var(--text-muted);
-            font-size: 1.15rem;
-            margin-bottom: 35px;
+            font-size: 1rem;
+            margin-bottom: 28px;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 18px;
-            margin-top: 20px;
+            gap: 13px;
         }
 
         .contact-small {
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 800;
             color: var(--industrial-yellow);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 2px;
         }
 
         .contact-name {
-            font-size: 2rem;
-            font-weight: 900;
+            font-size: 1.45rem;
+            font-weight: 800;
             color: #ffffff;
         }
 
         .contact-info a {
-            font-size: 1.9rem;
-            font-weight: 900;
+            font-size: 1.3rem;
+            font-weight: 800;
             color: #ffffff;
             text-decoration: none;
         }
@@ -410,24 +413,28 @@
                 font-size: 1.55rem;
             }
 
+            .contact-wrap {
+                padding: 50px 3%;
+            }
+
             .contact-section {
-                padding: 45px 20px;
+                padding: 42px 15px;
             }
 
             .contact-section h2 {
-                font-size: 1.9rem;
+                font-size: 1.55rem;
             }
 
             .contact-section p {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             .contact-name {
-                font-size: 1.45rem;
+                font-size: 1.25rem;
             }
 
             .contact-info a {
-                font-size: 1.25rem;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -624,7 +631,7 @@
     </section>
 
     <!-- KONTAKT -->
-    <section id="kontakt" class="section">
+    <section id="kontakt" class="section contact-wrap">
         <div class="contact-section">
             <h2>Võta ühendust</h2>
             <p>Kirjelda lühidalt, millise elektritöö või projektiga abi vajad.</p>
