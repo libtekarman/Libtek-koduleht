@@ -10,7 +10,7 @@
     <meta name="author" content="Libtek OÜ">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.libtek.ee/">
-    <meta name="theme-color" content="#d88400">
+    <meta name="theme-color" content="#e18a00">
 
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="SIIA_GOOGLE_SEARCH_CONSOLE_KOOD">
@@ -87,17 +87,17 @@
 
     <style>
         :root {
-            --bg: #f4f1ea;
+            --bg: #f5f1e8;
             --paper: #ffffff;
-            --text: #161616;
-            --muted: #66615b;
-            --line: #ddd4c8;
-            --soft: #faf6ee;
-            --dark: #121212;
-            --orange: #d88400;
-            --orange-dark: #a96400;
-            --shadow: 0 18px 45px rgba(20, 20, 20, 0.08);
-            --max: 1140px;
+            --paper-soft: #fbf7ef;
+            --dark: #141414;
+            --text: #1d1d1d;
+            --muted: #69645d;
+            --line: #ded4c5;
+            --orange: #e18a00;
+            --orange-dark: #ad6700;
+            --shadow: 0 22px 55px rgba(25, 20, 15, 0.08);
+            --max: 1160px;
         }
 
         * {
@@ -131,7 +131,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background: rgba(244, 241, 234, 0.94);
+            background: rgba(245, 241, 232, 0.94);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--line);
         }
@@ -139,7 +139,7 @@
         nav {
             width: min(var(--max), calc(100% - 36px));
             margin: 0 auto;
-            min-height: 70px;
+            min-height: 72px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -159,17 +159,17 @@
 
         .nav-links {
             display: flex;
-            gap: 20px;
             align-items: center;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .nav-links a {
+            color: #2b2b2b;
             font-size: 0.82rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.4px;
-            color: #252525;
         }
 
         .nav-links a:hover {
@@ -188,17 +188,18 @@
         }
 
         .hero {
-            padding: 74px 0 70px;
+            padding: 84px 0 78px;
             background:
-                radial-gradient(circle at top right, rgba(216,132,0,0.14), transparent 32%),
-                linear-gradient(180deg, #fbf7ef 0%, #f4f1ea 100%);
+                radial-gradient(circle at top right, rgba(225, 138, 0, 0.16), transparent 32%),
+                linear-gradient(180deg, #fbf7ef 0%, #f5f1e8 100%);
             border-bottom: 1px solid var(--line);
+            overflow: hidden;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.08fr 0.92fr;
-            gap: 42px;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 48px;
             align-items: center;
         }
 
@@ -208,15 +209,15 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         h1 {
-            font-size: clamp(2.35rem, 5vw, 4.45rem);
-            line-height: 1.03;
-            letter-spacing: -1.5px;
+            font-size: clamp(2.45rem, 5vw, 4.55rem);
+            line-height: 1.02;
+            letter-spacing: -1.6px;
             font-weight: 900;
-            max-width: 790px;
+            max-width: 820px;
             margin-bottom: 22px;
         }
 
@@ -224,27 +225,27 @@
             color: var(--orange);
         }
 
-        .hero p {
+        .hero-text {
             color: var(--muted);
             font-size: 1.05rem;
-            max-width: 680px;
-            margin-bottom: 28px;
+            max-width: 670px;
+            margin-bottom: 30px;
         }
 
         .hero-actions {
             display: flex;
-            gap: 12px;
             flex-wrap: wrap;
+            gap: 12px;
         }
 
         .btn {
             display: inline-block;
             padding: 14px 22px;
+            border-radius: 999px;
             font-size: 0.9rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.4px;
-            border-radius: 999px;
             transition: 0.2s ease;
         }
 
@@ -261,8 +262,8 @@
 
         .btn-secondary {
             background: #ffffff;
-            border: 1px solid var(--line);
             color: var(--dark);
+            border: 1px solid var(--line);
         }
 
         .btn-secondary:hover {
@@ -271,61 +272,91 @@
             transform: translateY(-2px);
         }
 
-        .hero-card {
+        .brand-panel {
+            position: relative;
+            min-height: 430px;
             background: var(--paper);
             border: 1px solid var(--line);
             box-shadow: var(--shadow);
-            padding: 28px;
+            overflow: hidden;
         }
 
-        .hero-card h2 {
-            font-size: 1.65rem;
-            line-height: 1.1;
-            margin-bottom: 16px;
+        .brand-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(20,20,20,0.045) 1px, transparent 1px),
+                linear-gradient(rgba(20,20,20,0.045) 1px, transparent 1px);
+            background-size: 42px 42px;
+            opacity: 0.7;
         }
 
-        .hero-card p {
+        .brand-shape {
+            position: absolute;
+            width: 290px;
+            height: 290px;
+            border: 2px solid var(--orange);
+            right: -42px;
+            top: -42px;
+            border-radius: 50%;
+        }
+
+        .brand-shape::after {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border: 2px solid var(--dark);
+            border-radius: 50%;
+            left: 54px;
+            top: 54px;
+        }
+
+        .brand-line {
+            position: absolute;
+            height: 4px;
+            background: var(--orange);
+            left: 46px;
+            right: 110px;
+            bottom: 130px;
+        }
+
+        .brand-card {
+            position: absolute;
+            left: 42px;
+            bottom: 42px;
+            right: 42px;
+            background: rgba(255,255,255,0.88);
+            border: 1px solid var(--line);
+            padding: 26px;
+            backdrop-filter: blur(8px);
+        }
+
+        .brand-card h2 {
+            font-size: 1.55rem;
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+
+        .brand-card p {
             color: var(--muted);
             font-size: 0.98rem;
-            margin-bottom: 22px;
-        }
-
-        .hero-list {
-            display: grid;
-            gap: 12px;
-        }
-
-        .hero-list div {
-            display: flex;
-            justify-content: space-between;
-            gap: 18px;
-            border-bottom: 1px solid var(--line);
-            padding-bottom: 12px;
-            font-size: 0.95rem;
-        }
-
-        .hero-list div:last-child {
-            border-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .hero-list strong {
-            color: var(--orange-dark);
-            white-space: nowrap;
+            max-width: 460px;
         }
 
         section {
-            padding: 72px 0;
+            padding: 76px 0;
         }
 
         .section-head {
             max-width: 820px;
-            margin-bottom: 34px;
+            margin-bottom: 38px;
         }
 
         .section-head h2 {
             font-size: clamp(2rem, 4vw, 3.2rem);
-            line-height: 1.08;
+            line-height: 1.07;
             letter-spacing: -0.9px;
             margin-bottom: 14px;
         }
@@ -340,45 +371,43 @@
         }
 
         .services-list {
-            display: grid;
-            gap: 16px;
-        }
-
-        .service-card {
             background: var(--paper);
             border: 1px solid var(--line);
             box-shadow: var(--shadow);
-            padding: 30px;
+        }
+
+        .service-row {
             display: grid;
-            grid-template-columns: 230px 1fr;
-            gap: 30px;
+            grid-template-columns: 290px 1fr;
+            gap: 34px;
+            padding: 34px;
+            border-bottom: 1px solid var(--line);
             align-items: start;
         }
 
-        .service-side {
-            border-left: 4px solid var(--orange);
-            padding-left: 16px;
+        .service-row:last-child {
+            border-bottom: 0;
         }
 
-        .service-side .type {
+        .service-kicker {
             color: var(--orange-dark);
             font-size: 0.82rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        .service-side .name {
-            font-size: 1.25rem;
+        .service-name {
+            font-size: 1.5rem;
+            line-height: 1.12;
             font-weight: 900;
-            line-height: 1.15;
         }
 
         .service-main h3 {
-            font-size: clamp(1.45rem, 3vw, 2.25rem);
+            font-size: clamp(1.55rem, 3vw, 2.35rem);
             line-height: 1.08;
-            letter-spacing: -0.6px;
+            letter-spacing: -0.7px;
             margin-bottom: 12px;
         }
 
@@ -396,12 +425,12 @@
         }
 
         .chips span {
-            background: var(--soft);
+            background: var(--paper-soft);
             border: 1px solid var(--line);
+            color: #2c2c2c;
             padding: 8px 11px;
             font-size: 0.86rem;
             font-weight: 700;
-            color: #2a2a2a;
         }
 
         .quote-section {
@@ -415,8 +444,7 @@
             border: 1px solid var(--line);
             box-shadow: var(--shadow);
             display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 0;
+            grid-template-columns: 0.85fr 1.15fr;
         }
 
         .quote-text {
@@ -430,27 +458,15 @@
         }
 
         .quote-text h2 {
-            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            font-size: clamp(1.8rem, 3vw, 2.7rem);
             line-height: 1.08;
             letter-spacing: -0.9px;
             margin-bottom: 16px;
         }
 
         .quote-text p {
-            color: #d6d6d6;
+            color: #d7d7d7;
             font-size: 1rem;
-            margin-bottom: 22px;
-        }
-
-        .quote-points {
-            display: grid;
-            gap: 10px;
-        }
-
-        .quote-points div {
-            border: 1px solid rgba(255,255,255,0.16);
-            padding: 12px 14px;
-            color: #eeeeee;
         }
 
         .form-wrap {
@@ -484,7 +500,7 @@
         select:focus,
         textarea:focus {
             border-color: var(--orange);
-            box-shadow: 0 0 0 3px rgba(216,132,0,0.14);
+            box-shadow: 0 0 0 3px rgba(225,138,0,0.14);
         }
 
         textarea {
@@ -529,12 +545,12 @@
             background: var(--paper);
             border: 1px solid var(--line);
             box-shadow: var(--shadow);
-            padding: 32px;
+            padding: 34px;
         }
 
         .about-box h2,
         .contact-box h2 {
-            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            font-size: clamp(1.8rem, 3vw, 2.75rem);
             line-height: 1.08;
             letter-spacing: -0.8px;
             margin-bottom: 16px;
@@ -556,7 +572,7 @@
         }
 
         .contact-box p {
-            color: #d6d6d6;
+            color: #d7d7d7;
             margin-bottom: 22px;
         }
 
@@ -589,7 +605,7 @@
 
         footer {
             background: var(--dark);
-            color: #d6d6d6;
+            color: #d7d7d7;
             padding: 26px 18px;
             text-align: center;
             font-size: 0.88rem;
@@ -602,15 +618,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .service-card {
-                grid-template-columns: 1fr;
+            .brand-panel {
+                min-height: 360px;
             }
 
-            .service-side {
-                border-left: 0;
-                border-top: 4px solid var(--orange);
-                padding-left: 0;
-                padding-top: 14px;
+            .service-row {
+                grid-template-columns: 1fr;
+                gap: 18px;
             }
         }
 
@@ -636,15 +650,15 @@
             }
 
             .hero {
-                padding: 52px 0;
-            }
-
-            section {
                 padding: 56px 0;
             }
 
-            .hero-card,
-            .service-card,
+            section {
+                padding: 58px 0;
+            }
+
+            .brand-card,
+            .service-row,
             .quote-text,
             .form-wrap,
             .about-box,
@@ -685,9 +699,9 @@
             <div>
                 <div class="small-title">Elektritööd • projektid • dokumendid</div>
 
-                <h1>Elektritööd, projektid ja dokumendid <span>ühest kohast.</span></h1>
+                <h1>Elektritööd, projektid ja dokumentatsioon <span>ühest kohast.</span></h1>
 
-                <p>
+                <p class="hero-text">
                     Libtek OÜ aitab elektripaigalduse, projekteerimise, mõõdistuste ja dokumentatsiooniga.
                     Saada töö lühikirjeldus ja vaatame, millist lahendust objekt vajab.
                 </p>
@@ -698,25 +712,15 @@
                 </div>
             </div>
 
-            <div class="hero-card">
-                <h2>Mida teeme?</h2>
-                <p>
-                    Tegeleme töödega, kus elektripaigaldus, projekt ja vajalik dokumentatsioon peavad omavahel kokku sobima.
-                </p>
+            <div class="brand-panel" aria-hidden="true">
+                <div class="brand-shape"></div>
+                <div class="brand-line"></div>
 
-                <div class="hero-list">
-                    <div>
-                        <span>Elektripaigaldus</span>
-                        <strong>kilbid ja kaablid</strong>
-                    </div>
-                    <div>
-                        <span>Projekteerimine</span>
-                        <strong>skeemid ja joonised</strong>
-                    </div>
-                    <div>
-                        <span>Mõõdistused</span>
-                        <strong>tabelid ja dokumendid</strong>
-                    </div>
+                <div class="brand-card">
+                    <h2>Elektrilahendus peab olema arusaadav enne töö algust.</h2>
+                    <p>
+                        Paigaldus, projekt ja dokumendid peavad sobima sama objekti vajadusega.
+                    </p>
                 </div>
             </div>
         </div>
@@ -735,10 +739,10 @@
         </div>
 
         <div class="services-list">
-            <article class="service-card">
-                <div class="service-side">
-                    <div class="type">Elektripaigaldus</div>
-                    <div class="name">Kilbid ja paigaldus</div>
+            <article class="service-row">
+                <div>
+                    <div class="service-kicker">Elektripaigaldus</div>
+                    <div class="service-name">Kilbid ja paigaldus</div>
                 </div>
 
                 <div class="service-main">
@@ -756,10 +760,10 @@
                 </div>
             </article>
 
-            <article class="service-card">
-                <div class="service-side">
-                    <div class="type">Projekteerimine</div>
-                    <div class="name">Projekt ja joonised</div>
+            <article class="service-row">
+                <div>
+                    <div class="service-kicker">Projekteerimine</div>
+                    <div class="service-name">Projekt ja joonised</div>
                 </div>
 
                 <div class="service-main">
@@ -777,10 +781,10 @@
                 </div>
             </article>
 
-            <article class="service-card">
-                <div class="service-side">
-                    <div class="type">Mõõdistused ja vormistus</div>
-                    <div class="name">Dokumendid korda</div>
+            <article class="service-row">
+                <div>
+                    <div class="service-kicker">Mõõdistused ja vormistus</div>
+                    <div class="service-name">Dokumendid korda</div>
                 </div>
 
                 <div class="service-main">
@@ -811,12 +815,6 @@
                     Saada töö kirjeldus ja võtame ühendust. Võimalusel lisa juurde objekt, töö liik või olemasolev projekt.
                     Päring liigub aadressile <strong>info@libtek.ee</strong>.
                 </p>
-
-                <div class="quote-points">
-                    <div>Elektripaigaldus ja kilbitööd</div>
-                    <div>Elektriprojektid ja teostusjoonised</div>
-                    <div>Mõõdistused ja dokumentatsioon</div>
-                </div>
             </div>
 
             <div class="form-wrap">
