@@ -4,29 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- GOOGLE SEO -->
+    <!-- GOOGLE SEO (See tekst ilmub Google otsingutulemuses, nagu pildil näha) -->
     <title>Elektritööd & Projekteerimine | Libtek OÜ</title>
-    <meta name="description" content="Libtek OÜ teostab elektripaigaldustöid ja elektriprojekteerimist ideest teostuseni. Täisteenus ja nõuetekohane dokumentatsioon.">
+    <meta name="description" content="Libtek OÜ teostab elektripaigaldustöid ja elektriprojekteerimist ideest teostuseni. Täisteenus ja nõuetekohane dokumentatsioon. Kirjuta: info@libtek.ee">
     <meta name="keywords" content="elektritööd, elektripaigaldus, elektri projekteerimine, elektrik, käidukorraldus, Libtek OÜ, Arman Liblik">
     <meta name="author" content="Arman Liblik">
 
-    <!-- GOOGLE SCHEMA -->
+    <!-- GOOGLE SCHEMA & SEARCHBOX KOOD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Electrician",
-      "name": "Libtek OÜ",
-      "telephone": "+37253461535",
-      "email": "info@libtek.ee",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "EE"
-      },
-      "founder": {
-        "@type": "Person",
-        "name": "Arman Liblik"
-      },
-      "description": "Elektripaigaldustööd ja elektrijooniste projekteerimine."
+      "@graph": [
+        {
+          "@type": "Electrician",
+          "name": "Libtek OÜ",
+          "url": "https://www.libtek.ee",
+          "telephone": "+37253461535",
+          "email": "info@libtek.ee",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "EE"
+          },
+          "founder": {
+            "@type": "Person",
+            "name": "Arman Liblik"
+          },
+          "description": "Elektripaigaldustööd ja elektrijooniste projekteerimine."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.libtek.ee/#website",
+          "url": "https://www.libtek.ee",
+          "name": "Libtek OÜ",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.libtek.ee/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
     }
     </script>
 
@@ -74,7 +90,7 @@
             color: var(--industrial-yellow);
         }
 
-        /* HERO SEKTSIOON (Lihtne ja asjalik) */
+        /* HERO SEKTSIOON */
         .hero {
             display: flex;
             align-items: center;
@@ -141,17 +157,28 @@
         .work-card {
             background-color: var(--bg-light);
             border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
         }
 
-        .card-img {
+        .card-icon-container {
             width: 100%;
-            height: 220px;
-            object-fit: cover;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #11141a;
             border-bottom: 2px solid var(--border-color);
         }
 
+        .card-icon-container svg {
+            width: 60px;
+            height: 60px;
+            fill: var(--industrial-yellow);
+        }
+
         .card-content {
-            padding: 20px;
+            padding: 25px;
         }
 
         .card-content h3 {
@@ -235,15 +262,18 @@
         </div>
     </section>
 
-    <!-- TEENUSED (WORK IN ELECTRICITY PILDID) -->
+    <!-- TEENUSED -->
     <section class="section">
         <h2 class="section-title">Teenused</h2>
         <div class="grid-3">
             
             <!-- KAART 1 -->
             <div class="work-card">
-                <!-- Reaalne elektritöö ja kaablite ühendamine -->
-                <img src="https://images.unsplash.com/photo-1471286174240-e85ff89ccdd6?auto=format&fit=crop&w=600&q=80" alt="Elektriprojekteerimine ja paigaldus" class="card-img">
+                <div class="card-icon-container">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-2-4H7v-2h10v2zm0-4H7V9h10v2z"/>
+                    </svg>
+                </div>
                 <div class="card-content">
                     <h3>01. Elektri Projekteerimine</h3>
                     <p>Elektriprojektide, põhimõtteskeemide ja teostusjooniste koostamine. Tehniliselt korrektsed lahendused enne ehitustööde algust.</p>
@@ -252,8 +282,11 @@
 
             <!-- KAART 2 -->
             <div class="work-card">
-                <!-- Juhtmete ja kilbi montaaž -->
-                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Elektripaigaldustööd objektil" class="card-img">
+                <div class="card-icon-container">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 2v11h3v9l7-12h-4l4-8H7z"/>
+                    </svg>
+                </div>
                 <div class="card-content">
                     <h3>02. Elektripaigaldustööd</h3>
                     <p>Kaablite vedu, jaotuskilpide montaaž, pistikupesade, lülitite ja valgustite paigaldus. Tugev- ja nõrkvoolusüsteemide ehitus.</p>
@@ -262,8 +295,11 @@
 
             <!-- KAART 3 -->
             <div class="work-card">
-                <!-- Tööriistad ja tehniline mõõtmine -->
-                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Elektriaudit ja mõõdistused" class="card-img">
+                <div class="card-icon-container">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/>
+                    </svg>
+                </div>
                 <div class="card-content">
                     <h3>03. Mõõdistused & Dokumendid</h3>
                     <p>Isolatsioonitakistuse mõõtmised, maanduse kontroll ja nõuetekohasuse deklaratsioonide vormistamine elektriauditi ja kasutusloa jaoks.</p>
