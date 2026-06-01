@@ -3,46 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- GOOGLE SEO -->
-    <title>Elektritööd ja Projekteerimine | Libtek OÜ</title>
-    <meta name="description" content="Libtek OÜ teostab elektripaigaldustöid ja elektriprojekteerimist ideest teostuseni. Täisteenus ja nõuetekohane dokumentatsioon. Kirjuta: info@libtek.ee">
-    <meta name="keywords" content="elektritööd, elektripaigaldus, elektri projekteerimine, elektrik, käidukorraldus, Libtek OÜ, Arman Liblik">
-    <meta name="author" content="Arman Liblik">
 
-    <!-- GOOGLE SCHEMA & SEARCHBOX KOOD -->
+    <!-- PÕHI SEO -->
+    <title>Elektritööd, elektripaigaldus ja elektri projekteerimine | Libtek OÜ</title>
+    <meta name="description" content="Libtek OÜ teostab elektritöid, elektripaigaldust, elektri projekteerimist, mõõdistusi ja dokumentatsiooni. Elektrilahendused era- ja äriklientidele. Küsi pakkumist: info@libtek.ee">
+    <meta name="keywords" content="elektritööd, elektrik, elektripaigaldus, elektri projekteerimine, elektriprojekt, elektrik Tallinn, elektritööd Tallinn, elektrik Harjumaa, elektripaigaldustööd, elektrimõõdistused, elektriaudit, Libtek OÜ">
+    <meta name="author" content="Libtek OÜ">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Estonian">
+    <meta name="geo.region" content="EE">
+    <meta name="geo.placename" content="Tallinn, Estonia">
+    <link rel="canonical" href="https://www.libtek.ee/">
+
+    <!-- FACEBOOK / META JAGAMISE INFO -->
+    <meta property="og:title" content="Libtek OÜ | Elektritööd ja elektri projekteerimine">
+    <meta property="og:description" content="Elektritööd, elektripaigaldus, projekteerimine, mõõdistused ja dokumentatsioon era- ja äriklientidele.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="et_EE">
+    <meta property="og:url" content="https://www.libtek.ee/">
+    <meta property="og:site_name" content="Libtek OÜ">
+
+    <!-- MOBIILI BRAUSERI VÄRV -->
+    <meta name="theme-color" content="#ffae00">
+
+    <!-- GOOGLE STRUCTURED DATA / SCHEMA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
+      "@type": "Electrician",
+      "name": "Libtek OÜ",
+      "url": "https://www.libtek.ee/",
+      "email": "info@libtek.ee",
+      "telephone": "+37253461535",
+      "priceRange": "$$",
+      "image": "https://www.libtek.ee/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EE",
+        "addressLocality": "Tallinn"
+      },
+      "areaServed": [
         {
-          "@type": "Electrician",
-          "name": "Libtek OÜ",
-          "url": "https://www.libtek.ee",
-          "telephone": "+37253461535",
-          "email": "info@libtek.ee",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "EE"
-          },
-          "founder": {
-            "@type": "Person",
-            "name": "Arman Liblik"
-          },
-          "description": "Elektripaigaldustööd ja elektrijooniste projekteerimine."
+          "@type": "Place",
+          "name": "Tallinn"
         },
         {
-          "@type": "WebSite",
-          "@id": "https://www.libtek.ee/#website",
-          "url": "https://www.libtek.ee",
-          "name": "Libtek OÜ",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://www.libtek.ee/?s={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
+          "@type": "Place",
+          "name": "Harjumaa"
+        },
+        {
+          "@type": "Country",
+          "name": "Estonia"
         }
-      ]
+      ],
+      "description": "Libtek OÜ teostab elektritöid, elektripaigaldust, elektri projekteerimist, mõõdistusi ja dokumentatsiooni.",
+      "founder": {
+        "@type": "Person",
+        "name": "Arman Liblik"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Elektritööd ja elektrilahendused",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Elektri projekteerimine",
+              "description": "Elektriprojektide, põhimõtteskeemide ja teostusjooniste koostamine."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Elektripaigaldustööd",
+              "description": "Kaablite vedu, jaotuskilpide montaaž, pistikupesade, lülitite ja valgustite paigaldus."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Elektrimõõdistused ja dokumentatsioon",
+              "description": "Elektripaigaldise mõõtmised, maanduse kontroll ja dokumentide vormistamine."
+            }
+          }
+        ]
+      }
     }
     </script>
 
@@ -50,9 +98,11 @@
         :root {
             --bg-dark: #0f1115;
             --bg-light: #181b22;
+            --bg-card: #12151b;
             --industrial-yellow: #ffae00;
+            --industrial-orange: #ff7a00;
             --text-light: #ffffff;
-            --text-muted: #9a9ea7;
+            --text-muted: #a7acb7;
             --border-color: #2c313c;
         }
 
@@ -61,6 +111,10 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -79,28 +133,45 @@
         }
 
         .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
+            font-size: 1.7rem;
+            font-weight: 900;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .logo span {
             color: var(--industrial-yellow);
         }
 
+        .nav-text {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
         .hero {
             display: flex;
             align-items: center;
-            min-height: 40vh;
-            padding: 60px 5%;
+            min-height: 52vh;
+            padding: 70px 5%;
             border-bottom: 1px solid var(--border-color);
+            background:
+                linear-gradient(120deg, rgba(255, 174, 0, 0.12), transparent 35%),
+                linear-gradient(180deg, #101319 0%, #0f1115 100%);
+        }
+
+        .hero-text {
+            max-width: 850px;
         }
 
         .hero-text h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
         .hero-text h1 span {
@@ -108,10 +179,26 @@
         }
 
         .hero-text p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin-bottom: 25px;
+            font-size: 1.15rem;
+            color: #c4c9d3;
+            max-width: 760px;
+            margin-bottom: 28px;
+        }
+
+        .hero-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .hero-points span {
+            border: 1px solid var(--border-color);
+            background-color: rgba(24, 27, 34, 0.75);
+            color: #d7dbe3;
+            padding: 8px 12px;
+            font-size: 0.92rem;
+            font-weight: 700;
         }
 
         .btn-heavy {
@@ -120,7 +207,7 @@
             color: #000;
             padding: 14px 35px;
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             text-decoration: none;
             letter-spacing: 0.5px;
@@ -131,16 +218,24 @@
         }
 
         .section {
-            padding: 60px 5%;
+            padding: 65px 5%;
         }
 
         .section-title {
             font-size: 2rem;
-            font-weight: 800;
+            font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 40px;
             border-left: 5px solid var(--industrial-yellow);
             padding-left: 15px;
+        }
+
+        .section-intro {
+            max-width: 850px;
+            color: #c4c9d3;
+            font-size: 1.05rem;
+            margin-top: -20px;
+            margin-bottom: 35px;
         }
 
         .grid-3 {
@@ -157,13 +252,23 @@
             overflow: hidden;
         }
 
+        .service-visual {
+            height: 220px;
+            background-color: #11141a;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
         .card-content {
             padding: 25px;
         }
 
         .card-content h3 {
             font-size: 1.25rem;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             margin-bottom: 10px;
             color: var(--industrial-yellow);
@@ -171,7 +276,25 @@
 
         .card-content p {
             color: #bdc2cc;
-            font-size: 0.95rem;
+            font-size: 0.96rem;
+        }
+
+        .about-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--industrial-yellow);
+            padding: 32px;
+            max-width: 1000px;
+        }
+
+        .about-box p {
+            color: #c4c9d3;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .about-box p:last-child {
+            margin-bottom: 0;
         }
 
         .contact-section {
@@ -180,6 +303,18 @@
             border-top: 3px solid var(--industrial-yellow);
             padding: 40px;
             margin-top: 20px;
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .contact-section p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 5px;
         }
 
         .contact-grid {
@@ -191,15 +326,16 @@
 
         .contact-item h4 {
             font-size: 0.85rem;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             color: var(--text-muted);
             margin-bottom: 5px;
         }
 
-        .contact-item p, .contact-item a {
-            font-size: 1.4rem;
-            font-weight: 700;
+        .contact-item p, 
+        .contact-item a {
+            font-size: 1.35rem;
+            font-weight: 800;
             color: #fff;
             text-decoration: none;
         }
@@ -219,12 +355,40 @@
         }
 
         @media (max-width: 768px) {
+            nav {
+                align-items: flex-start;
+                gap: 10px;
+                flex-direction: column;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 55px 5%;
+            }
+
             .hero-text h1 { 
-                font-size: 2.2rem; 
+                font-size: 2.15rem; 
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 50px 5%;
             }
 
             .section-title { 
-                font-size: 1.6rem; 
+                font-size: 1.55rem; 
+            }
+
+            .contact-section {
+                padding: 28px;
+            }
+
+            .contact-item p,
+            .contact-item a {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -234,92 +398,144 @@
 
     <!-- NAVIGATSIOON -->
     <nav>
-        <div class="logo">LIBTEK<span> OÜ</span></div>
-        <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-muted);">PROJEKTEERIMINE & EHITUS</div>
+        <div class="logo">LIB<span>TEK</span> OÜ</div>
+        <div class="nav-text">Elektritööd • Projekteerimine • Paigaldus</div>
     </nav>
 
-    <!-- HERO SEKTSIOON -->
-    <section class="hero">
+    <!-- HERO -->
+    <header class="hero">
         <div class="hero-text">
-            <h1>Elektritööd <span>projekteerimisest teostuseni</span>.</h1>
-            <p>Libtek OÜ teostab elektripaigaldustöid ja elektriprojekteerimist era- ja äriklientidele. Töö tehakse korrektselt, ohutult ja kokkulepitud lahenduse järgi.</p>
-            <a href="#kontakt" class="btn-heavy">Võta ühendust</a>
+            <h1>Elektritööd ja <span>elektri projekteerimine</span></h1>
+            <p>
+                Libtek OÜ teostab elektripaigaldustöid, elektriprojekteerimist, mõõdistusi ja dokumentatsiooni
+                era- ning äriklientidele. Töö tehakse korrektselt, ohutult ja kokkulepitud lahenduse järgi.
+            </p>
+
+            <div class="hero-points">
+                <span>Elektripaigaldustööd</span>
+                <span>Elektriprojektid</span>
+                <span>Jaotuskilbid</span>
+                <span>Mõõdistused</span>
+                <span>Dokumentatsioon</span>
+            </div>
+
+            <a href="#kontakt" class="btn-heavy">Küsi pakkumist</a>
         </div>
-    </section>
+    </header>
 
     <!-- TEENUSED -->
-    <section class="section">
+    <section class="section" id="teenused">
         <h2 class="section-title">Teenused</h2>
+        <p class="section-intro">
+            Libtek OÜ pakub elektritööde terviklahendusi alates projekti koostamisest kuni paigalduse,
+            mõõdistuste ja vajaliku dokumentatsiooni vormistamiseni.
+        </p>
 
         <div class="grid-3">
             
             <!-- KAART 1 -->
-            <div class="work-card">
-
-                <div style="height:220px; background:#11141a; border-bottom:2px solid #2c313c; display:flex; align-items:center; justify-content:center;">
-                    <svg width="105" height="105" viewBox="0 0 64 64" fill="none" stroke="#ffae00" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                        <rect x="14" y="10" width="36" height="44"></rect>
-                        <path d="M22 22h20"></path>
-                        <path d="M22 30h14"></path>
-                        <path d="M22 38h20"></path>
-                        <path d="M46 14l4-4"></path>
+            <article class="work-card">
+                <div class="service-visual" aria-label="Elektriprojekteerimise tehniline visuaal">
+                    <svg width="100%" height="100%" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" role="img">
+                        <rect width="600" height="220" fill="#11141a"/>
+                        <path d="M70 60 H250 V160 H70 Z" fill="none" stroke="#ffae00" stroke-width="4"/>
+                        <path d="M95 90 H220 M95 115 H180 M95 140 H230" stroke="#ffae00" stroke-width="4"/>
+                        <path d="M330 60 H520 M330 95 H500 M330 130 H470" stroke="#2c313c" stroke-width="6"/>
+                        <path d="M330 165 H520" stroke="#2c313c" stroke-width="6"/>
+                        <circle cx="280" cy="110" r="18" fill="none" stroke="#ffae00" stroke-width="4"/>
+                        <path d="M250 110 H262 M298 110 H330" stroke="#ffae00" stroke-width="4"/>
+                        <text x="300" y="198" fill="#ffae00" font-size="24" font-weight="800" text-anchor="middle">PROJEKTEERIMINE</text>
                     </svg>
                 </div>
 
                 <div class="card-content">
                     <h3>01. Elektri projekteerimine</h3>
-                    <p>Elektriprojektide, põhimõtteskeemide ja teostusjooniste koostamine. Tehniliselt korrektsed lahendused enne ehitustööde algust.</p>
+                    <p>
+                        Elektriprojektide, põhimõtteskeemide ja teostusjooniste koostamine.
+                        Tehniliselt korrektsed lahendused enne ehitus- ja paigaldustööde algust.
+                    </p>
                 </div>
-            </div>
+            </article>
 
             <!-- KAART 2 -->
-            <div class="work-card">
-
-                <div style="height:220px; background:#11141a; border-bottom:2px solid #2c313c; display:flex; align-items:center; justify-content:center;">
-                    <svg width="105" height="105" viewBox="0 0 64 64" fill="none" stroke="#ffae00" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                        <rect x="14" y="10" width="36" height="44"></rect>
-                        <path d="M24 20h16"></path>
-                        <path d="M24 30h16"></path>
-                        <path d="M24 40h16"></path>
-                        <path d="M18 20h3"></path>
-                        <path d="M18 30h3"></path>
-                        <path d="M18 40h3"></path>
+            <article class="work-card">
+                <div class="service-visual" aria-label="Elektripaigalduse tehniline visuaal">
+                    <svg width="100%" height="100%" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" role="img">
+                        <rect width="600" height="220" fill="#11141a"/>
+                        <rect x="185" y="35" width="230" height="135" fill="none" stroke="#ffae00" stroke-width="4"/>
+                        <rect x="215" y="60" width="55" height="35" fill="none" stroke="#ffae00" stroke-width="4"/>
+                        <rect x="290" y="60" width="55" height="35" fill="none" stroke="#ffae00" stroke-width="4"/>
+                        <rect x="365" y="60" width="25" height="85" fill="none" stroke="#ffae00" stroke-width="4"/>
+                        <path d="M220 120 H345 M220 140 H345" stroke="#ffae00" stroke-width="4"/>
+                        <path d="M80 95 H185 M415 95 H520" stroke="#2c313c" stroke-width="8"/>
+                        <path d="M80 130 H185 M415 130 H520" stroke="#2c313c" stroke-width="8"/>
+                        <circle cx="242" cy="78" r="5" fill="#ffae00"/>
+                        <circle cx="318" cy="78" r="5" fill="#ffae00"/>
+                        <text x="300" y="198" fill="#ffae00" font-size="24" font-weight="800" text-anchor="middle">PAIGALDUSTÖÖD</text>
                     </svg>
                 </div>
 
                 <div class="card-content">
                     <h3>02. Elektripaigaldustööd</h3>
-                    <p>Kaablite vedu, jaotuskilpide montaaž, pistikupesade, lülitite ja valgustite paigaldus. Tugev- ja nõrkvoolusüsteemide ehitus.</p>
+                    <p>
+                        Kaablite vedu, jaotuskilpide montaaž, pistikupesade, lülitite ja valgustite paigaldus.
+                        Tugev- ja nõrkvoolusüsteemide ehitus.
+                    </p>
                 </div>
-            </div>
+            </article>
 
             <!-- KAART 3 -->
-            <div class="work-card">
-
-                <div style="height:220px; background:#11141a; border-bottom:2px solid #2c313c; display:flex; align-items:center; justify-content:center;">
-                    <svg width="105" height="105" viewBox="0 0 64 64" fill="none" stroke="#ffae00" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                        <rect x="16" y="16" width="32" height="32" rx="3"></rect>
-                        <path d="M24 36h16"></path>
-                        <path d="M28 28l4-6 4 6"></path>
-                        <path d="M22 48v6"></path>
-                        <path d="M42 48v6"></path>
+            <article class="work-card">
+                <div class="service-visual" aria-label="Elektrimõõdistuste tehniline visuaal">
+                    <svg width="100%" height="100%" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" role="img">
+                        <rect width="600" height="220" fill="#11141a"/>
+                        <rect x="190" y="45" width="130" height="110" rx="8" fill="none" stroke="#ffae00" stroke-width="4"/>
+                        <circle cx="255" cy="95" r="28" fill="none" stroke="#ffae00" stroke-width="4"/>
+                        <path d="M255 95 L275 75" stroke="#ffae00" stroke-width="4"/>
+                        <path d="M215 135 H295" stroke="#ffae00" stroke-width="4"/>
+                        <path d="M350 55 H500 M350 85 H480 M350 115 H500 M350 145 H455" stroke="#2c313c" stroke-width="6"/>
+                        <path d="M215 155 V180 M295 155 V180" stroke="#ffae00" stroke-width="4"/>
+                        <text x="300" y="205" fill="#ffae00" font-size="22" font-weight="800" text-anchor="middle">MÕÕTMISED</text>
                     </svg>
                 </div>
 
                 <div class="card-content">
                     <h3>03. Mõõdistused ja dokumendid</h3>
-                    <p>Elektripaigaldise mõõtmised, maanduse kontroll ja dokumentide vormistamine elektriauditi või kasutusloa jaoks.</p>
+                    <p>
+                        Isolatsioonitakistuse mõõtmised, maanduse kontroll ja nõuetekohasuse deklaratsioonide
+                        vormistamine elektriauditi või kasutusloa jaoks.
+                    </p>
                 </div>
-            </div>
+            </article>
 
+        </div>
+    </section>
+
+    <!-- ETTEVÕTTEST -->
+    <section class="section" id="ettevottest">
+        <h2 class="section-title">Libtek OÜ</h2>
+
+        <div class="about-box">
+            <p>
+                Libtek OÜ on elektritööde ja elektrilahendustega tegelev ettevõte. Pakume abi nii uute
+                elektripaigaldiste rajamisel kui ka olemasolevate süsteemide korrastamisel ja täiendamisel.
+            </p>
+            <p>
+                Meie tööde hulka kuuluvad elektripaigaldus, elektri projekteerimine, jaotuskilpide montaaž,
+                valgustuse ja pistikupesade paigaldus, mõõdistused ning dokumentide vormistamine.
+            </p>
+            <p>
+                Eesmärk on pakkuda kliendile selget, ohutut ja nõuetekohast lahendust, mis sobib konkreetse
+                objekti vajadustega.
+            </p>
         </div>
     </section>
 
     <!-- KONTAKT -->
     <section id="kontakt" class="section">
         <div class="contact-section">
-            <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase;">Kontakt</h2>
-            <p style="color: var(--text-muted); font-size: 1rem; margin-top: 5px;">Hinnapakkumise saamiseks saatke objekti info või projekt meilile.</p>
+            <h2>Kontakt</h2>
+            <p>Hinnapakkumise saamiseks saada objekti info, projekt või töö kirjeldus meilile.</p>
             
             <div class="contact-grid">
                 <div class="contact-item">
