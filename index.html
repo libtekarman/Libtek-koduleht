@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO / GOOGLE -->
-    <title>Elektritööd, elektripaigaldus ja elektri projekteerimine | Libtek OÜ</title>
-    <meta name="description" content="Libtek OÜ teostab elektritöid, elektripaigaldust, elektri projekteerimist, mõõdistusi ja dokumentatsiooni. Elektrilahendused era- ja äriklientidele. Küsi pakkumist: info@libtek.ee">
-    <meta name="keywords" content="elektritööd, elektrik, elektripaigaldus, elektri projekteerimine, elektriprojekt, elektrik Tallinn, elektritööd Tallinn, elektrik Harjumaa, elektripaigaldustööd, elektrimõõdistused, elektriaudit, Libtek OÜ">
+    <title>Elektritööd ja elektri projekteerimine | Libtek OÜ</title>
+    <meta name="description" content="Libtek OÜ teostab elektritöid, elektripaigaldust, elektri projekteerimist, mõõdistusi ja dokumentatsiooni. Küsi pakkumist: info@libtek.ee">
+    <meta name="keywords" content="elektritööd, elektrik, elektripaigaldus, elektri projekteerimine, elektriprojekt, elektrik Tallinn, elektritööd Tallinn, elektrik Harjumaa, elektrimõõdistused, Libtek OÜ">
     <meta name="author" content="Libtek OÜ">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Estonian">
@@ -15,8 +14,19 @@
     <meta name="geo.placename" content="Tallinn, Estonia">
     <link rel="canonical" href="https://www.libtek.ee/">
 
-    <!-- GOOGLE ADS / GOOGLE ANALYTICS -->
-    <!-- Asenda hiljem oma päris Google ID-dega -->
+    <!-- Facebook / Meta jagamise info -->
+    <meta property="og:title" content="Libtek OÜ | Elektritööd ja elektri projekteerimine">
+    <meta property="og:description" content="Elektritööd, elektripaigaldus, projekteerimine, mõõdistused ja dokumentatsioon era- ja äriklientidele.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="et_EE">
+    <meta property="og:url" content="https://www.libtek.ee/">
+    <meta property="og:site_name" content="Libtek OÜ">
+    <meta property="og:image" content="https://www.libtek.ee/logo.png">
+
+    <meta name="theme-color" content="#f59e0b">
+
+    <!-- Google Ads / Analytics koht -->
+    <!-- Asenda hiljem oma päris ID-dega -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -36,18 +46,7 @@
         }
     </script>
 
-    <!-- FACEBOOK / META JAGAMISE INFO -->
-    <meta property="og:title" content="Libtek OÜ | Elektritööd ja elektri projekteerimine">
-    <meta property="og:description" content="Elektritööd, elektripaigaldus, projekteerimine, mõõdistused ja dokumentatsioon era- ja äriklientidele.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="et_EE">
-    <meta property="og:url" content="https://www.libtek.ee/">
-    <meta property="og:site_name" content="Libtek OÜ">
-    <meta property="og:image" content="https://www.libtek.ee/logo.png">
-
-    <meta name="theme-color" content="#ffae00">
-
-    <!-- GOOGLE STRUCTURED DATA -->
+    <!-- Google structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -72,56 +71,28 @@
       "founder": {
         "@type": "Person",
         "name": "Arman Liblik"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Elektritööd ja elektrilahendused",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Elektri projekteerimine",
-              "description": "Elektriprojektide, põhimõtteskeemide ja teostusjooniste koostamine."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Elektripaigaldustööd",
-              "description": "Kaablite vedu, jaotuskilpide montaaž, pistikupesade, lülitite ja valgustite paigaldus."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Elektrimõõdistused ja dokumentatsioon",
-              "description": "Elektripaigaldise mõõtmised, maanduse kontroll ja dokumentide vormistamine."
-            }
-          }
-        ]
       }
     }
     </script>
 
     <style>
         :root {
-            --bg-dark: #0f1115;
-            --bg-light: #181b22;
-            --bg-card: #141820;
-            --industrial-yellow: #ffae00;
-            --text-light: #ffffff;
-            --text-muted: #a7acb7;
-            --border-color: #2c313c;
+            --orange: #f59e0b;
+            --orange-dark: #d97706;
+            --dark: #111827;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --soft-orange: #fff7ed;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
         }
 
         html {
@@ -129,64 +100,59 @@
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.5;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
         }
 
         nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 22px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 5%;
-            background-color: #0a0b0d;
-            border-bottom: 2px solid var(--industrial-yellow);
             position: sticky;
             top: 0;
             z-index: 10;
         }
 
         .logo {
-            font-size: 1.7rem;
+            font-size: 1.65rem;
             font-weight: 900;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            color: var(--dark);
             text-transform: uppercase;
         }
 
         .logo span {
-            color: var(--industrial-yellow);
+            color: var(--orange);
         }
 
         .nav-links {
             display: flex;
-            gap: 22px;
-            align-items: center;
+            gap: 24px;
             flex-wrap: wrap;
         }
 
         .nav-links a {
-            color: var(--text-muted);
+            color: var(--text);
             text-decoration: none;
-            font-size: 0.85rem;
             font-weight: 800;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
         }
 
         .nav-links a:hover {
-            color: var(--industrial-yellow);
+            color: var(--orange-dark);
         }
 
         .hero {
-            min-height: 62vh;
-            padding: 80px 5%;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
             background:
-                linear-gradient(110deg, rgba(15, 17, 21, 0.95) 0%, rgba(15, 17, 21, 0.82) 47%, rgba(15, 17, 21, 0.98) 100%),
-                radial-gradient(circle at 72% 35%, rgba(255, 174, 0, 0.22), transparent 30%),
-                linear-gradient(135deg, #101319 0%, #0f1115 100%);
+                linear-gradient(110deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.9) 50%, rgba(255,247,237,0.95) 100%),
+                radial-gradient(circle at 78% 35%, rgba(245,158,11,0.22), transparent 30%);
+            padding: 90px 6%;
+            border-bottom: 1px solid var(--border);
             position: relative;
             overflow: hidden;
         }
@@ -194,213 +160,205 @@
         .hero::after {
             content: "";
             position: absolute;
-            right: -80px;
-            top: 50px;
-            width: 520px;
-            height: 320px;
-            border: 1px solid rgba(255, 174, 0, 0.28);
+            right: -120px;
+            top: 60px;
+            width: 560px;
+            height: 330px;
+            border: 1px solid rgba(245,158,11,0.35);
             background:
-                linear-gradient(90deg, transparent 95%, rgba(255, 174, 0, 0.18) 95%),
-                linear-gradient(0deg, transparent 95%, rgba(255, 174, 0, 0.18) 95%);
+                linear-gradient(90deg, transparent 95%, rgba(245,158,11,0.22) 95%),
+                linear-gradient(0deg, transparent 95%, rgba(245,158,11,0.22) 95%);
             background-size: 28px 28px;
             transform: rotate(-8deg);
-            opacity: 0.7;
         }
 
-        .hero-text {
-            max-width: 900px;
+        .hero-content {
+            max-width: 850px;
             position: relative;
             z-index: 1;
         }
 
         .hero-kicker {
-            color: var(--industrial-yellow);
-            text-transform: uppercase;
+            color: var(--orange-dark);
             font-size: 0.9rem;
             font-weight: 900;
-            letter-spacing: 1.2px;
-            margin-bottom: 14px;
-        }
-
-        .hero-text h1 {
-            font-size: 3.35rem;
-            font-weight: 900;
-            line-height: 1.12;
-            margin-bottom: 20px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
         }
 
-        .hero-text h1 span {
-            color: var(--industrial-yellow);
+        h1 {
+            color: var(--dark);
+            font-size: 3.4rem;
+            line-height: 1.12;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
-        .hero-text p {
+        h1 span {
+            color: var(--orange);
+        }
+
+        .hero p {
+            max-width: 760px;
+            color: var(--muted);
             font-size: 1.15rem;
-            color: #c4c9d3;
-            max-width: 800px;
             margin-bottom: 28px;
         }
 
         .hero-points {
             display: flex;
-            flex-wrap: wrap;
             gap: 12px;
-            margin-bottom: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
         }
 
         .hero-points span {
-            border: 1px solid var(--border-color);
-            background-color: rgba(24, 27, 34, 0.78);
-            color: #d7dbe3;
-            padding: 8px 12px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 9px 13px;
             font-size: 0.92rem;
             font-weight: 800;
+            color: var(--text);
         }
 
         .btn-row {
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
-            align-items: center;
         }
 
-        .btn-heavy {
-            display: inline-block;
-            background-color: var(--industrial-yellow);
-            color: #000;
-            padding: 14px 34px;
-            font-size: 1rem;
-            font-weight: 900;
-            text-transform: uppercase;
+        .btn-primary {
+            background: var(--orange);
+            color: #111827;
+            padding: 14px 32px;
             text-decoration: none;
-            letter-spacing: 0.5px;
-            border: 2px solid var(--industrial-yellow);
+            text-transform: uppercase;
+            font-weight: 900;
+            border: 2px solid var(--orange);
         }
 
-        .btn-heavy:hover {
-            background-color: #e09900;
-            border-color: #e09900;
-        }
-
-        .btn-outline {
-            display: inline-block;
+        .btn-primary:hover {
+            background: var(--orange-dark);
+            border-color: var(--orange-dark);
             color: #ffffff;
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--dark);
             padding: 14px 28px;
-            font-size: 1rem;
-            font-weight: 900;
-            text-transform: uppercase;
             text-decoration: none;
-            letter-spacing: 0.5px;
-            border: 2px solid var(--border-color);
+            text-transform: uppercase;
+            font-weight: 900;
+            border: 2px solid var(--border);
         }
 
-        .btn-outline:hover {
-            border-color: var(--industrial-yellow);
-            color: var(--industrial-yellow);
+        .btn-secondary:hover {
+            border-color: var(--orange);
+            color: var(--orange-dark);
         }
 
-        .section {
-            padding: 70px 5%;
+        section {
+            padding: 75px 6%;
         }
 
         .section-title {
+            color: var(--dark);
             font-size: 2rem;
             font-weight: 900;
             text-transform: uppercase;
-            margin-bottom: 38px;
-            border-left: 5px solid var(--industrial-yellow);
+            border-left: 5px solid var(--orange);
             padding-left: 15px;
+            margin-bottom: 36px;
         }
 
         .section-intro {
-            max-width: 900px;
-            color: #c4c9d3;
+            max-width: 850px;
+            color: var(--muted);
             font-size: 1.05rem;
             margin-top: -18px;
-            margin-bottom: 35px;
+            margin-bottom: 36px;
         }
 
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
         }
 
-        .work-card {
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
             overflow: hidden;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
         }
 
         .service-visual {
-            height: 220px;
-            background-color: #11141a;
-            border-bottom: 2px solid var(--border-color);
+            height: 210px;
+            background: linear-gradient(135deg, #fff7ed, #ffffff);
+            border-bottom: 1px solid var(--border);
             overflow: hidden;
         }
 
         .card-content {
-            padding: 25px;
+            padding: 26px;
         }
 
         .card-content h3 {
-            font-size: 1.22rem;
+            color: var(--orange-dark);
+            font-size: 1.18rem;
             font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 10px;
-            color: var(--industrial-yellow);
         }
 
         .card-content p {
-            color: #bdc2cc;
-            font-size: 0.96rem;
+            color: var(--muted);
+            font-size: 0.98rem;
         }
 
         .trust-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 18px;
-            margin-top: 35px;
+            margin-top: 34px;
         }
 
         .trust-item {
-            border: 1px solid var(--border-color);
-            background-color: #11141a;
-            padding: 22px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 24px;
         }
 
         .trust-item strong {
             display: block;
-            color: var(--industrial-yellow);
+            color: var(--dark);
+            font-size: 0.95rem;
             text-transform: uppercase;
-            font-size: 0.9rem;
             margin-bottom: 8px;
         }
 
         .trust-item span {
-            color: #c4c9d3;
+            color: var(--muted);
             font-size: 0.96rem;
         }
 
         .quote-section {
-            padding: 75px 5%;
-            background:
-                linear-gradient(120deg, rgba(255, 174, 0, 0.11), transparent 42%),
-                #11141a;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            background: var(--soft-orange);
+            border-top: 1px solid #fed7aa;
+            border-bottom: 1px solid #fed7aa;
         }
 
         .quote-box {
-            width: 100%;
-            max-width: 1180px;
+            background: var(--white);
+            border: 1px solid #fed7aa;
+            border-top: 4px solid var(--orange);
+            max-width: 1150px;
             margin: 0 auto;
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-top: 3px solid var(--industrial-yellow);
-            padding: 42px;
+            padding: 44px;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
         }
 
         .quote-head {
@@ -409,6 +367,7 @@
         }
 
         .quote-head h2 {
+            color: var(--dark);
             font-size: 2rem;
             font-weight: 900;
             text-transform: uppercase;
@@ -416,8 +375,7 @@
         }
 
         .quote-head p {
-            color: #c4c9d3;
-            font-size: 1rem;
+            color: var(--muted);
         }
 
         .quote-form {
@@ -431,33 +389,34 @@
             gap: 16px;
         }
 
-        .quote-form input,
-        .quote-form select,
-        .quote-form textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
-            background-color: #0f1115;
-            border: 1px solid var(--border-color);
-            color: #ffffff;
             padding: 15px 16px;
+            border: 1px solid var(--border);
+            background: #ffffff;
+            color: var(--dark);
             font-size: 1rem;
             outline: none;
         }
 
-        .quote-form input:focus,
-        .quote-form select:focus,
-        .quote-form textarea:focus {
-            border-color: var(--industrial-yellow);
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(245,158,11,0.16);
         }
 
-        .quote-form textarea {
+        textarea {
+            min-height: 140px;
             resize: vertical;
-            min-height: 135px;
         }
 
-        .quote-form button {
+        button {
             justify-self: start;
-            background-color: var(--industrial-yellow);
-            color: #000000;
+            background: var(--orange);
+            color: #111827;
             border: 0;
             padding: 15px 34px;
             font-size: 1rem;
@@ -466,28 +425,29 @@
             cursor: pointer;
         }
 
-        .quote-form button:hover {
-            background-color: #e09900;
+        button:hover {
+            background: var(--orange-dark);
+            color: #ffffff;
         }
 
         .form-note {
-            color: var(--text-muted);
+            color: var(--muted);
             font-size: 0.9rem;
-            margin-top: 5px;
         }
 
         .about-box {
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-left: 5px solid var(--industrial-yellow);
-            padding: 32px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--orange);
+            padding: 34px;
             max-width: 1050px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
         }
 
         .about-box p {
-            color: #c4c9d3;
-            font-size: 1.05rem;
+            color: var(--muted);
             margin-bottom: 15px;
+            font-size: 1.05rem;
         }
 
         .about-box p:last-child {
@@ -500,77 +460,73 @@
 
         .contact-section {
             width: 100%;
-            max-width: none;
-            margin: 0 auto;
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-top: 3px solid var(--industrial-yellow);
-            padding: 55px 20px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--orange);
+            padding: 56px 20px;
             text-align: center;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
         }
 
         .contact-section h2 {
+            color: var(--dark);
             font-size: 1.9rem;
             font-weight: 900;
             text-transform: uppercase;
-            margin-bottom: 14px;
-            color: #ffffff;
+            margin-bottom: 12px;
         }
 
         .contact-section p {
-            color: var(--text-muted);
-            font-size: 1rem;
+            color: var(--muted);
             margin-bottom: 28px;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
+            gap: 12px;
             align-items: center;
-            gap: 13px;
         }
 
         .contact-small {
+            color: var(--orange-dark);
             font-size: 0.85rem;
-            font-weight: 800;
-            color: var(--industrial-yellow);
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .contact-name {
+            color: var(--dark);
             font-size: 1.45rem;
-            font-weight: 800;
-            color: #ffffff;
+            font-weight: 900;
         }
 
         .contact-info a {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: #ffffff;
+            color: var(--dark);
             text-decoration: none;
+            font-size: 1.28rem;
+            font-weight: 900;
         }
 
         .contact-info a:hover {
-            color: var(--industrial-yellow);
+            color: var(--orange-dark);
         }
 
         footer {
+            background: var(--dark);
+            color: #d1d5db;
             text-align: center;
             padding: 30px 20px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            background-color: #0a0b0d;
-            border-top: 1px solid var(--border-color);
-            margin-top: 60px;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
             nav {
-                align-items: flex-start;
-                gap: 12px;
-                flex-direction: column;
                 position: static;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px;
             }
 
             .nav-links {
@@ -578,24 +534,23 @@
             }
 
             .hero {
-                min-height: auto;
-                padding: 55px 5%;
+                padding: 58px 6%;
             }
 
             .hero::after {
                 display: none;
             }
 
-            .hero-text h1 {
-                font-size: 2.15rem;
+            h1 {
+                font-size: 2.2rem;
             }
 
-            .hero-text p {
+            .hero p {
                 font-size: 1rem;
             }
 
-            .section {
-                padding: 50px 5%;
+            section {
+                padding: 52px 6%;
             }
 
             .section-title {
@@ -610,28 +565,8 @@
                 padding: 28px 20px;
             }
 
-            .quote-head h2 {
-                font-size: 1.55rem;
-            }
-
-            .quote-form button {
+            button {
                 width: 100%;
-            }
-
-            .contact-wrap {
-                padding: 50px 3%;
-            }
-
-            .contact-section {
-                padding: 42px 15px;
-            }
-
-            .contact-section h2 {
-                font-size: 1.55rem;
-            }
-
-            .contact-section p {
-                font-size: 0.95rem;
             }
 
             .contact-name {
@@ -647,7 +582,6 @@
 
 <body>
 
-    <!-- NAVIGATSIOON -->
     <nav>
         <div class="logo">LIB<span>TEK</span> OÜ</div>
         <div class="nav-links">
@@ -658,9 +592,8 @@
         </div>
     </nav>
 
-    <!-- HERO -->
     <header class="hero">
-        <div class="hero-text">
+        <div class="hero-content">
             <div class="hero-kicker">Elektritööd • Projekteerimine • Paigaldus</div>
             <h1>Elektritööd ja <span>elektri projekteerimine</span></h1>
             <p>
@@ -677,14 +610,13 @@
             </div>
 
             <div class="btn-row">
-                <a href="#pakkumine" class="btn-heavy" onclick="trackContactClick('hero_kysi_pakkumist')">Küsi pakkumist</a>
-                <a href="tel:+37253461535" class="btn-outline" onclick="trackContactClick('hero_telefon')">Helista</a>
+                <a href="#pakkumine" class="btn-primary" onclick="trackContactClick('hero_kysi_pakkumist')">Küsi pakkumist</a>
+                <a href="tel:+37253461535" class="btn-secondary" onclick="trackContactClick('hero_telefon')">Helista</a>
             </div>
         </div>
     </header>
 
-    <!-- TEENUSED -->
-    <section class="section" id="teenused">
+    <section id="teenused">
         <h2 class="section-title">Teenused</h2>
         <p class="section-intro">
             Libtek OÜ pakub elektritööde terviklahendusi alates projekti koostamisest kuni paigalduse,
@@ -692,141 +624,71 @@
         </p>
 
         <div class="grid-3">
-            
-            <article class="work-card">
+            <article class="service-card">
                 <div class="service-visual">
                     <svg width="100%" height="100%" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <pattern id="gridProject" width="24" height="24" patternUnits="userSpaceOnUse">
-                                <path d="M24 0H0V24" fill="none" stroke="#26303d" stroke-width="1"/>
-                            </pattern>
-                            <linearGradient id="projectGlow" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0" stop-color="#ffae00" stop-opacity="0.35"/>
-                                <stop offset="1" stop-color="#ffae00" stop-opacity="0"/>
-                            </linearGradient>
-                        </defs>
-
-                        <rect width="600" height="220" fill="#101319"/>
-                        <rect width="600" height="220" fill="url(#gridProject)" opacity="0.55"/>
-                        <rect width="600" height="220" fill="url(#projectGlow)"/>
-
-                        <rect x="70" y="45" width="210" height="130" fill="#151922" stroke="#ffae00" stroke-width="3"/>
-                        <path d="M95 75H245 M95 100H210 M95 125H250 M95 150H185" stroke="#ffae00" stroke-width="4"/>
-                        <circle cx="320" cy="110" r="25" fill="none" stroke="#ffae00" stroke-width="4"/>
-                        <path d="M280 110H295 M345 110H525" stroke="#ffae00" stroke-width="4"/>
-                        <path d="M385 75H525 M385 110H525 M385 145H500" stroke="#46505f" stroke-width="6"/>
-                        <path d="M470 55L530 55L530 115" fill="none" stroke="#ffae00" stroke-width="4"/>
-                        <path d="M530 55L512 73" stroke="#ffae00" stroke-width="4"/>
-                        <text x="300" y="205" fill="#ffae00" font-size="20" font-weight="800" text-anchor="middle">ELEKTRIPROJEKTID • SKEEMID • JOONISED</text>
+                        <rect width="600" height="220" fill="#fff7ed"/>
+                        <path d="M70 60 H250 V160 H70 Z" fill="#ffffff" stroke="#f59e0b" stroke-width="4"/>
+                        <path d="M95 90 H220 M95 115 H180 M95 140 H230" stroke="#d97706" stroke-width="4"/>
+                        <circle cx="320" cy="110" r="22" fill="#ffffff" stroke="#f59e0b" stroke-width="4"/>
+                        <path d="M250 110H298 M342 110H520" stroke="#f59e0b" stroke-width="4"/>
+                        <path d="M380 75H520 M380 110H500 M380 145H470" stroke="#cbd5e1" stroke-width="7"/>
+                        <text x="300" y="202" fill="#d97706" font-size="20" font-weight="900" text-anchor="middle">PROJEKTEERIMINE</text>
                     </svg>
                 </div>
-
                 <div class="card-content">
                     <h3>01. Elektri projekteerimine</h3>
-                    <p>
-                        Elektriprojektide, põhimõtteskeemide ja teostusjooniste koostamine.
-                        Tehniliselt korrektsed lahendused enne ehitus- ja paigaldustööde algust.
-                    </p>
+                    <p>Elektriprojektide, põhimõtteskeemide ja teostusjooniste koostamine. Tehniliselt korrektsed lahendused enne tööde algust.</p>
                 </div>
             </article>
 
-            <article class="work-card">
+            <article class="service-card">
                 <div class="service-visual">
                     <svg width="100%" height="100%" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="panelBg" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0" stop-color="#1d222c"/>
-                                <stop offset="1" stop-color="#0f1115"/>
-                            </linearGradient>
-                            <linearGradient id="orangeGlow" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0" stop-color="#ffae00" stop-opacity="0.1"/>
-                                <stop offset="0.5" stop-color="#ffae00" stop-opacity="0.35"/>
-                                <stop offset="1" stop-color="#ffae00" stop-opacity="0.1"/>
-                            </linearGradient>
-                        </defs>
-
-                        <rect width="600" height="220" fill="url(#panelBg)"/>
-                        <rect x="45" y="28" width="510" height="150" rx="4" fill="#141820" stroke="#343b48" stroke-width="2"/>
-                        <rect x="70" y="55" width="460" height="22" fill="url(#orangeGlow)" opacity="0.8"/>
-
-                        <rect x="110" y="82" width="60" height="70" fill="#d9dde4" opacity="0.9"/>
-                        <rect x="180" y="82" width="60" height="70" fill="#d9dde4" opacity="0.9"/>
-                        <rect x="250" y="82" width="60" height="70" fill="#d9dde4" opacity="0.9"/>
-                        <rect x="320" y="82" width="60" height="70" fill="#d9dde4" opacity="0.9"/>
-                        <rect x="390" y="82" width="60" height="70" fill="#d9dde4" opacity="0.9"/>
-
-                        <rect x="125" y="98" width="30" height="12" fill="#ffae00"/>
-                        <rect x="195" y="98" width="30" height="12" fill="#ffae00"/>
-                        <rect x="265" y="98" width="30" height="12" fill="#ffae00"/>
-                        <rect x="335" y="98" width="30" height="12" fill="#ffae00"/>
-                        <rect x="405" y="98" width="30" height="12" fill="#ffae00"/>
-
-                        <path d="M140 152C140 175 90 175 90 200" stroke="#ffae00" stroke-width="5" fill="none"/>
-                        <path d="M210 152C210 175 180 175 180 200" stroke="#d8dde6" stroke-width="5" fill="none"/>
-                        <path d="M280 152C280 175 300 175 300 200" stroke="#ffae00" stroke-width="5" fill="none"/>
-                        <path d="M350 152C350 175 420 175 420 200" stroke="#d8dde6" stroke-width="5" fill="none"/>
-                        <path d="M420 152C420 175 505 175 505 200" stroke="#ffae00" stroke-width="5" fill="none"/>
-
-                        <text x="300" y="205" fill="#ffae00" font-size="20" font-weight="800" text-anchor="middle">KILBID • KAABLID • PAIGALDUS</text>
+                        <rect width="600" height="220" fill="#fff7ed"/>
+                        <rect x="80" y="35" width="440" height="135" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="3"/>
+                        <rect x="120" y="70" width="70" height="70" fill="#f3f4f6" stroke="#f59e0b" stroke-width="4"/>
+                        <rect x="215" y="70" width="70" height="70" fill="#f3f4f6" stroke="#f59e0b" stroke-width="4"/>
+                        <rect x="310" y="70" width="70" height="70" fill="#f3f4f6" stroke="#f59e0b" stroke-width="4"/>
+                        <rect x="405" y="70" width="35" height="70" fill="#f3f4f6" stroke="#f59e0b" stroke-width="4"/>
+                        <path d="M155 140C155 170 100 165 100 200" stroke="#f59e0b" stroke-width="5" fill="none"/>
+                        <path d="M250 140C250 170 250 165 250 200" stroke="#94a3b8" stroke-width="5" fill="none"/>
+                        <path d="M345 140C345 170 425 165 425 200" stroke="#f59e0b" stroke-width="5" fill="none"/>
+                        <text x="300" y="202" fill="#d97706" font-size="20" font-weight="900" text-anchor="middle">PAIGALDUSTÖÖD</text>
                     </svg>
                 </div>
-
                 <div class="card-content">
                     <h3>02. Elektripaigaldustööd</h3>
-                    <p>
-                        Kaablite vedu, jaotuskilpide montaaž, pistikupesade, lülitite ja valgustite paigaldus.
-                        Tugev- ja nõrkvoolusüsteemide ehitus.
-                    </p>
+                    <p>Kaablite vedu, jaotuskilpide montaaž, pistikupesade, lülitite ja valgustite paigaldus. Tugev- ja nõrkvoolusüsteemide ehitus.</p>
                 </div>
             </article>
 
-            <article class="work-card">
+            <article class="service-card">
                 <div class="service-visual">
                     <svg width="100%" height="100%" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="measureBg" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0" stop-color="#151922"/>
-                                <stop offset="1" stop-color="#0f1115"/>
-                            </linearGradient>
-                        </defs>
-
-                        <rect width="600" height="220" fill="url(#measureBg)"/>
-
-                        <rect x="80" y="42" width="155" height="125" rx="12" fill="#171c25" stroke="#ffae00" stroke-width="4"/>
-                        <rect x="105" y="65" width="105" height="35" rx="4" fill="#ffae00" opacity="0.9"/>
-                        <text x="158" y="89" fill="#101319" font-size="18" font-weight="900" text-anchor="middle">0.38</text>
-                        <circle cx="158" cy="130" r="23" fill="none" stroke="#ffae00" stroke-width="4"/>
-                        <path d="M158 130L175 113" stroke="#ffae00" stroke-width="4"/>
-                        <path d="M115 168C115 195 60 190 60 215" stroke="#ffae00" stroke-width="4" fill="none"/>
-                        <path d="M200 168C200 195 270 190 270 215" stroke="#d8dde6" stroke-width="4" fill="none"/>
-
-                        <rect x="335" y="42" width="170" height="130" fill="#151922" stroke="#343b48" stroke-width="3"/>
-                        <path d="M365 75H475 M365 100H455 M365 125H485 M365 150H440" stroke="#596170" stroke-width="6"/>
-                        <path d="M340 45L370 45L370 75" fill="none" stroke="#ffae00" stroke-width="4"/>
-                        <path d="M360 150L378 168L415 120" fill="none" stroke="#ffae00" stroke-width="6"/>
-
-                        <path d="M270 70H315 M270 105H315 M270 140H315" stroke="#2c313c" stroke-width="6"/>
-                        <circle cx="295" cy="105" r="8" fill="#ffae00"/>
-
-                        <text x="300" y="205" fill="#ffae00" font-size="20" font-weight="800" text-anchor="middle">MÕÕDISTUSED • KONTROLL • DOKUMENDID</text>
+                        <rect width="600" height="220" fill="#fff7ed"/>
+                        <rect x="90" y="42" width="150" height="125" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="4"/>
+                        <rect x="115" y="65" width="100" height="35" rx="4" fill="#f59e0b"/>
+                        <text x="165" y="89" fill="#111827" font-size="18" font-weight="900" text-anchor="middle">0.38</text>
+                        <circle cx="165" cy="130" r="23" fill="#ffffff" stroke="#f59e0b" stroke-width="4"/>
+                        <path d="M165 130L182 113" stroke="#d97706" stroke-width="4"/>
+                        <rect x="335" y="45" width="170" height="125" fill="#ffffff" stroke="#e5e7eb" stroke-width="3"/>
+                        <path d="M365 75H475 M365 100H455 M365 125H485 M365 150H440" stroke="#cbd5e1" stroke-width="6"/>
+                        <path d="M360 148L378 166L415 118" fill="none" stroke="#f59e0b" stroke-width="6"/>
+                        <text x="300" y="202" fill="#d97706" font-size="20" font-weight="900" text-anchor="middle">MÕÕDISTUSED</text>
                     </svg>
                 </div>
-
                 <div class="card-content">
                     <h3>03. Mõõdistused ja dokumendid</h3>
-                    <p>
-                        Elektripaigaldise mõõtmised, maanduse kontroll ja dokumentide vormistamine
-                        elektriauditi või kasutusloa jaoks.
-                    </p>
+                    <p>Elektripaigaldise mõõtmised, maanduse kontroll ja dokumentide vormistamine elektriauditi või kasutusloa jaoks.</p>
                 </div>
             </article>
-
         </div>
 
         <div class="trust-row">
             <div class="trust-item">
                 <strong>Selge töömaht</strong>
-                <span>Kirjeldame enne töö alustamist, mida tehakse ja milline lahendus sobib objektile.</span>
+                <span>Enne töö alustamist on arusaadav, mida tehakse ja milline lahendus sobib objektile.</span>
             </div>
             <div class="trust-item">
                 <strong>Ohutus ja korrektsus</strong>
@@ -839,15 +701,11 @@
         </div>
     </section>
 
-    <!-- KÜSI PAKKUMIST -->
     <section class="quote-section" id="pakkumine">
         <div class="quote-box">
             <div class="quote-head">
                 <h2>Küsi pakkumist</h2>
-                <p>
-                    Täida vorm ja kirjelda lühidalt, millist elektritööd vajad. Päring saadetakse aadressile
-                    info@libtek.ee.
-                </p>
+                <p>Täida vorm ja kirjelda lühidalt, millist elektritööd vajad. Päring saadetakse aadressile info@libtek.ee.</p>
             </div>
 
             <form action="https://formsubmit.co/info@libtek.ee" method="POST" class="quote-form">
@@ -883,28 +741,16 @@
         </div>
     </section>
 
-    <!-- ETTEVÕTTEST -->
-    <section class="section" id="ettevottest">
+    <section id="ettevottest">
         <h2 class="section-title">Libtek OÜ</h2>
-
         <div class="about-box">
-            <p>
-                Libtek OÜ on elektritööde ja elektrilahendustega tegelev ettevõte. Pakume abi nii uute
-                elektripaigaldiste rajamisel kui ka olemasolevate süsteemide korrastamisel ja täiendamisel.
-            </p>
-            <p>
-                Meie tööde hulka kuuluvad elektripaigaldus, elektri projekteerimine, jaotuskilpide montaaž,
-                valgustuse ja pistikupesade paigaldus, mõõdistused ning dokumentide vormistamine.
-            </p>
-            <p>
-                Eesmärk on pakkuda kliendile selget, ohutut ja nõuetekohast lahendust, mis sobib konkreetse
-                objekti vajadustega.
-            </p>
+            <p>Libtek OÜ on elektritööde ja elektrilahendustega tegelev ettevõte. Pakume abi nii uute elektripaigaldiste rajamisel kui ka olemasolevate süsteemide korrastamisel ja täiendamisel.</p>
+            <p>Meie tööde hulka kuuluvad elektripaigaldus, elektri projekteerimine, jaotuskilpide montaaž, valgustuse ja pistikupesade paigaldus, mõõdistused ning dokumentide vormistamine.</p>
+            <p>Eesmärk on pakkuda kliendile selget, ohutut ja nõuetekohast lahendust, mis sobib konkreetse objekti vajadustega.</p>
         </div>
     </section>
 
-    <!-- KONTAKT -->
-    <section id="kontakt" class="section contact-wrap">
+    <section id="kontakt" class="contact-wrap">
         <div class="contact-section">
             <h2>Võta ühendust</h2>
             <p>Kirjelda lühidalt, millise elektritöö või projektiga abi vajad.</p>
@@ -913,18 +759,12 @@
                 <div class="contact-small">Kontakt</div>
                 <div class="contact-name">Arman Liblik</div>
 
-                <a href="tel:+37253461535" onclick="trackContactClick('telefoniklikk')">
-                    +372 5346 1535
-                </a>
-
-                <a href="mailto:info@libtek.ee" onclick="trackContactClick('emailiklikk')">
-                    info@libtek.ee
-                </a>
+                <a href="tel:+37253461535" onclick="trackContactClick('telefoniklikk')">+372 5346 1535</a>
+                <a href="mailto:info@libtek.ee" onclick="trackContactClick('emailiklikk')">info@libtek.ee</a>
             </div>
         </div>
     </section>
 
-    <!-- JALUS -->
     <footer>
         <p>&copy; 2026 Libtek OÜ. Kõik õigused kaitstud.</p>
     </footer>
